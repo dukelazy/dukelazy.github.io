@@ -1,0 +1,667 @@
+---
+layout: post
+title: "title"
+date: 2015-02-13 02:01:59 +0800
+comments: true
+categories: 
+---
+```
+U-Boot SPL 2012.10-04278-gb85d943-dirty (Apr 11 2013 - 14:07:54)
+build date: Apr 11 2013 14:08:07
+DRAM:1024MB
+SUNXI SD/MMC: 0
+ 
+ 
+U-Boot 2012.10-04277-g7aa9f04-dirty (Mar 05 2013 - 10:52:38) Allwinner Technology 
+ 
+CPU:   SUNXI Family
+Board: A10
+I2C:   ready
+DRAM:  1 GiB
+MMC:   SUNXI SD/MMC: 0
+*** Warning - bad CRC, using default environment
+ 
+In:    serial
+Out:   serial
+Err:   serial
+Hit any key to stop autoboot:  0 
+reading uEnv.txt
+ 
+575 bytes read
+Loaded environment from uEnv.txt
+reading boot.scr
+ 
+** Unable to read "boot.scr" from mmc 0:1 **
+Loading file "boot.scr" from mmc device 0:1
+Failed to mount ext2 filesystem...
+** Bad ext2 partition or disk - mmc 0:1 **
+ext2load - load binary file from a Ext2 filesystem
+ 
+Usage:
+ext2load <interface> <dev[:part]> [addr] [filename] [bytes]
+    - load binary file 'filename' from 'dev' on 'interface'
+      to address 'addr' from ext2 filesystem
+Loading file "boot/boot.scr" from mmc device 0:1
+Failed to mount ext2 filesystem...
+** Bad ext2 partition or disk - mmc 0:1 **
+ext2load - load binary file from a Ext2 filesystem
+ 
+Usage:
+ext2load <interface> <dev[:part]> [addr] [filename] [bytes]
+    - load binary file 'filename' from 'dev' on 'interface'
+      to address 'addr' from ext2 filesystem
+reading script.bin
+ 
+45244 bytes read
+reading uImage
+ 
+6329192 bytes read
+## Booting kernel from Legacy Image at 48000000 ...
+   Image Name:   Linux-3.4.29+
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    6329128 Bytes = 6 MiB
+   Load Address: 40008000
+   Entry Point:  40008000
+   Verifying Checksum ... OK
+   Loading Kernel Image ... OK
+OK
+ 
+Starting kernel ...
+ 
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Linux version 3.4.29+ (ubuntu@linux-server) (gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) ) #7 PREEMPT Mon Aug 5 13:37:28 CST 2013
+[    0.000000] CPU: ARMv7 Processor [413fc082] revision 2 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: sun4i
+[    0.000000] Memory cut off:
+[    0.000000] 	MALI : 0x5c000000 - 0x5fffffff  (  64 MB)
+[    0.000000] Ignoring unrecognised tag 0x00000000
+[    0.000000] Memory Reserved:
+[    0.000000] 	SYS  : 0x43000000 - 0x4300ffff  (  64 kB)
+[    0.000000] 	VE   : 0x44000000 - 0x48ffffff  (  80 MB)
+[    0.000000] 	G2D  : 0x49000000 - 0x49ffffff  (  16 MB)
+[    0.000000] 	LCD  : 0x5a000000 - 0x5bffffff  (  32 MB)
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] chip-id: A10 (AW1623 revision C)
+[    0.000000] On node 0 totalpages: 245760
+[    0.000000] free_area_init_node: node 0, pgdat c0a8ede4, node_mem_map c0c59000
+[    0.000000]   Normal zone: 1520 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 176656 pages, LIFO batch:31
+[    0.000000]   HighMem zone: 528 pages used for memmap
+[    0.000000]   HighMem zone: 67056 pages, LIFO batch:15
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 243712
+[    0.000000] Kernel command line: console=ttyS0,115200 console=tty1 root=/dev/mmcblk0p2 loglevel=8 panic=10
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 448MB 512MB = 960MB total
+[    0.000000] Memory: 830732k/830732k available, 152308k reserved, 270336K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xef800000   ( 760 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc08933a8   (8749 kB)
+[    0.000000]       .init : 0xc0894000 - 0xc0a2b000   (1628 kB)
+[    0.000000]       .data : 0xc0a2c000 - 0xc0a9b978   ( 447 kB)
+[    0.000000]        .bss : 0xc0a9b99c - 0xc0c58718   (1780 kB)
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS:128
+[    0.000000] timer0: Periodic Mode
+[    0.000000] sched_clock: 32 bits at 100 Hz, resolution 10000000ns, wraps every 4294967286ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000000] console [tty1] enabled
+[    0.000000] Calibrating delay loop... 1001.88 BogoMIPS (lpj=5009408)
+[    0.040000] pid_max: default: 32768 minimum: 301
+[    0.040000] Mount-cache hash table entries: 512
+[    0.040000] Initializing cgroup subsys cpuacct
+[    0.040000] Initializing cgroup subsys devices
+[    0.040000] Initializing cgroup subsys freezer
+[    0.040000] Initializing cgroup subsys blkio
+[    0.040000] CPU: Testing write buffer coherency: ok
+[    0.040000] hw perfevents: enabled with ARMv7 Cortex-A8 PMU driver, 5 counters available
+[    0.040000] Setting up static identity map for 0x405eaf68 - 0x405eaf9c
+[    0.040000] devtmpfs: initialized
+[    0.040000] dummy: 
+[    0.040000] NET: Registered protocol family 16
+[    0.040000] hw-breakpoint: debug architecture 0x4 unsupported.
+[    0.040000] SOFTWINNER DMA Driver, (c) 2003-2004,2006 Simtec Electronics
+[    0.040000] Initialize DMAC OK
+[    0.040000] Init eGon pin module V2.0
+[    0.040000] bio: create slab <bio-0> at 0
+[    0.040000] sunxi disp driver loaded (/dev/disp api 1.0)
+[    0.040000] SCSI subsystem initialized
+[    0.040000] usbcore: registered new interface driver usbfs
+[    0.040000] usbcore: registered new interface driver hub
+[    0.040000] usbcore: registered new device driver usb
+[    0.040000] Linux media interface: v0.10
+[    0.040000] Linux video capture interface: v2.00
+[    0.040000] Advanced Linux Sound Architecture Driver Version 1.0.25.
+[    0.040000] Bluetooth: Core ver 2.16
+[    0.040000] NET: Registered protocol family 31
+[    0.040000] Bluetooth: HCI device and connection manager initialized
+[    0.040000] Bluetooth: HCI socket layer initialized
+[    0.040000] Bluetooth: L2CAP socket layer initialized
+[    0.040000] Bluetooth: SCO socket layer initialized
+[    0.040000] Switching to clocksource aw 64bits couter
+[    0.040000] FS-Cache: Loaded
+[    0.040000] CacheFiles: Loaded
+[    0.050000] [usb_manager]: CONFIG_USB_SW_SUN4I_USB0_OTG
+[    0.050000] [sw_hcd0]: usb host driver initialize........
+[    0.050000] [sw_udc]: udc_init: version 20080411
+[    0.050000] [sw_udc]: usb_vbase  = 0xf1c13000
+[    0.050000] [sw_udc]: sram_vbase = 0xf1c00000
+[    0.050000] [sw_udc]: open_usb_clock
+[    0.060000] udc->driver is null, udc is need not stop
+[    0.060000] axp driver uning configuration failed(562)
+[    0.060000] axp driver uning configuration failed(574)
+[    0.060000] NET: Registered protocol family 2
+[    0.060000] IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.060000] TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+[    0.060000] TCP bind hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.060000] TCP: Hash tables configured (established 131072 bind 65536)
+[    0.060000] TCP: reno registered
+[    0.060000] UDP hash table entries: 512 (order: 1, 8192 bytes)
+[    0.060000] UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
+[    0.060000] NET: Registered protocol family 1
+[    0.060000] RPC: Registered named UNIX socket transport module.
+[    0.060000] RPC: Registered udp transport module.
+[    0.060000] RPC: Registered tcp transport module.
+[    0.060000] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.700000] audit: initializing netlink socket (disabled)
+[    0.700000] type=2000 audit(0.699:1): initialized
+[    0.700000] highmem bounce pool size: 64 pages
+[    0.710000] VFS: Disk quotas dquot_6.5.2
+[    0.710000] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.710000] NFS: Registering the id_resolver key type
+[    0.710000] NTFS driver 2.1.30 [Flags: R/W].
+[    0.710000] fuse init (API version 7.18)
+[    0.710000] msgmni has been set to 1094
+[    0.710000] alg: No test for stdrng (krng)
+[    0.710000] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    0.710000] io scheduler noop registered
+[    0.710000] io scheduler deadline registered
+[    0.710000] io scheduler cfq registered (default)
+[    0.710000] I2C: i2c-1: HDMI I2C adapter
+[    0.740000] disp clks: lcd 25200000 pre_scale 1 hdmi 25200000 pll 252000000 2x 0
+[    2.130000] Console: switching to colour frame buffer device 80x30
+[    2.170000] Serial: 8250/16550 driver, 8 ports, IRQ sharing disabled
+[    2.170000] [uart]: used uart info.: 0x05
+[    2.170000] [uart]: serial probe 0 irq 1 mapbase 0x01c28000
+[    2.170000] sunxi-uart.0: ttyS0 at MMIO 0x1c28000 (irq = 1) is a U6_16550A
+[    2.830000] console [ttyS0] enabled
+[    2.840000] [uart]: serial probe 2 irq 3 mapbase 0x01c28800
+[    2.850000] sunxi-uart.2: ttyS1 at MMIO 0x1c28800 (irq = 3) is a U6_16550A
+[    2.860000] G2D: drv_g2d_init
+[    2.860000] G2D: g2dmem: g2d_start=49000000, g2d_size=1000000
+[    2.870000] G2D: head:c9000000,tail:ca000000
+[    2.870000] G2D: Module initialized.major:248
+[    2.880000] brd: module loaded
+[    2.890000] loop: module loaded
+[    2.890000] [NAND]nand driver, init.
+[    2.900000] cmu_clk is 408 
+[    2.900000] nand clk init end 
+[    2.910000] offset 0xc:  0x6141 
+[    2.910000] offset 0x14:  0x8200000a 
+[    2.920000] [NAND] nand gpio_request
+[    2.920000] [NAND] nand driver version: 0x2 0x9 
+[    2.930000] nand interrupte register ok
+[    2.940000] ret of NFC_ChangMode is 0 
+[    2.940000] dma_hdle  is 0 
+[    2.950000] dma_hdle  is 10000008 
+[    2.950000] cmu_clk is 408 
+[    2.960000] nand clk init end 
+[    2.960000] offset 0xc:  0x6141 
+[    2.970000] offset 0x14:  0x82000006 
+[    2.990000] Dev nand: part 1, start 32768, size 65536
+[    2.990000] Dev nand: part 2, start 98304, size 4096
+[    3.000000] Dev nand: part 3, start 102400, size 32768
+[    3.010000] Dev nand: part 4, start 135168, size 3686400
+[    3.010000] Dev nand: part 5, start 3821568, size 69632
+[    3.020000]  nand: nanda nandb nandc nandd nande
+[    3.020000] benn: nand probe enter
+[    3.030000] [NAND]nand driver, ok.
+[    3.030000] [spi]: sw spi init !!
+[    3.040000] [spi]: Found 2 spi devices in config files
+[    3.040000] [spi]: boards num modalias         max_spd_hz       bus_num  cs   mode
+[    3.050000] [spi]: 0          spidev           12000000         0        0    0x3   
+[    3.060000] [spi]: 1          spidev           12000000         2        0    0x0   
+[    3.080000] [spi]: bus num = 0, spi used = 1 
+[    3.080000] [spi]: source = sdram_pll_p, src_clk = 408000000, mclk 102000000
+[    3.090000] sun4i-spi sun4i-spi.0: master is unqueued, this is deprecated
+[    3.100000] [spi]: allwinners SoC SPI Driver loaded for Bus SPI-0 with 2 Slaves attached
+[    3.110000] [spi]: [spi-0]: driver probe succeed, base f1c05000, irq 10, dma_id 37!
+[    3.120000] [spi]: bus num = 2, spi used = 1 
+[    3.130000] [spi]: source = sdram_pll_p, src_clk = 408000000, mclk 102000000
+[    3.140000] sun4i-spi sun4i-spi.2: master is unqueued, this is deprecated
+[    3.150000] [spi]: allwinners SoC SPI Driver loaded for Bus SPI-2 with 2 Slaves attached
+[    3.160000] [spi]: [spi-2]: driver probe succeed, base f1c17000, irq 12, dma_id 38!
+[    3.170000] wemac Ethernet Driver, V1.01 in file:/home/ubuntu/sunxi-bsp/linux-sunxi/drivers/net/ethernet/sun4i/sun4i_wemac.c
+[    3.190000] [EMAC] ahb clk enable
+[    3.190000] [EMAC] ahb gate clk: 0x526141
+[    3.230000] emac MAC isn't valid!
+[    3.230000] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.240000] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    3.250000] [sw-ehci1]: open clock
+[    3.280000] [sw-ehci1]: Set USB Power ON
+[    3.280000] sw-ehci sw-ehci.1: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.290000] sw-ehci sw-ehci.1: new USB bus registered, assigned bus number 1
+[    3.300000] sw-ehci sw-ehci.1: irq 39, io mem 0xf1c14000
+[    3.330000] sw-ehci sw-ehci.1: USB 0.0 started, EHCI 1.00
+[    3.330000] ehci_irq: port change detect
+[    3.340000] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.350000] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.360000] usb usb1: Product: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.370000] usb usb1: Manufacturer: Linux 3.4.29+ ehci_hcd
+[    3.380000] usb usb1: SerialNumber: sw-ehci
+[    3.390000] hub 1-0:1.0: USB hub found
+[    3.390000] hub 1-0:1.0: 1 port detected
+[    3.400000] [sw-ohci1]: open clock
+[    3.430000] sw-ohci sw-ohci.1: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    3.430000] sw-ohci sw-ohci.1: new USB bus registered, assigned bus number 2
+[    3.440000] sw-ohci sw-ohci.1: irq 64, io mem 0xf1c14400
+[    3.510000] usb usb2: New USB device found, idVendor=1d6b, idProduct=0001
+[    3.520000] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.530000] usb usb2: Product: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    3.540000] usb usb2: Manufacturer: Linux 3.4.29+ ohci_hcd
+[    3.550000] usb usb2: SerialNumber: sw-ohci
+[    3.550000] hub 2-0:1.0: USB hub found
+[    3.560000] hub 2-0:1.0: 1 port detected
+[    3.570000] [sw-ehci2]: open clock
+[    3.590000] [sw-ehci2]: Set USB Power ON
+[    3.600000] sw-ehci sw-ehci.2: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.610000] sw-ehci sw-ehci.2: new USB bus registered, assigned bus number 3
+[    3.620000] sw-ehci sw-ehci.2: irq 40, io mem 0xf1c1c000
+[    3.720000] usb 1-1: new high-speed USB device number 2 using sw-ehci
+[    3.740000] sw-ehci sw-ehci.2: USB 0.0 started, EHCI 1.00
+[    3.740000] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.750000] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.760000] usb usb3: Product: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.770000] usb usb3: Manufacturer: Linux 3.4.29+ ehci_hcd
+[    3.780000] usb usb3: SerialNumber: sw-ehci
+[    3.790000] hub 3-0:1.0: USB hub found
+[    3.800000] hub 3-0:1.0: 1 port detected
+[    3.800000] [sw-ohci2]: open clock
+[    3.830000] sw-ohci sw-ohci.2: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    3.840000] sw-ohci sw-ohci.2: new USB bus registered, assigned bus number 4
+[    3.850000] sw-ohci sw-ohci.2: irq 65, io mem 0xf1c1c400
+[    3.890000] usb 1-1: New USB device found, idVendor=0bda, idProduct=8178
+[    3.900000] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.900000] usb 1-1: Product: 802.11n WLAN Adapter
+[    3.920000] usb 1-1: Manufacturer: Realtek
+[    3.920000] usb 1-1: SerialNumber: 00e04c000001
+[    3.930000] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001
+[    3.940000] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.950000] usb usb4: Product: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    3.960000] usb usb4: Manufacturer: Linux 3.4.29+ ohci_hcd
+[    3.970000] usb usb4: SerialNumber: sw-ohci
+[    3.970000] hub 4-0:1.0: USB hub found
+[    3.980000] hub 4-0:1.0: 1 port detected
+[    3.990000] usbcore: registered new interface driver cdc_acm
+[    3.990000] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    4.010000] Initializing USB Mass Storage driver...
+[    4.010000] usbcore: registered new interface driver usb-storage
+[    4.020000] USB Mass Storage support registered.
+[    4.030000] usbcore: registered new interface driver libusual
+[    4.040000] usbcore: registered new interface driver ums-alauda
+[    4.040000] usbcore: registered new interface driver ums-cypress
+[    4.050000] usbcore: registered new interface driver ums-datafab
+[    4.060000] usbcore: registered new interface driver ums_eneub6250
+[    4.070000] usbcore: registered new interface driver ums-freecom
+[    4.080000] usbcore: registered new interface driver ums-isd200
+[    4.080000] usbcore: registered new interface driver ums-jumpshot
+[    4.090000] usbcore: registered new interface driver ums-karma
+[    4.100000] usbcore: registered new interface driver ums-onetouch
+[    4.110000] usbcore: registered new interface driver ums-sddr09
+[    4.110000] usbcore: registered new interface driver ums-sddr55
+[    4.120000] usbcore: registered new interface driver ums-usbat
+[    4.130000] usbcore: registered new interface driver usbserial
+[    4.140000] usbcore: registered new interface driver usbserial_generic
+[    4.140000] USB Serial support registered for generic
+[    4.150000] usbserial: USB Serial Driver core
+[    4.160000] usbcore: registered new interface driver aircable
+[    4.160000] USB Serial support registered for aircable
+[    4.170000] usbcore: registered new interface driver ark3116
+[    4.180000] USB Serial support registered for ark3116
+[    4.180000] usbcore: registered new interface driver belkin
+[    4.190000] USB Serial support registered for Belkin / Peracom / GoHubs USB Serial Adapter
+[    4.200000] usbcore: registered new interface driver ch341
+[    4.210000] USB Serial support registered for ch341-uart
+[    4.210000] usbcore: registered new interface driver cp210x
+[    4.220000] USB Serial support registered for cp210x
+[    4.230000] usbcore: registered new interface driver cyberjack
+[    4.230000] USB Serial support registered for Reiner SCT Cyberjack USB card reader
+[    4.240000] usbcore: registered new interface driver cypress
+[    4.250000] USB Serial support registered for DeLorme Earthmate USB
+[    4.260000] USB Serial support registered for HID->COM RS232 Adapter
+[    4.270000] USB Serial support registered for Nokia CA-42 V2 Adapter
+[    4.280000] usbcore: registered new interface driver debug
+[    4.280000] USB Serial support registered for debug
+[    4.290000] usbcore: registered new interface driver digi_acceleport
+[    4.300000] USB Serial support registered for Digi 2 port USB adapter
+[    4.310000] USB Serial support registered for Digi 4 port USB adapter
+[    4.320000] usbcore: registered new interface driver io_edgeport
+[    4.330000] USB Serial support registered for Edgeport 2 port adapter
+[    4.330000] USB Serial support registered for Edgeport 4 port adapter
+[    4.340000] USB Serial support registered for Edgeport 8 port adapter
+[    4.350000] USB Serial support registered for EPiC device
+[    4.360000] usbcore: registered new interface driver io_ti
+[    4.370000] USB Serial support registered for Edgeport TI 1 port adapter
+[    4.370000] USB Serial support registered for Edgeport TI 2 port adapter
+[    4.380000] usbcore: registered new interface driver empeg
+[    4.390000] USB Serial support registered for empeg
+[    4.400000] usbcore: registered new interface driver f81232
+[    4.410000] USB Serial support registered for f81232
+[    4.410000] usbcore: registered new interface driver ftdi_sio
+[    4.420000] USB Serial support registered for FTDI USB Serial Device
+[    4.430000] ftdi_sio: v1.6.0:USB FTDI Serial Converters Driver
+[    4.440000] usbcore: registered new interface driver funsoft
+[    4.440000] USB Serial support registered for funsoft
+[    4.450000] usbcore: registered new interface driver garmin_gps
+[    4.460000] USB Serial support registered for Garmin GPS usb/tty
+[    4.470000] usbcore: registered new interface driver hp4X
+[    4.470000] USB Serial support registered for hp4X
+[    4.480000] usbcore: registered new interface driver ipaq
+[    4.490000] USB Serial support registered for PocketPC PDA
+[    4.490000] ipaq: v1.0:USB PocketPC PDA driver
+[    4.500000] usbcore: registered new interface driver ipwtty
+[    4.510000] USB Serial support registered for IPWireless converter
+[    4.520000] usbcore: registered new interface driver ir-usb
+[    4.520000] USB Serial support registered for IR Dongle
+[    4.530000] ir_usb: v0.5:USB IR Dongle driver
+[    4.540000] usbcore: registered new interface driver iuu_phoenix
+[    4.550000] USB Serial support registered for iuu_phoenix
+[    4.550000] usbcore: registered new interface driver keyspan
+[    4.560000] USB Serial support registered for Keyspan - (without firmware)
+[    4.570000] USB Serial support registered for Keyspan 1 port adapter
+[    4.580000] USB Serial support registered for Keyspan 2 port adapter
+[    4.590000] USB Serial support registered for Keyspan 4 port adapter
+[    4.600000] usbcore: registered new interface driver keyspan_pda
+[    4.600000] USB Serial support registered for Keyspan PDA
+[    4.610000] USB Serial support registered for Keyspan PDA - (prerenumeration)
+[    4.620000] USB Serial support registered for Xircom / Entregra PGS - (prerenumeration)
+[    4.630000] usbcore: registered new interface driver kl5kusb105d
+[    4.640000] USB Serial support registered for KL5KUSB105D / PalmConnect
+[    4.650000] usbcore: registered new interface driver kobil
+[    4.660000] USB Serial support registered for KOBIL USB smart card terminal
+[    4.660000] usbcore: registered new interface driver mct_u232
+[    4.670000] USB Serial support registered for MCT U232
+[    4.680000] usbcore: registered new interface driver metro-usb
+[    4.690000] USB Serial support registered for Metrologic USB to serial converter.
+[    4.700000] usbcore: registered new interface driver moschip7720
+[    4.710000] USB Serial support registered for Moschip 2 port adapter
+[    4.720000] usbcore: registered new interface driver mos7840
+[    4.720000] USB Serial support registered for Moschip 7840/7820 USB Serial Driver
+[    4.740000] usbcore: registered new interface driver moto-modem
+[    4.740000] USB Serial support registered for moto-modem
+[    4.750000] usbcore: registered new interface driver navman
+[    4.760000] USB Serial support registered for navman
+[    4.770000] usbcore: registered new interface driver omninet
+[    4.770000] USB Serial support registered for ZyXEL - omni.net lcd plus usb
+[    4.780000] usbcore: registered new interface driver opticon
+[    4.790000] USB Serial support registered for opticon
+[    4.800000] usbcore: registered new interface driver option
+[    4.810000] USB Serial support registered for GSM modem (1-port)
+[    4.820000] usbcore: registered new interface driver oti6858
+[    4.820000] USB Serial support registered for oti6858
+[    4.830000] usbcore: registered new interface driver pl2303
+[    4.840000] USB Serial support registered for pl2303
+[    4.850000] usbcore: registered new interface driver qcaux
+[    4.860000] USB Serial support registered for qcaux
+[    4.860000] usbcore: registered new interface driver qcserial
+[    4.870000] USB Serial support registered for Qualcomm USB modem
+[    4.880000] safe_serial: v0.1:USB Safe Encapsulated Serial
+[    4.890000] usbcore: registered new interface driver safe_serial
+[    4.900000] USB Serial support registered for safe_serial
+[    4.900000] usbcore: registered new interface driver siemens_mpi
+[    4.910000] USB Serial support registered for siemens_mpi
+[    4.920000] usbcore: registered new interface driver sierra
+[    4.930000] USB Serial support registered for Sierra USB modem
+[    4.930000] usbcore: registered new interface driver spcp8x5
+[    4.940000] USB Serial support registered for SPCP8x5
+[    4.950000] usbcore: registered new interface driver ssu100
+[    4.960000] USB Serial support registered for Quatech SSU-100 USB to Serial Driver
+[    4.970000] usbcore: registered new interface driver symbol
+[    4.980000] USB Serial support registered for symbol
+[    4.980000] usbcore: registered new interface driver ti_usb_3410_5052
+[    4.990000] USB Serial support registered for TI USB 3410 1 port adapter
+[    5.000000] USB Serial support registered for TI USB 5052 2 port adapter
+[    5.010000] ti_usb_3410_5052: v0.10:TI USB 3410/5052 Serial Driver
+[    5.020000] usbcore: registered new interface driver visor
+[    5.030000] USB Serial support registered for Handspring Visor / Palm OS
+[    5.040000] USB Serial support registered for Sony Clie 5.0
+[    5.040000] USB Serial support registered for Sony Clie 3.5
+[    5.050000] visor: USB HandSpring Visor / Palm OS driver
+[    5.060000] usbcore: registered new interface driver whiteheat
+[    5.070000] USB Serial support registered for Connect Tech - WhiteHEAT - (prerenumeration)
+[    5.080000] USB Serial support registered for Connect Tech - WhiteHEAT
+[    5.090000] usbcore: registered new interface driver vivopay-serial
+[    5.100000] USB Serial support registered for vivopay-serial
+[    5.110000] usbcore: registered new interface driver zio
+[    5.110000] USB Serial support registered for zio
+[    5.120000] usbcore: registered new interface driver trancevibrator
+[    5.130000] [sw_udc]: [sw_usb_udc]: binding gadget driver 'android_usb'
+[    5.140000] [sw_udc]: alloc request: ep(0xc0a700c0, ep0, 64), req(0xee8a90c0)
+[    5.150000] [sw_udc]: sw_udc_pullup, is_on = 0
+[    5.150000] [sw_udc]: usbd_stop_work
+[    5.160000] file system registered
+[    5.170000] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    5.170000] android_usb gadget: Number of LUNs=1
+[    5.180000]  lun0: LUN: removable file: (no medium)
+[    5.190000] android_usb gadget: android_usb ready
+[    5.200000] [sw_udc]: CONFIG_USB_GADGET_DUALSPEED
+[    5.200000] [sw_udc]: usbd_start_work
+[    5.210000] mousedev: PS/2 mouse device common for all mice
+[    5.220000] sunxi RTC version 0.1 
+[    5.220000] sunxi-rtc sunxi-rtc: sunxi_rtc_probe tmp_data = 380239881
+[    5.230000] sunxi-rtc sunxi-rtc: sunxi_rtc_gettime
+[    5.240000] sunxi-rtc sunxi-rtc: read time 2013-8-28 11:56:46
+[    5.240000] sunxi-rtc sunxi-rtc: sunxi_rtc_gettime
+[    5.250000] sunxi-rtc sunxi-rtc: read time 2013-8-28 11:56:46
+[    5.260000] sunxi-rtc sunxi-rtc: rtc core: registered rtc as rtc0
+[    5.270000] [sw_udc]: IRQ: suspend
+[    5.270000] i2c /dev entries driver
+[    5.280000] !!! base_Addr = 0xf1c2ac00 
+[    5.280000] config i2c gpio with gpio_config api 
+[    5.290000] twi0, apb clock = 24000000 
+[    5.300000] axp_mfd 0-0034: AXP (CHIP ID: 0x41) detected
+[    5.300000] [AXP]axp driver uning configuration failed(345)
+[    5.310000] [AXP]power_start = 0
+[    5.320000] I2C: i2c-0: AW16XX I2C adapter
+[    5.320000] **********start************
+[    5.330000] 0x40 
+[    5.330000] 0xf8 
+[    5.330000] 0x28 
+[    5.340000] 0x0 
+[    5.340000] 0x0 
+[    5.340000] **********end************
+[    5.350000] !!! base_Addr = 0xf1c2b000 
+[    5.350000] twi1, apb clock = 24000000 
+[    5.360000] I2C: Failed to add bus
+[    5.360000] sun4i-i2c: probe of sun4i-i2c.1 failed with error -16
+[    5.370000] !!! base_Addr = 0xf1c2b400 
+[    5.380000] twi2, apb clock = 24000000 
+[    5.380000] I2C: i2c-2: AW16XX I2C adapter
+[    5.390000] **********start************
+[    5.390000] 0x40 
+[    5.400000] 0xf8 
+[    5.400000] 0x59 
+[    5.400000] 0x0 
+[    5.410000] 0x0 
+[    5.410000] **********end************
+[    5.410000] lirc_dev: IR Remote Control driver registered, major 246 
+[    5.420000] IR NEC protocol handler initialized
+[    5.430000] IR RC5(x) protocol handler initialized
+[    5.430000] IR RC6 protocol handler initialized
+[    5.440000] IR JVC protocol handler initialized
+[    5.440000] IR Sony protocol handler initialized
+[    5.450000] IR RC5 (streamzap) protocol handler initialized
+[    5.460000] IR SANYO protocol handler initialized
+[    5.460000] IR MCE Keyboard/mouse protocol handler initialized
+[    5.470000] IR LIRC bridge handler initialized
+[    5.480000] usbcore: registered new interface driver uvcvideo
+[    5.480000] USB Video Class driver (1.1.1)
+[    5.490000] [cedar dev]: install start!!!
+[    5.490000] [cedar dev]: install end!!!
+[    5.500000] [tt]----- avs_dev driver load... ----
+[    5.510000] [tt]-----      register iomem      ----
+[    5.510000] [tt]--- avs_dev driver load ok!! -----
+[    5.520000] [ace_drv] start!!!
+[    5.520000] [ace_drv] init end!!!
+[    5.530000] [pa_drv] start!!!
+[    5.530000] [pa_drv] init end!!!
+[    5.540000] axp20_ldo1: 1300 mV 
+[    5.540000] axp20_ldo2: 1800 <--> 3300 mV at 3000 mV 
+[    5.550000] axp20_ldo3: 700 <--> 3500 mV at 2800 mV 
+[    5.560000] axp20_ldo4: 1250 <--> 3300 mV at 2800 mV 
+[    5.560000] axp20_buck2: 700 <--> 2275 mV at 1400 mV 
+[    5.570000] axp20_buck3: 700 <--> 3500 mV at 1250 mV 
+[    5.580000] axp20_ldoio0: 1800 <--> 3300 mV at 2800 mV 
+[    5.590000] input: axp20-supplyer as /devices/platform/sun4i-i2c.0/i2c-0/0-0034/axp20-supplyer.41/input/input0
+[    5.610000] axp20_ldo2: Failed to create debugfs directory
+[    5.620000] sunxi_wdt: sunxi WatchDog Timer Driver v1.0
+[    5.630000] sunxi_wdt: initialized (timeout=23s, nowayout=1)
+[    5.630000] Bluetooth: HCI UART driver ver 2.2
+[    5.640000] Bluetooth: HCI H4 protocol initialized
+[    5.650000] Bluetooth: HCI BCSP protocol initialized
+[    5.650000] Bluetooth: HCILL protocol initialized
+[    5.660000] Bluetooth: HCIATH3K protocol initialized
+[    5.670000] usbcore: registered new interface driver btusb
+[    5.670000] Bluetooth: Generic Bluetooth SDIO driver ver 0.1
+[    5.680000] [wifi]: Select sdio wifi: swl-n20 !!
+[    5.690000] [mmc_pm]: SDIO card gpio init is OK !!
+[    5.690000] [mmc]: sunximmc_init
+[    5.700000] [mmc]: sunxi mmc controller using config : 0xb
+[    5.710000] [mmc]: sunxi-mmc.0: pdev->name: sunxi-mmc, pdev->id: 0
+[    5.710000] [mmc]: mmc 0 power off !!
+[    5.720000] [mmc]: mmc0 Probe: base:0xf1c0f000 irq:32 dma:0 pdes:0xee8e4000, ret 0.
+[    5.730000] [mmc]: sunxi-mmc.1: pdev->name: sunxi-mmc, pdev->id: 1
+[    5.740000] [mmc]: mmc 1 power off !!
+[    5.750000] [mmc]: mmc1 Probe: base:0xf1c10000 irq:33 dma:0 pdes:0xee8ec000, ret 0.
+[    5.760000] [mmc]: sunxi-mmc.3: pdev->name: sunxi-mmc, pdev->id: 3
+[    5.770000] [mmc]: mmc 3 power off !!
+[    5.770000] [mmc]: mmc3 Probe: base:0xf1c12000 irq:35 dma:0 pdes:0xee8f0000, ret 0.
+[    5.780000] sunxi_leds driver init
+[    5.790000] sunxi leds can't find script data '[leds_para]' 'leds_used'
+[    5.800000] usbcore: registered new interface driver usbhid
+[    5.810000] usbhid: USB HID core driver
+[    5.810000] logger: created 256K log 'log_main'
+[    5.820000] logger: created 256K log 'log_events'
+[    5.830000] logger: created 256K log 'log_radio'
+[    5.830000] logger: created 256K log 'log_system'
+[    5.840000] usbcore: registered new interface driver snd-usb-audio
+[    5.850000] soc-audio soc-audio.0: ASoC machine sun4i-sndhdmi should use snd_soc_register_card()
+[    5.860000] asoc: sndhdmi <-> sun4i-hdmiaudio.0 mapping ok
+[    5.870000] pktgen: Packet Generator for packet performance testing. Version: 2.74
+[    5.880000] IPVS: Registered protocols ()
+[    5.890000] IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+[    5.900000] IPVS: Creating netns size=808 id=0
+[    5.910000] IPVS: ipvs loaded.
+[    5.910000] IPv4 over IPv4 tunneling driver
+[    5.920000] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    5.930000] arp_tables: (C) 2002 David S. Miller
+[    5.930000] TCP: cubic registered
+[    5.940000] Initializing XFRM netlink socket
+[    5.950000] NET: Registered protocol family 10
+[    5.950000] IPv6 over IPv4 tunneling driver
+[    5.960000] NET: Registered protocol family 17
+[    5.970000] NET: Registered protocol family 15
+[    5.970000] Bridge firewalling registered
+[    5.980000] Bluetooth: RFCOMM TTY layer initialized
+[    5.980000] Bluetooth: RFCOMM socket layer initialized
+[    5.990000] Bluetooth: RFCOMM ver 1.11
+[    6.000000] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    6.000000] Bluetooth: BNEP filters: protocol multicast
+[    6.010000] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    6.020000] 8021q: 802.1Q VLAN Support v1.8
+[    6.030000] Registering the dns_resolver key type
+[    6.030000] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 3
+[    6.040000] Registering SWP/SWPB emulation handler
+[    6.050000] registered taskstats version 1
+[    6.060000] axp20_buck3: incomplete constraints, leaving on
+[    6.060000] axp20_buck2: incomplete constraints, leaving on
+[    6.070000] axp20_ldo4: incomplete constraints, leaving on
+[    6.080000] axp20_ldo3: incomplete constraints, leaving on
+[    6.090000] axp20_ldo2: incomplete constraints, leaving on
+[    6.090000] sunxi-rtc sunxi-rtc: sunxi_rtc_gettime
+[    6.100000] sunxi-rtc sunxi-rtc: read time 2013-8-28 11:56:47
+[    6.110000] sunxi-rtc sunxi-rtc: setting system clock to 2013-08-28 11:56:47 UTC (1377691007)
+[    6.120000] ALSA device list:
+[    6.120000]   #0: sun4i-sndhdmi
+[    6.130000] Freeing init memory: 1628K
+[    6.370000] Warning: this sunxi disp driver will see significant redesign.
+[    6.380000] Applications using /dev/disp directly will break.
+[    6.390000] For more information visit: http://linux-sunxi.org/Sunxi_disp_driver
+[    6.720000] [mmc]: mmc 0 detect change, present 1
+[    7.020000] [mmc]: mmc 0 power on !!
+[    7.060000] [mmc]: sdxc_request_done(L1114): smc 0 err, cmd 52,  RTO !!
+[    7.070000] [mmc]: sdxc_request_done(L1114): smc 0 err, cmd 52,  RTO !!
+[    7.080000] [mmc]: sdxc_request_done(L1114): smc 0 err, cmd 5,  RTO !!
+[    7.090000] [mmc]: sdxc_request_done(L1114): smc 0 err, cmd 5,  RTO !!
+[    7.100000] [mmc]: sdxc_request_done(L1114): smc 0 err, cmd 5,  RTO !!
+[    7.100000] [mmc]: sdxc_request_done(L1114): smc 0 err, cmd 5,  RTO !!
+[    7.150000] mmc0: new high speed SDHC card at address aaaa
+[    7.160000] mmcblk0: mmc0:aaaa SU08G 7.40 GiB 
+[    7.170000]  mmcblk0: p1 p2
+[    7.460000] kjournald starting.  Commit interval 5 seconds
+[    7.470000] EXT3-fs (mmcblk0p2): using internal journal
+[    7.480000] EXT3-fs (mmcblk0p2): mounted filesystem with ordered data mode
+[    7.800000] init: plymouth main process (73) terminated with status 127
+[    7.850000] init: ureadahead main process (75) terminated with status 5
+ 
+ 
+Welcome to Linaro 12.07 (GNU/Linux 3.4.29+ armv7l)
+ 
+ * Documentation:  https://wiki.linaro.org/
+root@ubuntu:~# ifconfig
+eth0      Link encap:Ethernet  HWaddr aa:a2:ad:fb:ac:ba  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:55 Base address:0xb000 
+ 
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:6 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:418 (418.0 B)  TX bytes:418 (418.0 B)
+ 
+wlan3     Link encap:Ethernet  HWaddr e8:4e:06:13:b8:17  
+          inet addr:192.168.1.223  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::ea4e:6ff:fe13:b817/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:16 errors:0 dropped:749 overruns:0 frame:0
+          TX packets:22 errors:0 dropped:1 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2292 (2.2 KB)  TX bytes:2713 (2.7 KB)
+ 
+root@ubuntu:~ync
+root@ubuntu:~# shutdown -h now
+root@ubuntu:~#  
+Broadcast message from root@ubuntu
+ 
+	(/dev/ttyS0) at 19:58 ... shudown -h
+```
+
+|| *Year* || *Temperature (low)* || *Temperature (high)* ||
+|| 1900 || -10 || 25 ||
+|| 1910 || -15 || 30 ||
+|| 1920 || -10 || 32 ||
+
+
+| 项目        | 价格   |  数量  |
+| --------   | -----:  | :----:  |
+| 计算机     | $1600 |   5     |
+| 手机        |   $12   |   12   |
+| 管线        |    $1    |  234  |
