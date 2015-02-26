@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://dukelazy.github.io/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-02-26T11:28:55+08:00</updated>
+  <updated>2015-02-26T12:33:32+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -19,6 +19,10 @@
     <updated>2015-02-26T11:15:13+08:00</updated>
     <id>http://dukelazy.github.io/blog/2015/02/26/my-first-octopress-blog</id>
     <content type="html"><![CDATA[<p>中文内容可以吗？</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>using System;</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
