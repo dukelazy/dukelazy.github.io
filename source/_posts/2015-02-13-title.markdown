@@ -5,6 +5,7 @@ date: 2015-02-13 02:01:59 +0800
 comments: true
 categories: 
 ---
+<!--more-->
 ```
 U-Boot SPL 2012.10-04278-gb85d943-dirty (Apr 11 2013 - 14:07:54)
 build date: Apr 11 2013 14:08:07

@@ -6,6 +6,7 @@ comments: true
 categories: 
 ---
 
+<!--more-->
 一、安装系统
 --------------------------
 使用`CentOS-6.6-x86_64-minimal.iso`安装全新操作系统
