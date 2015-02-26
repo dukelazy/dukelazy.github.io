@@ -7,3 +7,7 @@ categories:
 ---
 
 中文内容可以吗？
+
+```
+using System;
+```
