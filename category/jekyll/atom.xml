@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jekyll | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/category/jekyll/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-03-01T01:17:18+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[解决在git的post-receive钩子不能执行git Pull]]></title>
+    <link href="http://dukelazy.github.io/2015/01/git-post-receive-git-pull/"/>
+    <updated>2015-01-11T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2015/01/git-post-receive-git-pull</id>
+    <content type="html"><![CDATA[<p>有一个需求是本地git在push到远程 git repo 之后，在远程服务器上自动在/dir/foo下执行 git pull 的操作。想来是一个很简单的需求，不就是在远程的 foo.git 仓库中的 hook 里加一个 post-receive 的钩子，然后在钩子里加入一个 git pull 的操作。但是实际操作的时候发现有问题的，因为这样忽略了一个小细节的问题。</p>
+
+<p>操作之前，头脑里想的代码如下：</p>
+
+<pre><code class="bash">#!/bin/sh
+cd /var/git/web3/etc/puppet
+/usr/bin/git pull
+</code></pre>
+
+<p>用这个代码在 git push ssh://git@ownlinux.org:/opt/foo.git 之后，发现远程服务器上的 /dir/foo 目录下并没有成功 pull 到最新的数据，并且终端上也有报错（remote: fatal: Not a git repository: ‘.’）。 后面发现 git 的钩子在运行的时候会调用 GIT_DIR 这个环境变量，而不是PWD 这个。所以在 git pull 的时候提示 Not a git repository: ‘.’ ，其中 “.” 正是 GIT_DIR 这个环境变量的值。</p>
+
+<p>钩子的代码改成下面的之后，运行正常了：</p>
+
+<pre><code class="sh">#!/bin/sh
+unset $(git rev-parse --local-env-vars)
+cd /var/git/web3/etc/puppet
+/usr/bin/git pull
+</code></pre>
+
+<h2><em>参考资料</em></h2>
+
+<ul>
+<li><em><a href="http://www.ownlinux.org">OwnLinux.org</a>. <a href="http://www.ownlinux.org/2013/11/22/git-post-receive-git-pull.html">记 git 的 post-receive 钩子不能正常 git pull 的问题</a>. 2013-11-22 [205-01-11]</em></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[POST Format]]></title>
+    <link href="http://dukelazy.github.io/2015/01/POST-Format/"/>
+    <updated>2015-01-05T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2015/01/POST-Format</id>
+    <content type="html"><![CDATA[<h2>一、General</h2>
+
+<pre><code>POST /oauth/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: api.s.gitcafe.org
+Content-Length: 234
+Expect: 100-continue
+grant_type=password&amp;username=raven@gitcafe.com&amp;password=[passwordValue]&amp;client_id=0aeef87b0f41e96adde4f323012997961faec5f06210865f7a73c638e542f2bd&amp;client_secret=276ab98bbe499b5c827523b6ad1b095290dbd7e86b98211f84d7d951505389ef&amp;scope=read write
+</code></pre>
+
+<h2>二、Multipart/form-data</h2>
+
+<pre><code>POST /oauth/token HTTP/1.1
+Content-Type: multipart/form-data; boundary="b0e86de3-4c49-42ad-b971-034f42b6634a"
+Host: api.s.gitcafe.org
+Content-Length: 1021
+Expect: 100-continue
+Connection: Keep-Alive
+
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="grant_type"
+
+password
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="username"
+
+raven@gitcafe.com
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="password"
+
+[passwordValue]
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="client_id"
+
+0aeef87b0f41e96adde4f323012997961faec5f06210865f7a73c638e542f2bd
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="client_secret"
+
+276ab98bbe499b5c827523b6ad1b095290dbd7e86b98211f84d7d951505389ef
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="scope"
+
+read write
+--b0e86de3-4c49-42ad-b971-034f42b6634a--
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install Jekyll]]></title>
+    <link href="http://dukelazy.github.io/2014/12/Install-jekyll/"/>
+    <updated>2014-12-31T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2014/12/Install-jekyll</id>
+    <content type="html"><![CDATA[<!--
+- Ruby
+- Python
+- Jekyll
+- nodejs
+- Raneto
+- GitBook
+- MarkdownPad
+- Github
+- Github Pages
+- Gist
+- Rsync
+- Wordpress
+- gitolite
+- readmine
+- git
+- bitbucket
+- code Google
+- Dns
+-->
+
+
+<h2>一、安装系统</h2>
+
+<p>使用<code>CentOS-6.6-x86_64-minimal.iso</code>安装全新操作系统</p>
+
+<ul>
+<li>语言：英文</li>
+<li>时区：上海（东八区）</li>
+</ul>
+
+
+<h2>二、安装操作系统后系统初始化设置</h2>
+
+<ul>
+<li><p>激活网卡、设置DNS</p>
+
+<ul>
+<li>激活网卡</li>
+</ul>
+
+
+<pre><code class="``">  #ifup eth1
+</code></pre>
+
+<ul>
+<li>修改DNS</li>
+</ul>
+
+
+<pre><code class="``">  #echo 'nameserver 8.8.8.8' &gt;&gt; /etc/resolv.conf
+  #echo 'nameserver 114.114.114.114' &gt;&gt; /etc/resolv.conf
+</code></pre>
+
+<ul>
+<li>设置网卡开启启动</li>
+</ul>
+
+
+<pre><code class="``">  #vi /etc/sysconfig/network-scripts/ifcfg-eth1
+</code></pre>
+
+<p>  编辑<code>ONBOOT=no</code>为<code>ONBOOT=yes</code></p></li>
+<li><p>更新系统</p></li>
+</ul>
+
+
+<pre><code>#yum update -y
+</code></pre>
+
+<ul>
+<li>安装工具环境</li>
+</ul>
+
+
+<pre><code>#yum install vim -y
+#yum install wget -y
+#yum install unzip -y
+#yum install git-all -y
+</code></pre>
+
+<h2>三、编译安装Ruby 1.9.3</h2>
+
+<p><a href="http://www.cnblogs.com/iosdev/p/3320671.html">http://www.cnblogs.com/iosdev/p/3320671.html</a></p>
+
+<ol>
+<li>准备需要的安装的东西</li>
+</ol>
+
+
+<pre><code>yum -y install make gcc openssl-devel zlib-devel gcc gcc-c++ make autoconf readline-devel curl-devel expat-devel gettext-devel ncurses-devel sqlite3-devel mysql-devel httpd-devel wget which
+</code></pre>
+
+<ol>
+<li>下载源文件</li>
+</ol>
+
+
+<pre><code>cd /usr/src
+wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+tar zxf yaml-0.1.4.tar.gz
+cd yaml-0.1.4
+./configure --prefix=/usr/local
+make &amp;&amp; make install
+</code></pre>
+
+<pre><code class="">cd /usr/src
+wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.gz
+tar zxf ruby-1.9.3-p551.tar.gz
+cd ruby-1.9.3-p551
+./configure --prefix=/usr/local --disable-install-doc --with-opt-dir=/usr/local/lib
+make &amp;&amp; make install
+</code></pre>
+
+<!--
+    - 编译Ruby的时候遇到错误
+    
+    ```
+    ossl_pkey_ec.c:765: warning: assignment makes pointer from integer without a cast
+    ossl_pkey_ec.c:819: error: ‘EC_GROUP_new_curve_GF2m’ undeclared (first use in this function)
+    ossl_pkey_ec.c:819: error: (Each undeclared identifier is reported only once
+    ossl_pkey_ec.c:819: error: for each function it appears in.)
+    ossl_pkey_ec.c: In function ‘ossl_ec_group_set_seed’:
+    ossl_pkey_ec.c:1114: warning: comparison between signed and unsigned integer expressions
+    make[1]: *** [ossl_pkey_ec.o] Error 1
+    make[1]: Leaving directory `/usr/src/ruby-1.9.2-p330/ext/openssl'
+    make: *** [mkmain.sh] Error 1
+    ```
+    
+    解决办法参照如下网页
+    http://blog.csdn.net/iefreer/article/details/18828515
+-->
+
+
+<ol>
+<li>whereis 查看ruby路径</li>
+</ol>
+
+
+<pre><code class="sh">whereis ruby
+</code></pre>
+
+<h2>三、安装jekyll</h2>
+
+<!--
+~~#yum install ruby rubygemc~~不知道为什么执~行完了没有装上~
+~~#yum install ruby-rdo~~
+~~#yum install ruby-devel~~
+~~#yum install gcc gcc-c++~~
+-->
+
+
+<pre><code>#wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.5.tgz
+#tar -vxf rubygems-2.4.5.tgz
+#cd rubygems-2.4.5
+#ruby setup.rb
+</code></pre>
+
+<pre><code>gem install jekyll
+
+gem install RedCloth #这个为了解决运行jekyll的时候出错的问题
+gem install rdiscount
+</code></pre>
+
+<pre><code class="sh">cd blog/
+jekyll server -H 0.0.0.0
+</code></pre>
+
+<p>浏览器访问 <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a></p>
+
+<ul>
+<li><p>PS无法访问<a href="https://api.rubygem.org%E5%8F%AF%E4%BB%A5%E5%8F%82%E7%85%A7https://ruby.taobao.org%E6%9B%BF%E6%8D%A2%E4%BD%BF%E7%94%A8%E6%B7%98%E5%AE%9D%E7%9A%84%E6%BA%90">https://api.rubygem.org%E5%8F%AF%E4%BB%A5%E5%8F%82%E7%85%A7https://ruby.taobao.org%E6%9B%BF%E6%8D%A2%E4%BD%BF%E7%94%A8%E6%B7%98%E5%AE%9D%E7%9A%84%E6%BA%90</a></p>
+
+<p>  替换淘宝源后安装有些包出错,最终还是切换回官方源安装成功</p></li>
+<li><p>需要先安装nodejs</p></li>
+</ul>
+
+
+<h2>四、安装Raneto</h2>
+
+<pre><code class="bash">wget http://nodejs.org/dist/v0.10.35/node-v0.10.35-linux-x64.tar.gz
+tar zvxf node-v0.10.35-linux-x64.tar.gz
+mv node-v0.10.35-linux-x64 ~/opt/nodejs
+ln -s ~/opt/nodejs/bin/node ~/bin/node
+ln -s ~/opt/nodejs/bin/npm ~/bin/npm
+</code></pre>
+
+<pre><code class="bash">wget https://github.com/gilbitron/Raneto/archive/0.6.0.zip Raneto-0.6.0.zip
+unzip Raneto-0.6.0.zip
+mv Raneto-0.6.0 ~/www/raneto
+
+cd ~/www/raneto
+npm install
+npm start
+</code></pre>
+
+<p>浏览器访问 <a href="http://127.0.0.1:3000/">http://127.0.0.1:3000/</a></p>
+
+<pre><code class="csharp">using System;
+using System.Collections.Generic;
+using System.Text;
+using GitCafeSDK;
+using System.Net;
+
+namespace Simple
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
