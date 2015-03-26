@@ -1,411 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[放羊的博客]]></title>
+  <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://dukelazy.github.io/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-03-01T01:17:18+08:00</updated>
+  <updated>2015-02-26T14:10:33+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
-    <name><![CDATA[Duke Lazy]]></name>
+    <name><![CDATA[Your Name]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[The Aliyun Server Information]]></title>
-    <link href="http://dukelazy.github.io/2015/02/my-aliyun-server-information/"/>
-    <updated>2015-02-28T17:49:31+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/my-aliyun-server-information</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Virpus Server Information]]></title>
-    <link href="http://dukelazy.github.io/2015/02/my-virpus-server-information/"/>
-    <updated>2015-02-28T17:49:08+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/my-virpus-server-information</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Localhost Server Information]]></title>
-    <link href="http://dukelazy.github.io/2015/02/my-localhost-server-information/"/>
-    <updated>2015-02-28T17:48:31+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/my-localhost-server-information</id>
-    <content type="html"><![CDATA[<ul>
-<li><h3>基本信息</h3></li>
-<li><h3>网络信息</h3></li>
-<li><h3>支持协议</h3>
-
-<ul>
-<li>http(80)</li>
-<li>https(443)</li>
-<li>git()</li>
-<li>ssh(22)</li>
-<li>samba(,)</li>
-<li>ftp(21)</li>
-</ul>
-</li>
-<li><h3>使用的端口</h3>
-
-<ul>
-<li>21</li>
-<li>53</li>
-<li>80</li>
-<li>443</li>
-</ul>
-</li>
-<li><h3>绑定的域名</h3>
-
-<ul>
-<li>git.myrsoft.local</li>
-<li>gitweb.myrsoft.local</li>
-<li>cgit.myrsoft.local</li>
-<li>gallery.myrsoft.local</li>
-</ul>
-</li>
-<li><h3>运行的网站信息</h3></li>
-<li><h3>提供的服务</h3>
-
-<ul>
-<li>源代码版本库
-
-<ul>
-<li>支持协议: git://,ssh://,samba://,<a href="http://,https://">http://,https://</a></li>
-<li>运行环境：Gitolite,cgit,gitweb,nginx,apache</li>
-</ul>
-</li>
-<li>画廊图库
-
-<ul>
-<li>支持协议: <a href="http://,ftp://,samba://">http://,ftp://,samba://</a></li>
-<li>运行环境：Piwigo,php,mysql,nginx</li>
-</ul>
-</li>
-<li>文件管理(MFS)
-
-<ul>
-<li>支持协议：<a href="http://,ftp://,samba://,ssh://">http://,ftp://,samba://,ssh://</a></li>
-</ul>
-</li>
-<li>项目管理
-
-<ul>
-<li>支持协议：<a href="https://,http://">https://,http://</a></li>
-<li>运行环境：redmine+nginx+mysql</li>
-</ul>
-</li>
-<li>博客文档（知识库）
-
-<ul>
-<li>支持协议：<a href="http://">http://</a></li>
-<li>运行环境：
-
-<ul>
-<li>方案1：Nginx</li>
-<li>方案2：Octopress+Node.js+ruby+Nginx+Rbenv</li>
-<li>方案3：jekyll+ruby+Nginx</li>
-<li>方案4：wordpress+php+nginx+mysql</li>
-<li>方案5：Node.js+Raneto+nginx</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>服务器状态监控和管理
-
-<ul>
-<li>支持协议：<a href="http://">http://</a></li>
-<li>运行环境：Nginx+phpmyadmin+apache</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3>安装的基础软件</h3>
-
-<ul>
-<li>hamachi</li>
-<li>Git</li>
-<li>Gitolite</li>
-<li>Cgit</li>
-</ul>
-</li>
-<li><h3>服务器类型</h3>
-
-<ul>
-<li>Web服务器</li>
-<li>FTP服务器</li>
-<li>DNS服务器</li>
-<li>数据库服务器</li>
-<li>Samba服务器</li>
-<li>ssh服务器</li>
-<li>Git服务器</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux常用难记命令]]></title>
-    <link href="http://dukelazy.github.io/2015/02/hard-to-remember-linux-commonly-used-commands/"/>
-    <updated>2015-02-28T14:24:08+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/hard-to-remember-linux-commonly-used-commands</id>
-    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[root@host named]# lsb_release -a
-</span><span class='line'>LSB Version:    :core-4.1-amd64:core-4.1-noarch
-</span><span class='line'>Distributor ID: CentOS
-</span><span class='line'>Description:    CentOS Linux release 7.0.1406 (Core)
-</span><span class='line'>Release:        7.0.1406
-</span><span class='line'>Codename:       Core</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Git常用难记命令]]></title>
-    <link href="http://dukelazy.github.io/2015/02/hard-to-remember-git-commonly-used-commands/"/>
-    <updated>2015-02-28T14:19:34+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/hard-to-remember-git-commonly-used-commands</id>
-    <content type="html"><![CDATA[<blockquote><p>在日常使用git中经常会使用到一些非常有用的命令脚本，但是我的脑袋总是记不住，每次都要上网查询，故在这里做一个集锦。</p><footer><strong>@shepherdlazy,twitter</strong> <cite><a href='http://www.twitter.com/shepherdlazy'>www.twitter.com/shepherdlazy/&hellip;</a></cite></footer></blockquote>
-
-
-
-
-<!--more-->
-
-
-<ul>
-<li><h4>创建一个空分支</h4>
-
-<pre><code class="`` bash">  $ git checkout --orphan gh-pages
-</code></pre></li>
-<li><h4>删除远程分支</h4></li>
-<li><h4>恢复版本库到上一个版本</h4></li>
-<li><h4>重置本地文件</h4></li>
-<li><h4>强制推送</h4></li>
-<li><h4>创建、删除、签出分支</h4></li>
-<li><h4>同步全部远程分支</h4></li>
-<li><h4>克隆全部远程分支</h4></li>
-<li><h4>拉取全部远程分支</h4></li>
-<li><h4>以子目录形式引入外部项目</h4>
-
-<pre><code class="`` bash">  $ git filter-branch
-  $ git subtree
-</code></pre>
-
-<ul>
-<li><a href="http://www.tuicool.com/articles/veaEBr">http://www.tuicool.com/articles/veaEBr</a></li>
-</ul>
-</li>
-<li><h4>拆分仓库</h4>
-
-<ul>
-<li><a href="http://www.tuicool.com/articles/rYBVzmy">http://www.tuicool.com/articles/rYBVzmy</a></li>
-<li><a href="http://codego.net/153650/">http://codego.net/153650/</a></li>
-<li><a href="http://codego.net/21462/">http://codego.net/21462/</a></li>
-</ul>
-</li>
-<li><h4>如何提交空目录</h4>
-
-<p>  为什么不能提交空目录呢？</p></li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ find . ( -type d -empty ) -and ( -not -regex ./\.git.* ) -exec touch {}/.gitignore;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>   <br/>
-    - <a href="http://demo.netfoucs.com/younger_china/article/details/21653463">http://demo.netfoucs.com/younger_china/article/details/21653463</a></p>
-
-<ul>
-<li><h4>下一个</h4></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[重要文件夹结构说明]]></title>
-    <link href="http://dukelazy.github.io/2015/02/explain-the-folder-tree-structure-important-mfs-system/"/>
-    <updated>2015-02-26T14:53:28+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/explain-the-folder-tree-structure-important-mfs-system</id>
-    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/                   #根文件系统
-</span><span class='line'>+---archive
-</span><span class='line'>+---backup
-</span><span class='line'>|   \---website
-</span><span class='line'>+---book
-</span><span class='line'>|   |   1.rtf
-</span><span class='line'>|   |   q.txt
-</span><span class='line'>|   |   sf.txt
-</span><span class='line'>|   |
-</span><span class='line'>|   +---fd
-</span><span class='line'>|   \---fs
-</span><span class='line'>+---current
-</span><span class='line'>+---document
-</span><span class='line'>+---Environment
-</span><span class='line'>+---list
-</span><span class='line'>+---Resources
-</span><span class='line'>+---software
-</span><span class='line'>\---workspace</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Octopress重点关注的文件夹和文件</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>octopress.
-</span><span class='line'>|   config.rb
-</span><span class='line'>|   config.ru
-</span><span class='line'>|   Gemfile
-</span><span class='line'>|   Rakefile
-</span><span class='line'>|   _config.yml
-</span><span class='line'>|   
-</span><span class='line'>+---.themes
-</span><span class='line'>+---plugins
-</span><span class='line'>+---public  
-</span><span class='line'>+---source
-</span><span class='line'>\---_deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Raven-GitCafePC上的重要文件夹以及文件</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Raven-GitCafePC.
-</span><span class='line'>+---C:
-</span><span class='line'>|   +---SRE
-</span><span class='line'>|   \---Users
-</span><span class='line'>|       \---Raven
-</span><span class='line'>|           |    .bash_history
-</span><span class='line'>|           |    .gemrc
-</span><span class='line'>|           |    .gitconfig
-</span><span class='line'>|           |    .gvimrc
-</span><span class='line'>|           |    .npmrc
-</span><span class='line'>|           |    .viminfo
-</span><span class='line'>|           |    .vimrc
-</span><span class='line'>|           |    _viminfo
-</span><span class='line'>|           |
-</span><span class='line'>|           +---.gnupg
-</span><span class='line'>|           +---.ssh
-</span><span class='line'>|           \---.vim
-</span><span class='line'>|
-</span><span class='line'>+---D:
-</span><span class='line'>|   +---KuGou
-</span><span class='line'>|   +---Resources
-</span><span class='line'>|   \---SoftWare
-</span><span class='line'>|
-</span><span class='line'>+---E
-</span><span class='line'>|   +---dev
-</span><span class='line'>|   +---scm
-</span><span class='line'>|   +---Sync
-</span><span class='line'>|   \---Tools
-</span><span class='line'>|
-</span><span class='line'>\---F:
-</span><span class='line'>    \---PT</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[千千静听早期各版本特点]]></title>
-    <link href="http://dukelazy.github.io/2015/02/ttplayer-early-every-version-features/"/>
-    <updated>2015-02-26T14:39:59+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/ttplayer-early-every-version-features</id>
-    <content type="html"><![CDATA[<ul>
-<li>4.6.8.0 - 5.0.2.0 ：纯本地式播放器，无音乐窗，无弹窗</li>
-<li>5.1.0.0 - 5.3.1.0 ：带音乐窗，无弹窗</li>
-<li>5.5.1.0 - 5.9.6.0 ：经典皮肤，带音乐窗，带弹窗</li>
-<li>6.0.0.0 ：百度音乐皮肤（可更换），带音乐窗，带弹窗</li>
-<li>6.1.0.0 ：百度音乐皮肤（可更换），带登录，带网盘上传，带音乐窗，带弹窗</li>
-<li>6.1.2.0 - 6.1.4.0 ：百度音乐皮肤（可更换），带登录，带网盘上传，带音乐窗，带弹窗，安装界面及安装包改变</li>
-<li>7.0.0.0 - 7.0.2.0 ：百度音乐皮肤（可更换），带登录，带云音乐同步，带音乐窗，带弹窗，安装界面改变</li>
-<li>7.1.0.0 ：百度音乐皮肤（可更换），带登录，带云音乐同步，带音乐窗，带弹窗，安装界面及安装包改变，更名为百度音乐</li>
-</ul>
-
-
-<p>注：版本不齐，望补充，5.9.7版本没找到，5.0.2.0和6.1.4.0为百度发布的千千静听经典版本（百度自称）</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[My First Octopress Blog]]></title>
-    <link href="http://dukelazy.github.io/2015/02/my-first-octopress-blog/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/26/my-first-octopress-blog/"/>
     <updated>2015-02-26T11:15:13+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/my-first-octopress-blog</id>
+    <id>http://dukelazy.github.io/blog/2015/02/26/my-first-octopress-blog</id>
     <content type="html"><![CDATA[<p>中文内容可以吗？</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -416,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Markdown-howto]]></title>
-    <link href="http://dukelazy.github.io/2015/02/markdown-howto/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/markdown-howto/"/>
     <updated>2015-02-13T13:03:43+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/markdown-howto</id>
+    <id>http://dukelazy.github.io/blog/2015/02/13/markdown-howto</id>
     <content type="html"><![CDATA[<h2 id="overview">概述</h2>
 
 
@@ -1249,9 +861,9 @@ _   底线
   
   <entry>
     <title type="html"><![CDATA[Cmd Markdown Editor]]></title>
-    <link href="http://dukelazy.github.io/2015/02/cmd-markdown-editor/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/cmd-markdown-editor/"/>
     <updated>2015-02-13T13:02:27+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/cmd-markdown-editor</id>
+    <id>http://dukelazy.github.io/blog/2015/02/13/cmd-markdown-editor</id>
     <content type="html"><![CDATA[<h1>欢迎使用 Cmd - 在线 Markdown 编辑阅读器</h1>
 
 <hr />
@@ -1466,9 +1078,9 @@ _   底线
   
   <entry>
     <title type="html"><![CDATA[Dillinger]]></title>
-    <link href="http://dukelazy.github.io/2015/02/dillinger/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/dillinger/"/>
     <updated>2015-02-13T13:01:08+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/dillinger</id>
+    <id>http://dukelazy.github.io/blog/2015/02/13/dillinger</id>
     <content type="html"><![CDATA[<h1>Dillinger</h1>
 
 <p>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
@@ -1478,9 +1090,6 @@ _   底线
 <li>See HTML in the right</li>
 <li>Magic</li>
 </ul>
-
-
-<!--more-->
 
 
 <p>Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As <a href="http://daringfireball.net/">John Gruber</a> writes on the <a href="http://daringfireball.net/projects/markdown/">Markdown site</a>:</p>
@@ -1614,9 +1223,9 @@ Make a change in your file and instantanously see your updates!</p>
   
   <entry>
     <title type="html"><![CDATA[Interesting-small-jokes-collection]]></title>
-    <link href="http://dukelazy.github.io/2015/02/interesting-small-jokes-collection/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/interesting-small-jokes-collection/"/>
     <updated>2015-02-13T12:26:37+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/interesting-small-jokes-collection</id>
+    <id>http://dukelazy.github.io/blog/2015/02/13/interesting-small-jokes-collection</id>
     <content type="html"><![CDATA[<h2>一、心灵鸡汤</h2>
 
 <ol>
@@ -1674,13 +1283,10 @@ Linux？Windows 7？Windows XP？
   
   <entry>
     <title type="html"><![CDATA[Install Jekyll]]></title>
-    <link href="http://dukelazy.github.io/2015/02/install-jekyll/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/install-jekyll/"/>
     <updated>2015-02-13T12:21:00+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/install-jekyll</id>
-    <content type="html"><![CDATA[<!--more-->
-
-
-<h2>一、安装系统</h2>
+    <id>http://dukelazy.github.io/blog/2015/02/13/install-jekyll</id>
+    <content type="html"><![CDATA[<h2>一、安装系统</h2>
 
 <p>使用<code>CentOS-6.6-x86_64-minimal.iso</code>安装全新操作系统</p>
 
@@ -1943,25 +1549,10 @@ Linux？Windows 7？Windows XP？
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[My Collection of Octopress Themes]]></title>
-    <link href="http://dukelazy.github.io/2015/02/my-collection-of-octopress-themes/"/>
-    <updated>2015-02-13T02:55:57+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/my-collection-of-octopress-themes</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p>
-
-<p><a href="https://github.com/qingwang/octopress-theme-yinyang">https://github.com/qingwang/octopress-theme-yinyang</a>
-<a href="http://mrzhang.me/blog/blog-equals-github-plus-octopress.html">http://mrzhang.me/blog/blog-equals-github-plus-octopress.html</a>
-<a href="https://github.com/alexharris/calm-shallow-sea">https://github.com/alexharris/calm-shallow-sea</a>
-<a href="https://github.com/johnkeith/boldandblue">https://github.com/johnkeith/boldandblue</a>
-<a href="https://github.com/fapper/classic-martinb">https://github.com/fapper/classic-martinb</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Zombie Ninjas Attack: A Survivor's Retrospective]]></title>
-    <link href="http://dukelazy.github.io/2015/02/zombie-ninjas-attack-a-survivors-retrospective/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/zombie-ninjas-attack-a-survivors-retrospective/"/>
     <updated>2015-02-13T02:02:48+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/zombie-ninjas-attack-a-survivors-retrospective</id>
+    <id>http://dukelazy.github.io/blog/2015/02/13/zombie-ninjas-attack-a-survivors-retrospective</id>
     <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone git@github.com:imathis/octopress.git # fork octopress</span></code></pre></td></tr></table></div></figure>
 
@@ -1981,7 +1572,6 @@ Linux？Windows 7？Windows XP？
 </span></code></pre></td></tr></table></div></figure>
 
 
-<!--more-->
 
 
 <figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -2018,13 +1608,10 @@ Linux？Windows 7？Windows XP？
   
   <entry>
     <title type="html"><![CDATA[Title]]></title>
-    <link href="http://dukelazy.github.io/2015/02/title/"/>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/title/"/>
     <updated>2015-02-13T02:01:59+08:00</updated>
-    <id>http://dukelazy.github.io/2015/02/title</id>
-    <content type="html"><![CDATA[<!--more-->
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+    <id>http://dukelazy.github.io/blog/2015/02/13/title</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -3350,481 +2937,6 @@ Linux？Windows 7？Windows XP？
 </tbody>
 </table>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Minecraft Server Template]]></title>
-    <link href="http://dukelazy.github.io/2015/01/minecraft-server-template/"/>
-    <updated>2015-01-29T01:43:02+08:00</updated>
-    <id>http://dukelazy.github.io/2015/01/minecraft-server-template</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Minecraft_server_template.txt</span><a href='http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt'>Minecraft_server_template.txt</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## MAKE SURE THIS SCRIPT IS AVAILABLE IN YOUR $PATH.</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># It&#39;s highly advisable to create a directory to hold all of your server files. </span>
-</span><span class='line'><span class="c"># The jar will generate quite a few files upon first run and it would get pretty </span>
-</span><span class='line'><span class="c"># messy if there are other files in the same directory.</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## NEEDED INFORMATION</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># This is the location for a Debian/Ubuntu java executable</span>
-</span><span class='line'><span class="nv">javaexec</span><span class="o">=</span>/usr/bin/java
-</span><span class='line'>
-</span><span class='line'><span class="c"># Set this to the directory containing the minecraft_server.jar</span>
-</span><span class='line'><span class="c"># Provide the full path from /</span>
-</span><span class='line'><span class="nv">server_location</span><span class="o">=</span>CHANGE ME BEFORE DOING ANYTHING
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## RUNNING THE SERVER</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># By cd&#39;ing to the server location</span>
-</span><span class='line'><span class="c"># All server files will be created in this directory.</span>
-</span><span class='line'><span class="nb">cd</span> <span class="nv">$server_location</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># Run the Server</span>
-</span><span class='line'><span class="sb">`</span><span class="nv">$javaexec</span> -Xmx1024M -Xms1024M -jar <span class="nv">$server_location</span>/minecraft_server.jar nogui<span class="sb">`</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># After killing off the server, you will be cd&#39;ed back to the directory you were </span>
-</span><span class='line'><span class="c"># at prior to running this script.</span>
-</span><span class='line'><span class="nb">cd</span> -
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span> (Minecraft_server_template.sh)</span> <a href='http://dukelazy.github.io/downloads/code/Minecraft_server_template.sh'>download</a></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## MAKE SURE THIS SCRIPT IS AVAILABLE IN YOUR $PATH.</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># It&#39;s highly advisable to create a directory to hold all of your server files. </span>
-</span><span class='line'><span class="c"># The jar will generate quite a few files upon first run and it would get pretty </span>
-</span><span class='line'><span class="c"># messy if there are other files in the same directory.</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## NEEDED INFORMATION</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># This is the location for a Debian/Ubuntu java executable</span>
-</span><span class='line'><span class="nv">javaexec</span><span class="o">=</span>/usr/bin/java
-</span><span class='line'>
-</span><span class='line'><span class="c"># Set this to the directory containing the minecraft_server.jar</span>
-</span><span class='line'><span class="c"># Provide the full path from /</span>
-</span><span class='line'><span class="nv">server_location</span><span class="o">=</span>CHANGE ME BEFORE DOING ANYTHING
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## RUNNING THE SERVER</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># By cd&#39;ing to the server location</span>
-</span><span class='line'><span class="c"># All server files will be created in this directory.</span>
-</span><span class='line'><span class="nb">cd</span> <span class="nv">$server_location</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># Run the Server</span>
-</span><span class='line'><span class="sb">`</span><span class="nv">$javaexec</span> -Xmx1024M -Xms1024M -jar <span class="nv">$server_location</span>/minecraft_server.jar nogui<span class="sb">`</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># After killing off the server, you will be cd&#39;ed back to the directory you were </span>
-</span><span class='line'><span class="c"># at prior to running this script.</span>
-</span><span class='line'><span class="nb">cd</span> -
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[解决在git的post-receive钩子不能执行git Pull]]></title>
-    <link href="http://dukelazy.github.io/2015/01/git-post-receive-git-pull/"/>
-    <updated>2015-01-11T00:00:00+08:00</updated>
-    <id>http://dukelazy.github.io/2015/01/git-post-receive-git-pull</id>
-    <content type="html"><![CDATA[<p>有一个需求是本地git在push到远程 git repo 之后，在远程服务器上自动在/dir/foo下执行 git pull 的操作。想来是一个很简单的需求，不就是在远程的 foo.git 仓库中的 hook 里加一个 post-receive 的钩子，然后在钩子里加入一个 git pull 的操作。但是实际操作的时候发现有问题的，因为这样忽略了一个小细节的问题。</p>
-
-<p>操作之前，头脑里想的代码如下：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/sh</span>
-</span><span class='line'><span class="nb">cd</span> /var/git/web3/etc/puppet
-</span><span class='line'>/usr/bin/git pull
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>用这个代码在 git push ssh://git@ownlinux.org:/opt/foo.git 之后，发现远程服务器上的 /dir/foo 目录下并没有成功 pull 到最新的数据，并且终端上也有报错（remote: fatal: Not a git repository: ‘.’）。 后面发现 git 的钩子在运行的时候会调用 GIT_DIR 这个环境变量，而不是PWD 这个。所以在 git pull 的时候提示 Not a git repository: ‘.’ ，其中 “.” 正是 GIT_DIR 这个环境变量的值。</p>
-
-<p>钩子的代码改成下面的之后，运行正常了：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/sh</span>
-</span><span class='line'><span class="nb">unset</span> <span class="k">$(</span>git rev-parse --local-env-vars<span class="k">)</span>
-</span><span class='line'><span class="nb">cd</span> /var/git/web3/etc/puppet
-</span><span class='line'>/usr/bin/git pull
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><em>参考资料</em></h2>
-
-<ul>
-<li><em><a href="http://www.ownlinux.org">OwnLinux.org</a>. <a href="http://www.ownlinux.org/2013/11/22/git-post-receive-git-pull.html">记 git 的 post-receive 钩子不能正常 git pull 的问题</a>. 2013-11-22 [205-01-11]</em></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[生成随机数进阶]]></title>
-    <link href="http://dukelazy.github.io/2015/01/Random-number-generation-advanced/"/>
-    <updated>2015-01-11T00:00:00+08:00</updated>
-    <id>http://dukelazy.github.io/2015/01/Random-number-generation-advanced</id>
-    <content type="html"><![CDATA[<h3>生成随机数进阶</h3>
-
-<ul>
-<li>不指定随机数生成范围</li>
-<li>指定随机数生成范围</li>
-<li>生成随机的双精度浮点数</li>
-</ul>
-
-
-<h3>生成不重复随机数</h3>
-
-<h3>按概率生成随机数</h3>
-
-<h3>参考文档</h3>
-
-<p>我们在做能自动生成试卷的考试系统时，常常需要随机生成一组不重复的题目，在.net Framework中提供了一个专门用来产生随机数的类System.Random。</p>
-
-<p>对于随机数，大家都知道，计算机不可能产生完全随机的数字，所谓的随机数发生器都是通过一定的算法对事先选定的随机种子做复杂的运算，用产生的结果来近似的模拟完全随机数，这种随机数被称 作伪随机数。伪随机数是以相同的概率从一组有限的数字中选取的。所选数字并不具有完全的随机性，但是从实用的角度而言，其随机程度已足够了。伪随机数的选 择是从随机种子开始的，所以为了保证每次得到的伪随机数都足够地“随机”，随机种子的选择就显得非常重要。如果随机种子一样，那么同一个随机数发生器产生 的随机数也会一样。一般地，我们使用同系统时间有关的参数作为随机种子，这也是.net Framework中的随机数发生器默认采用的方法。</p>
-
-<h3>初始化种子发生器</h3>
-
-<p>我们可以使用两种方式初始化一个随机数发生器：
-- 不指定随机种子，系统自动选取当前时间作为随机种子：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Random</span> <span class="n">ro</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>可以指定一个int型参数作为随机种子，这样可以保证99%不是一样。之后，我们就可以使用这个Random类的对象来产生随机数，这时候要用到Random.Next()方法。这个方法使用相当灵活，你甚至可以指定产生的随机数的上下限。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">int</span> <span class="n">iSeed</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
-</span><span class='line'><span class="n">Random</span> <span class="n">ro</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="m">10</span><span class="p">);</span>
-</span><span class='line'><span class="kt">long</span> <span class="n">tick</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span><span class="p">;</span>
-</span><span class='line'><span class="n">Random</span> <span class="n">ran</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xffffffffL</span><span class="p">)</span> <span class="p">|</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">tick</span> <span class="p">&gt;&gt;</span> <span class="m">32</span><span class="p">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>生成随机数</h3>
-
-<ol>
-<li>不指定上下限的使用如下：</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="kt">int</span> <span class="n">iResult</span><span class="p">;</span>
-</span><span class='line'><span class="n">iResult</span><span class="p">=</span><span class="n">ro</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>下面的代码指定返回小于100的随机数：</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="kt">int</span> <span class="n">iResult</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">iUp</span><span class="p">=</span><span class="m">100</span><span class="p">;</span>
-</span><span class='line'><span class="n">iResult</span><span class="p">=</span><span class="n">ro</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">iUp</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>而下面这段代码则指定返回值必须在50-100的范围之内：</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="kt">int</span> <span class="n">iResult</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">iUp</span><span class="p">=</span><span class="m">100</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">iDown</span><span class="p">=</span><span class="m">50</span><span class="p">;</span>
-</span><span class='line'><span class="n">iResult</span><span class="p">=</span><span class="n">ro</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">iDown</span><span class="p">,</span><span class="n">iUp</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>除了Random.Next()方法之外，Random类还提供了Random.NextDouble()方法产生一个范围在0.0-1.0之间的随机的双精度浮点数：</li>
-</ol>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="kt">double</span> <span class="n">dResult</span><span class="p">;</span>
-</span><span class='line'><span class="n">dResult</span><span class="p">=</span><span class="n">ro</span><span class="p">.</span><span class="n">NextDouble</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>解决生成随机数重复</h2>
-
-<p>但是用Random类生成题号，会出现重复，特别是在数量较小的题目中要生成不重复的的题目是很难的，参考了网上的一些方法，包括两类，一类是通过随机种子入手，使每一次的随机种子不同，来保证不重复；第二类是使用一些数据结构和算法。下面主要就第二类介绍几个方法。
-　 　
-- <strong>方法一</strong>
-思想是用一个数组来保存索引号，先随机生成一个数组位置，然后把这个位置的索引号取出来，并把最后一个索引号复制到当前的数组位置，然后使随机 数的上限减一，具体如：先把这100个数放在一个数组内，每次随机取一个位置（第一次是1-100，第二次是1-99，&hellip;），将该位置的数用最后的数 代替。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="n">index</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">15</span><span class="p">];</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">15</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span><span class='line'>    <span class="n">index</span> <span class="p">=</span> <span class="n">i</span><span class="p">;</span>
-</span><span class='line'><span class="n">Random</span> <span class="n">r</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-</span><span class='line'><span class="c1">//用来保存随机生成的不重复的10个数</span>
-</span><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">10</span><span class="p">];</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">site</span> <span class="p">=</span> <span class="m">15</span><span class="p">;</span><span class="c1">//设置下限</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="n">id</span> <span class="p">=</span> <span class="n">r</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">site</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
-</span><span class='line'>    <span class="c1">//在随机位置取出一个数，保存到结果数组</span>
-</span><span class='line'>    <span class="n">result</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">=</span> <span class="n">index</span><span class="p">[</span><span class="n">id</span><span class="p">];</span>
-</span><span class='line'>    <span class="c1">//最后一个数复制到当前位置</span>
-</span><span class='line'>    <span class="n">index</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="p">=</span> <span class="n">index</span><span class="p">[</span><span class="n">site</span> <span class="p">-</span> <span class="m">1</span><span class="p">];</span>
-</span><span class='line'>    <span class="c1">//位置的下限减少一</span>
-</span><span class='line'>    <span class="n">site</span><span class="p">--;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><strong>方法二</strong>
-利用Hashtable。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="n">Hashtable</span> <span class="n">hashtable</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="p">();</span>
-</span><span class='line'><span class="n">Random</span> <span class="n">rm</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">RmNum</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">hashtable</span><span class="p">.</span><span class="n">Count</span> <span class="p">&lt;</span> <span class="n">RmNum</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">nValue</span> <span class="p">=</span> <span class="n">rm</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="m">100</span><span class="p">);</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(!</span><span class="n">hashtable</span><span class="p">.</span><span class="n">ContainsValue</span><span class="p">(</span><span class="n">nValue</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">nValue</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="n">hashtable</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">nValue</span><span class="p">,</span> <span class="n">nValue</span><span class="p">);</span>
-</span><span class='line'>        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">nValue</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li><strong>方法三</strong>
-递归，用它来检测生成的随机数是否有重复，如果取出来的数字和已取得的数字有重复就重新随机获取。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="n">Random</span> <span class="n">ra</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="k">unchecked</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span><span class="p">));</span>
-</span><span class='line'><span class="kt">int</span><span class="p">[]</span> <span class="n">arrNum</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">10</span><span class="p">];</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">tmp</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">minValue</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">maxValue</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="n">tmp</span> <span class="p">=</span> <span class="n">ra</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">minValue</span><span class="p">,</span> <span class="n">maxValue</span><span class="p">);</span> <span class="c1">//随机取数</span>
-</span><span class='line'>    <span class="n">arrNum</span> <span class="p">=</span> <span class="n">getNum</span><span class="p">(</span><span class="n">arrNum</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">minValue</span><span class="p">,</span> <span class="n">maxValue</span><span class="p">,</span> <span class="n">ra</span><span class="p">);</span> <span class="c1">//取出值赋到数组中</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='C#'><span class='line'><span class="k">public</span> <span class="kt">int</span> <span class="nf">getNum</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">arrNum</span><span class="p">,</span> <span class="kt">int</span> <span class="n">tmp</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minValue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">maxValue</span><span class="p">,</span> <span class="n">Random</span> <span class="n">ra</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">n</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="p">&lt;=</span> <span class="n">arrNum</span><span class="p">.</span><span class="n">Length</span> <span class="p">-</span> <span class="m">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">arrNum</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="p">==</span> <span class="n">tmp</span><span class="p">)</span> <span class="c1">//利用循环判断是否有重复</span>
-</span><span class='line'>        <span class="p">{</span>
-</span><span class='line'>            <span class="n">tmp</span> <span class="p">=</span> <span class="n">ra</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">minValue</span><span class="p">,</span> <span class="n">maxValue</span><span class="p">);</span> <span class="c1">//重新随机获取。</span>
-</span><span class='line'>            <span class="n">getNum</span><span class="p">(</span><span class="n">arrNum</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">minValue</span><span class="p">,</span> <span class="n">maxValue</span><span class="p">,</span> <span class="n">ra</span><span class="p">);</span><span class="c1">//递归:如果取出来的数字和已取得的数字有重复就重新随机获取。</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>        <span class="n">n</span><span class="p">++;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">tmp</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://www.connectionstrings.com/">http://www.connectionstrings.com/</a></p>
-
-<h2><em>参考资料</em></h2>
-
-<ul>
-<li><em><a href="http://www.unibetter.com/members/deerchao.aspx">deerchao</a>. <a href="http://unibetter.com/deerchao/zhengzhe-biaodashi-jiaocheng-se.htm">正则表达式30分钟入门 v2.31</a>. 2009-4-11 [2010-04-16]</em></li>
-<li><em>willpower88. <a href="http://www.blogjava.net/willpower88/archive/2007/04/10/109669.html" title="正则表达式">正则表达式</a>. BlogJava. 2007-04-10 [2010-04-16].</em></li>
-<li><em>kkun_3yue3. <a href="http://bbs.csdn.net/topics/110062075#post-110555919">提取网页正文内容代码</a>. CSDN论坛. 2007-05-11 [2010-04-16].</em></li>
-<li><em>gradylu. <a href="http://blog.csdn.net/tigerlgf/article/details/1529989">如何提取网页上的内容（C#） </a>. CSDN博客. 2007-03-15 [2010-04-16].</em></li>
-<li><em>Kevin Yang. <a href="http://www.cnblogs.com/KevinYang/archive/2009/08/04/1538050.html">使用正则表达式匹配嵌套Html标签</a>. 博客园. 2009-08-04 [2010-04-16]</em></li>
-<li><em>Laser_Lu. <a href="http://www.cnblogs.com/Laser_Lu/archive/2005/04/21/142605.html">可以解析HTML/XHTML页面的所有元素和结构的Regular Expression！</a>. 博客园. 2005-04-21 [2010-04-16]</em></li>
-<li><em>wuhuiran. <a href="http://blog.csdn.net/wuhuiran/article/details/2750765">正则表达式提取HTML页面的特定部分 </a>. CSDN博客. 2007-03-15 [2010-04-16].</em></li>
-<li><em>tgw2000. <a href="http://tgw2000.blog.163.com/blog/static/68159568200851210260475/">正则表达式</a>. 网易博客 2008-06-12 [2010-04-16].</em></li>
-<li><em>byxdaz. <a href="http://blog.csdn.net/byxdaz/article/details/4470684">常用正则表达式大全</a>. CSDN博客 2009-08-21 [2010-04-16].</em></li>
-<li><em>魑魅魍魉. <a href="http://hi.baidu.com/mepowbjbrpfuvye/item/689452a28d423f9e1410732f" title="保存图片的SRC地址">保存图片的SRC地址</a>. 百度空间. 2007-11-18[2010-04-16].</em></li>
-<li><em>感動常在. <a href="http://www.cnblogs.com/wang123/archive/2006/09/16/505758.html">利用正则表达式去掉html代码</a>. 博客园. 2006-09-16 [2010-04-16].</em></li>
-<li><p><em>ljpbxh027. <a href="http://hi.baidu.com/ljpbxh027/item/ef1e705c0191a43594eb0563" title="正则表达式用于字符串处理、表单验证等场合，实用高效。现将一些常用的表达式收集于此，以备不时之需。">正则表达式用于字符串处理、表单验证等场合，实用高效。现将一些常用的表达式收集于此，以备不时之需。</a>. 百度空间. 2006-10-18 [2010-04-16].</em></p></li>
-<li><p><em>. <a href=""></a>&hellip;</em></p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[英语时间相关单词]]></title>
-    <link href="http://dukelazy.github.io/2015/01/time-related-words/"/>
-    <updated>2015-01-09T00:00:00+08:00</updated>
-    <id>http://dukelazy.github.io/2015/01/time-related-words</id>
-    <content type="html"><![CDATA[<h1>英语一月到十二月单词的缩写</h1>
-
-<hr />
-
-<p><a href="http://zhidao.baidu.com/link?url=1oKHXjpqrqtU7XdUJOp2A_swd-Dc7gJF4-0m4I_srn9QixjrilLTA3TwU72E03cQYjeKacVPl_udlnKeGyZdsa">http://zhidao.baidu.com/link?url=1oKHXjpqrqtU7XdUJOp2A_swd-Dc7gJF4-0m4I_srn9QixjrilLTA3TwU72E03cQYjeKacVPl_udlnKeGyZdsa</a></p>
 ]]></content>
   </entry>
   

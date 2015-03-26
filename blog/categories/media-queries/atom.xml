@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Media Queries | My Octopress Blog]]></title>
+  <link href="http://dukelazy.github.io/blog/categories/media-queries/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-02-26T14:10:33+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zombie Ninjas Attack: A Survivor's Retrospective]]></title>
+    <link href="http://dukelazy.github.io/blog/2015/02/13/zombie-ninjas-attack-a-survivors-retrospective/"/>
+    <updated>2015-02-13T02:02:48+08:00</updated>
+    <id>http://dukelazy.github.io/blog/2015/02/13/zombie-ninjas-attack-a-survivors-retrospective</id>
+    <content type="html"><![CDATA[<pre><code>$ git clone git@github.com:imathis/octopress.git # fork octopress
+</code></pre>
+
+<pre><code class="ruby Discover if a number is prime http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/ Source Article">class Fixnum
+  def prime?
+    ('1' * self) !~ /^1?$|^(11+?)\1+$/
+  end
+end
+</code></pre>
+
+<pre><code class="ruby Discover if a number is prime http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/ Source Article">class Fixnum
+  def prime?
+    ('1' * self) !~ /^1?$|^(11+?)\1+$/
+  end
+end
+</code></pre>
+
+<p><img class="<a" src="href="http://placekitten.com/890/280">http://placekitten.com/890/280</a>&#8221;>
+<img class="left <a" src="href="http://placekitten.com/320/250">http://placekitten.com/320/250</a>&#8221; title=&#8221;Place Kitten #2&#8221; >
+<img class="right <a" src="href="http://placekitten.com/300/500">http://placekitten.com/300/500</a>&#8221; width=&#8221;150&#8221; height=&#8221;250&#8221; title=&#8221;Place Kitten #3&#8221; >
+<img class="right <a" src="href="http://placekitten.com/300/500">http://placekitten.com/300/500</a>&#8221; width=&#8221;150&#8221; height=&#8221;250&#8221; title=&#8221;&lsquo;Place Kitten #4&rsquo; &lsquo;An image of a very cute kitten&rsquo;&#8221; ></p>
+
+<p><video width='640' height='320' preload='metadata' controls poster='http://s3.imathis.com/video/zero-to-fancy-buttons.png">http://s3.imathis.com/video/zero-to-fancy-buttons.png</a>&#8217;><source src='http://s3.imathis.com/video/zero-to-fancy-buttons.mp4">http://s3.imathis.com/video/zero-to-fancy-buttons.mp4</a>&#8217; ></video></p>
+
+<p><blockquote><p>Over the past 24 hours I&rsquo;ve been reflecting on my life &amp; I&rsquo;ve realized only one thing. I need a medieval battle axe.</p><footer><strong>@allanbranch <a href="https://twitter.com/allanbranch/status/90766146063712256">https://twitter.com/allanbranch/status/90766146063712256</a></strong></footer></blockquote></p>
+
+<p><blockquote><p>Every interaction is both precious and an opportunity to delight.</p><footer><strong>Seth Godin <a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html</a> Welcome to Island Marketing</strong></footer></blockquote></p>
+]]></content>
+  </entry>
+  
+</feed>

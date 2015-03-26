@@ -1,135 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://dukelazy.github.io/2015/02/my-aliyun-server-information/</loc>
-    <lastmod>2015-02-28T17:49:31+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/my-virpus-server-information/</loc>
-    <lastmod>2015-02-28T17:49:08+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/my-localhost-server-information/</loc>
-    <lastmod>2015-02-28T17:48:31+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/hard-to-remember-linux-commonly-used-commands/</loc>
-    <lastmod>2015-02-28T14:24:08+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/hard-to-remember-git-commonly-used-commands/</loc>
-    <lastmod>2015-02-28T14:19:34+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/explain-the-folder-tree-structure-important-mfs-system/</loc>
-    <lastmod>2015-02-26T14:53:28+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/ttplayer-early-every-version-features/</loc>
-    <lastmod>2015-02-26T14:39:59+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/my-first-octopress-blog/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/26/my-first-octopress-blog/</loc>
     <lastmod>2015-02-26T11:15:13+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/markdown-howto/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/markdown-howto/</loc>
     <lastmod>2015-02-13T13:03:43+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/cmd-markdown-editor/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/cmd-markdown-editor/</loc>
     <lastmod>2015-02-13T13:02:27+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/dillinger/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/dillinger/</loc>
     <lastmod>2015-02-13T13:01:08+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/interesting-small-jokes-collection/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/interesting-small-jokes-collection/</loc>
     <lastmod>2015-02-13T12:26:37+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/install-jekyll/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/install-jekyll/</loc>
     <lastmod>2015-02-13T12:21:00+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/my-collection-of-octopress-themes/</loc>
-    <lastmod>2015-02-13T02:55:57+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/02/zombie-ninjas-attack-a-survivors-retrospective/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/zombie-ninjas-attack-a-survivors-retrospective/</loc>
     <lastmod>2015-02-13T02:02:48+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/02/title/</loc>
+    <loc>http://dukelazy.github.io/blog/2015/02/13/title/</loc>
     <lastmod>2015-02-13T02:01:59+08:00</lastmod>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/2015/01/minecraft-server-template/</loc>
-    <lastmod>2015-01-29T01:43:02+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/01/git-post-receive-git-pull/</loc>
-    <lastmod>2015-01-11T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/01/Random-number-generation-advanced/</loc>
-    <lastmod>2015-01-11T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/01/time-related-words/</loc>
-    <lastmod>2015-01-09T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2015/01/POST-Format/</loc>
-    <lastmod>2015-01-05T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/12/Install-jekyll/</loc>
-    <lastmod>2014-12-31T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/12/interesting-small-jokes-collection/</loc>
-    <lastmod>2014-12-30T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/12/Information-security-grading-Capriccio-second-part/</loc>
-    <lastmod>2014-12-29T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/12/Information-security-grading-Capriccio-first-part/</loc>
-    <lastmod>2014-12-29T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/10/personal-information-management/</loc>
-    <lastmod>2014-10-17T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/06/random-numbers/</loc>
-    <lastmod>2014-06-15T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/06/simple-cenerates-random-numbers/</loc>
-    <lastmod>2014-06-14T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/2014/06/Use-csharp-cenerates-random-numbers/</loc>
-    <lastmod>2014-06-14T00:00:00+08:00</lastmod>
+    <loc>http://dukelazy.github.io/</loc>
+    <lastmod>2015-02-26T14:10:33+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/blog/archives/</loc>
-    <lastmod>2015-03-01T01:17:18+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/</loc>
-    <lastmod>2015-03-01T01:17:18+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tag-cloud/</loc>
-    <lastmod>2015-03-01T01:17:18+08:00</lastmod>
+    <lastmod>2015-02-26T14:10:33+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/super-awesome/</loc>
-    <lastmod>2015-03-01T01:17:18+08:00</lastmod>
+    <lastmod>2015-02-26T14:10:33+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tag-cloud/</loc>
+    <lastmod>2015-02-26T14:10:33+08:00</lastmod>
   </url>
 </urlset>
