@@ -5,11 +5,19 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>有意思的小段子 - 放羊的博客</title>
+  <title>Install Rbenv in CentOS 7 - 放羊的博客</title>
   <meta name="author" content="Duke Lazy">
 
   
-  <meta name="description" content="有意思的小段子 一、心灵鸡汤 他，曾经在世俗的眼光中匍匐前进，殊不知，在我们无法企及的世界里他已畅游许久。人世间，有太多真实的自卑需要虚伪的骄傲来粉饰，有太多超常的智慧被平庸的肤浅所践踏。我们虽无大智慧，但一生修行总要习得一些小善意，比如尊重世间每一个存在的个体生命和他们呈现出的状态。[2014- &hellip;">
+  <meta name="description" content="1
+2
+3
+4
+5
+6
+cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo &#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39; &gt;&gt; ~/. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +26,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dukelazy.github.io/2014/12/interesting-small-jokes-collection/">
+  <link rel="canonical" href="http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="放羊的博客" type="application/atom+xml">
@@ -75,7 +83,7 @@
   
   <header>
     
-      <h1 class="entry-title">有意思的小段子</h1>
+      <h1 class="entry-title">Install Rbenv in CentOS 7</h1>
     
     
       <p class="meta">
@@ -84,64 +92,46 @@
 
 
 
-<time class='entry-date' datetime='2014-12-30T00:00:00+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2015-04-03T08:43:08+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>8:43 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h1>有意思的小段子</h1>
-
-<hr />
-
-<h2>一、心灵鸡汤</h2>
-
-<ol>
-<li>他，曾经在世俗的眼光中匍匐前进，殊不知，在我们无法企及的世界里他已畅游许久。人世间，有太多真实的自卑需要虚伪的骄傲来粉饰，有太多超常的智慧被平庸的肤浅所践踏。我们虽无大智慧，但一生修行总要习得一些小善意，比如尊重世间每一个存在的个体生命和他们呈现出的状态。<em>[2014-01-19]</em></li>
-<li>小孩子才分对错，成年人要看利弊。<em>[2014-11-25]</em></li>
-<li>当年要是猪先站起来，现在盘子里躺着就是我们。 <em>[2014-11-25]</em></li>
-</ol>
-
-
-<h2>二、搞笑段子</h2>
-
-<ol>
-<li>江边一个美女在哭，我驻足不前，背对着她，抽起一支烟。路过的男男女女都为我侧目，以为我要甩她。有女朋友的感觉，好爽！ <em>[2014-11-25]</em></li>
-<li>一天，老公剥开柑递给我，8岁的女儿看到说:爸爸给我，爸爸给我！！老公说:先给妈妈，她是我老婆！女儿不满地说:我才是你最亲的人！你们又没有血缘关系！！<em>[2014-11-25]</em></li>
-<li>昨天老公跟我爸爸在家喝酒，都喝的有点多，席间，老爸非要支援我俩三万块钱，留着我俩买车，二货老公高低没要，说要凭我俩自己的实力买，不能花父母的钱。老爸是死乞白赖的非要给，老公是死乞白赖的非不要。今早酒醒后，俩人都后悔了。。。<em>[2014-11-25]</em></li>
-</ol>
+<div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
+</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bash_profile
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.bash_profile
+</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+</span><span class='line'><span class="nb">source</span> ~/.bash_profile
+</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>二、知乎神回复</h2>
+<h3>Install Ruby 1.9.3</h3>
 
-<ol>
-<li>你小时候父母为了让你能够努力学习，都用过什么丧尽天良的方法？
+<p>Next install Ruby 1.9.3 and you&rsquo;ll be all set.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>rbenv install 1.9.3-p551
+</span><span class='line'>rbenv <span class="nb">local </span>1.9.3-p551
+</span><span class='line'>rbenv rehash
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ul>
-<li>给了我这张脸</li>
-</ul>
-</li>
-<li>政府禁用了 Windows 8 和苹果系统，那他们用什么操作系统办公？
-Linux？Windows 7？Windows XP？
-
-<ul>
-<li>盗版Windows</li>
-</ul>
-</li>
-<li>如何看待快播王欣被抓？
-
-<ul>
-<li>强奸的不抓，抓了个卖避孕套的。</li>
-</ul>
-</li>
-</ol>
-
-
-<h2><em>参考资料</em></h2>
-
-<ul>
-<li><em><a href="https://github.com/BigPeng">BigPeng</a>. <a href="https://github.com/BigPeng/zhihu_shenhuifu">知乎神回复</a>. 2009-4-11 [2014-12-30]</em></li>
+<li><a href="ftp://ftp.ruby-lang.org/pub/ruby/">ftp://ftp.ruby-lang.org/pub/ruby/</a></li>
+<li><a href="http://cache.ruby-lang.org/pub/ruby/1.9/">http://cache.ruby-lang.org/pub/ruby/1.9/</a></li>
+<li><a href="https://ruby-china.org/wiki/rbenv-guide">https://ruby-china.org/wiki/rbenv-guide</a></li>
+<li><a href="http://octopress.org/docs/setup/rbenv/">http://octopress.org/docs/setup/rbenv/</a></li>
 </ul>
 
 </div>
@@ -159,7 +149,7 @@ Linux？Windows 7？Windows XP？
 
 
 
-<time class='entry-date' datetime='2014-12-30T00:00:00+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2015-04-03T08:43:08+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>8:43 am</span></time>
       
 
 
@@ -167,7 +157,7 @@ Linux？Windows 7？Windows XP？
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dukelazy.github.io/2014/12/interesting-small-jokes-collection/" data-via="" data-counturl="http://dukelazy.github.io/2014/12/interesting-small-jokes-collection/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7/" data-via="" data-counturl="http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7/" >Tweet</a>
   
   
   
@@ -176,10 +166,8 @@ Linux？Windows 7？Windows XP？
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2014/12/Information-security-grading-Capriccio-second-part/" title="Previous Post: 个人信息保密等级划分随想(二)">&laquo; 个人信息保密等级划分随想(二)</a>
+        <a class="basic-alignment left" href="/2015/04/install-octopress-in-centos-7/" title="Previous Post: install Octopress in CentOS 7">&laquo; install Octopress in CentOS 7</a>
       
-      
-        <a class="basic-alignment right" href="/2014/12/Install-jekyll/" title="Next Post: Install Jekyll">Install Jekyll &raquo;</a>
       
     </p>
   </footer>
