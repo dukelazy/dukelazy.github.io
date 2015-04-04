@@ -9,8 +9,10 @@ single: true
   <footer>
     <p class="meta">
       {% include post/author.html %}
-      {% include post/date.html %}{{ time }}{% if updated %} {{ updated }}{% endif %}
+     于 {% include post/date.html %}{% if updated %}{{ updated }} 编辑. {% else %}{{ time }} 写下. {% endif %}
+     全文共 {{ content | number_of_words }} 字
       {% include post/categories.html %}
+      {% include post/tags.html %}
     </p>
     {% unless page.sharing == false %}
       {% include post/sharing.html %}
