@@ -4,7 +4,9 @@ title: "install Octopress in CentOS 7"
 date: 2015-04-03 08:42:43 +0800
 comments: true
 categories: 
+tags: 
 ---
+
 ```
 git clone https://github.com/imathis/octopress.git octopress
 

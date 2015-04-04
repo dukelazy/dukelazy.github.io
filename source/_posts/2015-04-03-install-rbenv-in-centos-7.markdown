@@ -2,9 +2,23 @@
 layout: post
 title: "install rbenv in CentOS 7"
 date: 2015-04-03 08:43:08 +0800
+updated: 2015-04-04 15:43:08 +0800
 comments: true
+tags: [rbenv,ruby,linux,centos]
 categories: 
 ---
+
+*First Header*  | *Second Header*
+------------- | ------------:
+Content Cell  | 1
+Content Cell  | 50
+
+*Year* | *Temperature (low)* | *Temperature (high)*
+-|:-:|:-:
+1900 | -10 | 25
+1910 | -15 | 30
+1920 | -10 | 32
+
 ``` bash
 cd
 git clone git://github.com/sstephenson/rbenv.git .rbenv
