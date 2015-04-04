@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: jekyll | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/jekyll/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-04T13:33:01+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install Jekyll]]></title>
+    <link href="http://dukelazy.github.io/2014/12/Install-jekyll/"/>
+    <updated>2014-12-31T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2014/12/Install-jekyll</id>
+    <content type="html"><![CDATA[<!--
+- Ruby
+- Python
+- Jekyll
+- nodejs
+- Raneto
+- GitBook
+- MarkdownPad
+- Github
+- Github Pages
+- Gist
+- Rsync
+- Wordpress
+- gitolite
+- readmine
+- git
+- bitbucket
+- code Google
+- Dns
+-->
+
+
+<h2>一、安装系统</h2>
+
+<p>使用<code>CentOS-6.6-x86_64-minimal.iso</code>安装全新操作系统</p>
+
+<ul>
+<li>语言：英文</li>
+<li>时区：上海（东八区）</li>
+</ul>
+
+
+<h2>二、安装操作系统后系统初始化设置</h2>
+
+<ul>
+<li><p>激活网卡、设置DNS</p>
+
+<ul>
+<li>激活网卡</li>
+</ul>
+
+
+<pre><code class="``">  #ifup eth1
+</code></pre>
+
+<ul>
+<li>修改DNS</li>
+</ul>
+
+
+<pre><code class="``">  #echo 'nameserver 8.8.8.8' &gt;&gt; /etc/resolv.conf
+  #echo 'nameserver 114.114.114.114' &gt;&gt; /etc/resolv.conf
+</code></pre>
+
+<ul>
+<li>设置网卡开启启动</li>
+</ul>
+
+
+<pre><code class="``">  #vi /etc/sysconfig/network-scripts/ifcfg-eth1
+</code></pre>
+
+<p>  编辑<code>ONBOOT=no</code>为<code>ONBOOT=yes</code></p></li>
+<li><p>更新系统</p></li>
+</ul>
+
+
+<pre><code>#yum update -y
+</code></pre>
+
+<ul>
+<li>安装工具环境</li>
+</ul>
+
+
+<pre><code>#yum install vim -y
+#yum install wget -y
+#yum install unzip -y
+#yum install git-all -y
+</code></pre>
+
+<h2>三、编译安装Ruby 1.9.3</h2>
+
+<p>http://www.cnblogs.com/iosdev/p/3320671.html</p>
+
+<ol>
+<li>准备需要的安装的东西</li>
+</ol>
+
+
+<pre><code>yum -y install make gcc openssl-devel zlib-devel gcc gcc-c++ make autoconf readline-devel curl-devel expat-devel gettext-devel ncurses-devel sqlite3-devel mysql-devel httpd-devel wget which
+</code></pre>
+
+<ol>
+<li>下载源文件</li>
+</ol>
+
+
+<pre><code>cd /usr/src
+wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+tar zxf yaml-0.1.4.tar.gz
+cd yaml-0.1.4
+./configure --prefix=/usr/local
+make &amp;&amp; make install
+</code></pre>
+
+<pre><code class="">cd /usr/src
+wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.gz
+tar zxf ruby-1.9.3-p551.tar.gz
+cd ruby-1.9.3-p551
+./configure --prefix=/usr/local --disable-install-doc --with-opt-dir=/usr/local/lib
+make &amp;&amp; make install
+</code></pre>
+
+<!--
+    - 编译Ruby的时候遇到错误
+    
+    ```
+    ossl_pkey_ec.c:765: warning: assignment makes pointer from integer without a cast
+    ossl_pkey_ec.c:819: error: ‘EC_GROUP_new_curve_GF2m’ undeclared (first use in this function)
+    ossl_pkey_ec.c:819: error: (Each undeclared identifier is reported only once
+    ossl_pkey_ec.c:819: error: for each function it appears in.)
+    ossl_pkey_ec.c: In function ‘ossl_ec_group_set_seed’:
+    ossl_pkey_ec.c:1114: warning: comparison between signed and unsigned integer expressions
+    make[1]: *** [ossl_pkey_ec.o] Error 1
+    make[1]: Leaving directory `/usr/src/ruby-1.9.2-p330/ext/openssl'
+    make: *** [mkmain.sh] Error 1
+    ```
+    
+    解决办法参照如下网页
+    http://blog.csdn.net/iefreer/article/details/18828515
+-->
+
+
+<ol>
+<li>whereis 查看ruby路径</li>
+</ol>
+
+
+<pre><code class="sh">whereis ruby
+</code></pre>
+
+<h2>三、安装jekyll</h2>
+
+<!--
+~~#yum install ruby rubygemc~~不知道为什么执~行完了没有装上~
+~~#yum install ruby-rdo~~
+~~#yum install ruby-devel~~
+~~#yum install gcc gcc-c++~~
+-->
+
+
+<pre><code>#wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.5.tgz
+#tar -vxf rubygems-2.4.5.tgz
+#cd rubygems-2.4.5
+#ruby setup.rb
+</code></pre>
+
+<pre><code>gem install jekyll
+
+gem install RedCloth #这个为了解决运行jekyll的时候出错的问题
+gem install rdiscount
+</code></pre>
+
+<pre><code class="sh">cd blog/
+jekyll server -H 0.0.0.0
+</code></pre>
+
+<p>浏览器访问 http://127.0.0.1:4000</p>
+
+<ul>
+<li><p>PS无法访问https://api.rubygem.org可以参照https://ruby.taobao.org替换使用淘宝的源</p>
+
+<p>  替换淘宝源后安装有些包出错,最终还是切换回官方源安装成功</p></li>
+<li><p>需要先安装nodejs</p></li>
+</ul>
+
+
+<h2>四、安装Raneto</h2>
+
+<pre><code class="bash">wget http://nodejs.org/dist/v0.10.35/node-v0.10.35-linux-x64.tar.gz
+tar zvxf node-v0.10.35-linux-x64.tar.gz
+mv node-v0.10.35-linux-x64 ~/opt/nodejs
+ln -s ~/opt/nodejs/bin/node ~/bin/node
+ln -s ~/opt/nodejs/bin/npm ~/bin/npm
+</code></pre>
+
+<pre><code class="bash">wget https://github.com/gilbitron/Raneto/archive/0.6.0.zip Raneto-0.6.0.zip
+unzip Raneto-0.6.0.zip
+mv Raneto-0.6.0 ~/www/raneto
+
+cd ~/www/raneto
+npm install
+npm start
+</code></pre>
+
+<p>浏览器访问 http://127.0.0.1:3000/</p>
+
+<pre><code class="csharp">using System;
+using System.Collections.Generic;
+using System.Text;
+using GitCafeSDK;
+using System.Net;
+
+namespace Simple
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        }
+    }
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

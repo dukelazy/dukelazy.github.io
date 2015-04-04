@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: ruby | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/ruby/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-04T13:33:01+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[install rbenv in CentOS 7]]></title>
+    <link href="http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7/"/>
+    <updated>2015-04-03T08:43:08+08:00</updated>
+    <id>http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7</id>
+    <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th><em>First Header</em>  </th>
+<th style="text-align:right;"> <em>Second Header</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell  </td>
+<td style="text-align:right;"> 1</td>
+</tr>
+<tr>
+<td>Content Cell  </td>
+<td style="text-align:right;"> 50</td>
+</tr>
+</tbody>
+</table>
+
+
+<table>
+<thead>
+<tr>
+<th><em>Year</em> </th>
+<th style="text-align:center;"> <em>Temperature (low)</em> </th>
+<th style="text-align:center;"> <em>Temperature (high)</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1900 </td>
+<td style="text-align:center;"> -10 </td>
+<td style="text-align:center;"> 25</td>
+</tr>
+<tr>
+<td>1910 </td>
+<td style="text-align:center;"> -15 </td>
+<td style="text-align:center;"> 30</td>
+</tr>
+<tr>
+<td>1920 </td>
+<td style="text-align:center;"> -10 </td>
+<td style="text-align:center;"> 32</td>
+</tr>
+</tbody>
+</table>
+
+
+<pre><code class="bash">cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+source ~/.bash_profile 
+</code></pre>
+
+<h3>Install Ruby 1.9.3</h3>
+
+<p>Next install Ruby 1.9.3 and you&rsquo;ll be all set.
+<code>
+rbenv install 1.9.3-p551
+rbenv local 1.9.3-p551
+rbenv rehash
+</code></p>
+
+<ul>
+<li>ftp://ftp.ruby-lang.org/pub/ruby/</li>
+<li>http://cache.ruby-lang.org/pub/ruby/1.9/</li>
+<li>https://ruby-china.org/wiki/rbenv-guide</li>
+<li>http://octopress.org/docs/setup/rbenv/</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

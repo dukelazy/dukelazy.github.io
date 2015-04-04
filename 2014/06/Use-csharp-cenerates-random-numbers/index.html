@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>C#生成随机数 - 放羊的博客</title>
+  <meta name="author" content="Duke Lazy">
+
+  
+  <meta name="description" content="导语引言 随机数说明 .net.Frameword中提供了一个专门产生随机数的类System.Random 随机数生成器基本使用 我们可以使用两种方式初始化一个随机数发生器, 微软的随机数生成器为我们提供了两种方式初始化一个随机数生成器。一种是默认的构造函数Random generator = &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dukelazy.github.io/2014/06/Use-csharp-cenerates-random-numbers/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="放羊的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.lug.ustc.edu.cn/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><a id="avatar" href="/"></a>   
+<hgroup>
+  <h1><a href="/">放羊的博客</a></h1>
+  
+    <h2>万能的技术,苦逼的技术.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="dukelazy.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+<li><a href="/life-thoughts">生活杂谈</a></li>
+<li><a href="/technology-programming">程序生涯</a></li>
+<li><a href="/messy">杂七杂八</a></li>
+<li><a href="/detailed-list">各项清单</a></li>
+<li><a href="/project">开源项目</a></li>
+  <li><a href="/archives">文章归档</a></li>
+  <li><a href="/tags">标签</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">C#生成随机数</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2014-06-14
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>导语引言</h3>
+
+<h3>随机数说明</h3>
+
+<p>.net.Frameword中提供了一个专门产生随机数的类System.Random</p>
+
+<h3>随机数生成器基本使用</h3>
+
+<p>我们可以使用两种方式初始化一个随机数发生器,
+ 微软的随机数生成器为我们提供了两种方式初始化一个随机数生成器。一种是默认的构造函数<code>Random generator = new Random();</code>，用该方法初始化的生成器.net.Frameword使用与时间相关的默认种子值为我们创建出一个随机数生成器；第二种是使用指定的随机种子值初始化一个随机生成器；</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Random ro = new Random(10);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>或</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Random</span> <span class="n">ra</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="k">unchecked</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="kt">long</span> <span class="n">tick</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span><span class="p">;</span>
+</span><span class='line'><span class="n">Random</span> <span class="n">ran</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span> <span class="p">&amp;</span> <span class="m">0</span><span class="n">xffffffffL</span><span class="p">)</span> <span class="p">|</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">tick</span> <span class="p">&gt;&gt;</span> <span class="m">32</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>或</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="n">Random</span> <span class="n">ro</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="n">iSeed</span><span class="p">());</span>
+</span><span class='line'><span class="k">static</span> <span class="kt">int</span> <span class="nf">iSeed</span><span class="p">()</span> <span class="c1">//有返回值，叫子函数（ＶＢ），无返回值，叫子程序（ＶＢ）；；；Ｃ#中，统一叫方法.</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">//一个子方法，跟据tick产生随机数的种子</span>
+</span><span class='line'>    <span class="kt">long</span> <span class="n">tick</span> <span class="p">=</span> <span class="m">987654123</span><span class="p">;</span><span class="c1">//定义一干扰常数，9位数且尾数不为0，自定</span>
+</span><span class='line'>    <span class="n">tick</span> <span class="p">=</span> <span class="n">tick</span> <span class="p">*</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Millisecond</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Month</span><span class="p">);</span><span class="c1">//乘以毫秒为干扰</span>
+</span><span class='line'>    <span class="n">tick</span> <span class="p">=</span> <span class="n">tick</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Ticks</span><span class="p">;</span> <span class="c1">//加上tick，主变量</span>
+</span><span class='line'>    <span class="n">tick</span> <span class="p">=</span> <span class="n">tick</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">TickCount</span> <span class="p">*</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Millisecond</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Year</span><span class="p">);</span><span class="c1">//开机毫秒数</span>
+</span><span class='line'>    <span class="n">tick</span> <span class="p">=</span> <span class="n">tick</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">Environment</span><span class="p">.</span><span class="n">WorkingSet</span> <span class="p">*</span> <span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Millisecond</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Day</span><span class="p">);</span><span class="c1">//内存干扰</span>
+</span><span class='line'>    <span class="kt">string</span> <span class="n">sTick</span> <span class="p">=</span> <span class="n">tick</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span><span class="c1">//将tick转换为字符;</span>
+</span><span class='line'>    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;转换为字符的64位Long &quot;</span> <span class="p">+</span> <span class="n">sTick</span><span class="p">);</span>
+</span><span class='line'>    <span class="kt">string</span> <span class="n">sSeed</span> <span class="p">=</span> <span class="n">sTick</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="n">sTick</span><span class="p">.</span><span class="n">Length</span> <span class="p">-</span> <span class="m">10</span><span class="p">);</span> <span class="c1">//先取10位</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">sSeed</span><span class="p">)</span> <span class="p">&gt;</span> <span class="m">2147483642</span><span class="p">)</span> <span class="c1">// 聪明不可用尽，int32亦不取尽</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="n">sSeed</span> <span class="p">=</span> <span class="n">sTick</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="n">sTick</span><span class="p">.</span><span class="n">Length</span> <span class="p">-</span> <span class="m">9</span><span class="p">);</span> <span class="c1">//溢出int32正数，则取9位</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">sSeed</span><span class="p">);</span> <span class="c1">//转换为int32数字，把算出的数，给回去iSeed，呵呵~~</span>
+</span><span class='line'>    <span class="c1">//一个子方法，跟据tick产生随机数的种子</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='csharp'><span class='line'><span class="k">static</span> <span class="kt">int</span> <span class="nf">GetRandomSeed</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="kt">byte</span><span class="p">[]</span> <span class="n">bytes</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="p">[</span><span class="m">4</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">Cryptography</span><span class="p">.</span><span class="n">RNGCryptoServiceProvider</span> <span class="n">rng</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Security</span><span class="p">.</span><span class="n">Cryptography</span><span class="p">.</span><span class="n">RNGCryptoServiceProvider</span><span class="p">();</span>
+</span><span class='line'>    <span class="n">rng</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">BitConverter</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">Random</span> <span class="n">random</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">(</span><span class="n">GetRandomSeed</span><span class="p">());</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>参考文档</h4>
+
+<ul>
+<li><em>红叶菩提. <a href="http://onetown.blog.163.com/blog/static/9025535201311520533/" title="C# 随机数种子的获取">C# 随机数种子的获取</a>. 网易博客. 2013-02-01 [2014-6-15].</em></li>
+<li><em>旧语新思. <a href="http://growupsoft.blog.163.com/blog/static/960729201092611427366/" title="C#最佳随机数生成（Mersenne Twister）及最佳种子获得方法  ">C#最佳随机数生成（Mersenne Twister）及最佳种子获得方法</a>. 网易博客. 2010-10-26 [2014-6-15].</em></li>
+<li><em>许明吉. <a href="http://www.cnblogs.com/jxsoft/archive/2011/03/15/1984509.html" title="C# 生成随机数">C# 生成随机数</a>. 博客园. 2011-03-15 [2014-6-15].</em></li>
+<li><em>amber(ms). <a href="http://www.cnblogs.com/izanami/archive/2011/04/20/2022173.html" title="C#生成随机数的三种方法">C#生成随机数的三种方法</a>. 博客园. 2011-04-20 [2014-6-15].</em></li>
+<li><em>XCQ1228. <a href="http://blog.csdn.net/XCQ1228/article/details/2771287" title="C#中的随机数种子 ">C#中的随机数种子 </a>. CSDN博客. 2008-08-05 [2014-6-15].</em></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">— 由 <span class="fn">Duke Lazy</span></span>
+
+     于 
+
+
+
+
+2014-06-14 写下. 
+     全文共 624 字
+      
+
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dukelazy.github.io/2014/06/Use-csharp-cenerates-random-numbers/" data-via="" data-counturl="http://dukelazy.github.io/2014/06/Use-csharp-cenerates-random-numbers/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/2014/06/simple-cenerates-random-numbers/" title="Next Post: 简单生成随机数">简单生成随机数 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/03/rsync-script/">Rsync Script</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Duke Lazy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

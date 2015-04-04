@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rsync | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/category/rsync/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-04T13:33:01+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rsync Script]]></title>
+    <link href="http://dukelazy.github.io/2015/03/rsync-script/"/>
+    <updated>2015-03-30T17:21:47+08:00</updated>
+    <id>http://dukelazy.github.io/2015/03/rsync-script</id>
+    <content type="html"><![CDATA[<p><strong>注意原路径末尾有没有<code>/</code>符号</strong></p>
+
+<ul>
+<li>如果没有<code>/</code>则在目录中创建原路径最后的目录;</li>
+<li>如果有<code>/</code>,则在目标路径的根目录下创建源目录中的文件;</li>
+</ul>
+
+
+<!--more-->
+
+
+<ol>
+<li><strong>在Windows客户端安装Rsync；</strong></li>
+<li><strong>在Rsync的安装目录下建立<code>home/.ssh/config</code>文件</strong></li>
+<li><strong>准备ssh key；</strong></li>
+<li><strong>在Windows客户端以管理员身份执行同步脚本；</strong>
+<code>bat
+rsync -rltDvzP /cygdrive/f/Media/行车记录仪-过年 dukelazy@192.168.0.10:/mfs/pub/mnt/sdb1/
+</code></li>
+<li><strong>在服务器端执行修改权限脚本；</strong></li>
+</ol>
+
+
+<pre><code class="bat">rsync -avP /mfs/pub/mnt/sde5/MySoftWare/结婚照光盘镜像 /mfs/pub/mnt/sdb1/
+</code></pre>
+
+<pre><code class="bash">[root@host ~]# find /mfs/pub/mnt/sdb1/结婚照光盘镜像 -type d -exec chmod 755 \{\} \;
+[root@host ~]# find /mfs/pub/mnt/sdb1/结婚照光盘镜像 -type f -exec chmod 644 \{\} \;
+</code></pre>
+
+<ul>
+<li>在Windows Rsync客户端以管理员身份执行如下脚本同步数据到服务器
+<code>bat
+rsync -avP /mfs/pub/mnt/sde5/galleries /mfs/pub/mnt/sdb1/
+</code></li>
+<li>在服务器执行如下脚本设置文件夹和文件权限
+<code>bash
+sudo find /mfs/pub/mnt/sdb1/galleries -type d -exec chmod 755 \{\} \;
+sudo find /mfs/pub/mnt/sdb1/galleries -type f -exec chmod 644 \{\} \;
+</code></li>
+</ul>
+
+
+<p>gitcafe PC同步到服务器
+安装后在安装目录下创建Home/等对应目录，并配置.ssh的配置文件如下
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Host *
+</span><span class='line'>    StrictHostKeyChecking no
+</span><span class='line'>    UserKnownHostsFile =/dev/null&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;Host 192.168.0.10
+</span><span class='line'>   UserKnownHostsFile =/dev/null
+</span><span class='line'>   IdentityFile       =/V/authentication/.ssh/root_rsa</span></code></pre></td></tr></table></div></figure></p>
+
+<pre><code>rsync -avP [src] [dest]
+</code></pre>
+
+<p>启动Octopress
+<code>bat
+E:
+cd E:\scm\octopress
+set LANG=zh_CN.UTF-8
+set LC_ALL=zh_CN.UTF-8
+rake generate
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
