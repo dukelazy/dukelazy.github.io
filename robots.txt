@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://dukelazy.github.io/sitemap.xml 
