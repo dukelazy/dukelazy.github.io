@@ -27,13 +27,11 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-# permalink: /blog/:year/:month/:day/:title/
 permalink: /:year/:month/:title/
 source: source
 destination: public
 plugins: plugins
 code_dir: downloads/code
-# category_dir: blog/categories
 category_dir: category
 tag_dir: tags
 markdown: rdiscount
@@ -70,12 +68,12 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # Github repositories
 github_user:
 github_repo_count: 0
-github_show_profile_link: true
-github_skip_forks: true
+github_show_profile_link: false
+github_skip_forks: false
 
 # Twitter
 twitter_user:
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Google +1
 google_plus_one: false
