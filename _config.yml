@@ -35,6 +35,7 @@ plugins: plugins
 code_dir: downloads/code
 # category_dir: blog/categories
 category_dir: category
+tag_dir: tags
 markdown: rdiscount
 rdiscount:
   extensions:
