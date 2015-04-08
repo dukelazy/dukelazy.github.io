@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: linux | 放羊的博客]]></title>
   <link href="http://dukelazy.github.io/tags/linux/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-04-04T14:02:47+08:00</updated>
+  <updated>2015-04-08T11:51:50+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -12,86 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[install rbenv in CentOS 7]]></title>
-    <link href="http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7/"/>
-    <updated>2015-04-03T08:43:08+08:00</updated>
-    <id>http://dukelazy.github.io/2015/04/install-rbenv-in-centos-7</id>
-    <content type="html"><![CDATA[<table>
-<thead>
-<tr>
-<th><em>First Header</em>  </th>
-<th style="text-align:right;"> <em>Second Header</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content Cell  </td>
-<td style="text-align:right;"> 1</td>
-</tr>
-<tr>
-<td>Content Cell  </td>
-<td style="text-align:right;"> 50</td>
-</tr>
-</tbody>
-</table>
-
-
-<table>
-<thead>
-<tr>
-<th><em>Year</em> </th>
-<th style="text-align:center;"> <em>Temperature (low)</em> </th>
-<th style="text-align:center;"> <em>Temperature (high)</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1900 </td>
-<td style="text-align:center;"> -10 </td>
-<td style="text-align:center;"> 25</td>
-</tr>
-<tr>
-<td>1910 </td>
-<td style="text-align:center;"> -15 </td>
-<td style="text-align:center;"> 30</td>
-</tr>
-<tr>
-<td>1920 </td>
-<td style="text-align:center;"> -10 </td>
-<td style="text-align:center;"> 32</td>
-</tr>
-</tbody>
-</table>
-
-
-<pre><code class="bash">cd
-git clone git://github.com/sstephenson/rbenv.git .rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
-echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
-git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-source ~/.bash_profile 
-</code></pre>
-
-<h3>Install Ruby 1.9.3</h3>
-
-<p>Next install Ruby 1.9.3 and you&rsquo;ll be all set.
-<code>
-rbenv install 1.9.3-p551
-rbenv local 1.9.3-p551
-rbenv rehash
-</code></p>
-
-<ul>
-<li>ftp://ftp.ruby-lang.org/pub/ruby/</li>
-<li>http://cache.ruby-lang.org/pub/ruby/1.9/</li>
-<li>https://ruby-china.org/wiki/rbenv-guide</li>
-<li>http://octopress.org/docs/setup/rbenv/</li>
-</ul>
-
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux常用难记命令]]></title>
@@ -105,6 +25,264 @@ Description:    CentOS Linux release 7.0.1406 (Core)
 Release:        7.0.1406
 Codename:       Core
 </code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在 CentOS 7 上安装 rbenv]]></title>
+    <link href="http://dukelazy.github.io/2015/02/install-rbenv-in-centos-7/"/>
+    <updated>2015-02-02T08:43:08+08:00</updated>
+    <id>http://dukelazy.github.io/2015/02/install-rbenv-in-centos-7</id>
+    <content type="html"><![CDATA[<p>rbenv 用来管理多个版本的 ruby 在用户目录的安装和使用.也可以使用 rvm 来实现多个版本的 ruby 安装和使用.</p>
+
+<!--more-->
+
+
+<h2>安装 rbenv</h2>
+
+<pre><code class="bash">[dukelazy@localhost ~]$ cd ~
+[dukelazy@localhost ~]$ git clone git://github.com/sstephenson/rbenv.git .rbenv
+[dukelazy@localhost ~]$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bash_profile
+[dukelazy@localhost ~]$ echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bash_profile
+[dukelazy@localhost ~]$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+[dukelazy@localhost ~]$ source ~/.bash_profile
+</code></pre>
+
+<h2>安装 Ruby 1.9.3</h2>
+
+<pre><code>[dukelazy@localhost ~]$ rbenv install 1.9.3-p551
+[dukelazy@localhost ~]$ rbenv local 1.9.3-p551
+[dukelazy@localhost ~]$ rbenv rehash
+[dukelazy@localhost ~]$ rm -rf .rbenv-version
+</code></pre>
+
+<h2><em>参考文档</em></h2>
+
+<ul>
+<li>https://github.com/sstephenson/rbenv [2015-02-03].</li>
+<li>ftp://ftp.ruby-lang.org/pub/ruby/ [2015-02-03].</li>
+<li>http://cache.ruby-lang.org/pub/ruby/1.9/ [2015-02-03].</li>
+<li>https://ruby-china.org/wiki/rbenv-guide [2015-02-03].</li>
+<li>http://octopress.org/docs/setup/rbenv/ [2015-02-03].</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在 CentOS 7 上安装 Node.js]]></title>
+    <link href="http://dukelazy.github.io/2014/12/install-nodejs-in-centos-7/"/>
+    <updated>2014-12-31T12:20:56+08:00</updated>
+    <id>http://dukelazy.github.io/2014/12/install-nodejs-in-centos-7</id>
+    <content type="html"><![CDATA[<p>Node.Js 是一个 Javascript 运行环境 (runtime),无论在 Windows 还是 Linux 上安装和使用都很方便.现在有很多程序都是使用 Node.Js 作为运行框架, Node.Js 也有非常丰富的扩展库.下面主要记录我在 Centos 7 上的安装过程.使用两种不同的方式安装,我要使用最新的稳定版本所以使用第二种方法安装的.</p>
+
+<!--more-->
+
+
+<h2>系统信息</h2>
+
+<pre><code class="bash">[dukelazy@localhost ~]$ cat /etc/redhat-release
+CentOS Linux release 7.0.1406 (Core)
+[dukelazy@localhost ~]$ uname -r
+3.10.0-123.20.1.el7.x86_64
+[dukelazy@localhost ~]$ python --version
+Python 2.7.5
+</code></pre>
+
+<h2>安装方法一</h2>
+
+<p>使用yum安装.适用于有管理员权限的用户，安装后整个系统全部用户均可用。</p>
+
+<pre><code class="bash">[root@localhost ~]# curl -sL https://rpm.nodesource.com/setup | bash -
+[root@localhost ~]# yum install -y gcc-c++ make zlib-devel openssl-devel
+[root@localhost ~]# yum install -y nodejs
+</code></pre>
+
+<p>查看安装的版本</p>
+
+<pre><code class="bash">[dukelazy@localhost ~]$ node --version
+v0.10.38
+[dukelazy@localhost ~]$ npm --version
+1.4.28
+</code></pre>
+
+<h2>安装方法二</h2>
+
+<p>适用于没有管理员权限或者想安装不同版本等情况.
+在<a href="https://nodejs.org/download/" title="Node.js">Node.js</a>官网查看符合自己系统版本的包下载解压到安装目录,配置环境变量.</p>
+
+<pre><code>[dukelazy@localhost ~]$ wget http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz
+[dukelazy@localhost ~]$ tar zvxf node-v0.12.2-linux-x64.tar.gz
+[dukelazy@localhost ~]$ mkdir -p $HOME/opt
+[dukelazy@localhost ~]$ mv node-v0.12.2-linux-x64 $HOME/opt/
+[dukelazy@localhost ~]$ mkdir -p $HOME/bin
+[dukelazy@localhost ~]$ ln -s $HOME/opt/node-v0.12.2-linux-x64/bin/node $HOME/bin/
+[dukelazy@localhost ~]$ ln -s $HOME/opt/node-v0.12.2-linux-x64/bin/npm $HOME/bin/
+[dukelazy@localhost ~]$ source $HOME/.bash_profile
+[dukelazy@localhost ~]$ rm -rf node-v0.12.2-linux-x64.tar.gz
+</code></pre>
+
+<p>查看安装的版本</p>
+
+<pre><code>[dukelazy@localhost ~]$ node --version
+v0.12.2
+[dukelazy@localhost ~]$ npm --version
+2.7.4
+</code></pre>
+
+<h2><em>参考资料</em></h2>
+
+<ul>
+<li><em><a href="https://nodejs.org" title="Node.js">https://nodejs.org/</a>. [2014-12-31].</em></li>
+<li><em><a href="https://github.com/joyent/node" title="Node.js Git Repository">Node.js in github</a>. [2014-12-31].</em></li>
+<li><em><a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager" title="Installing Node.js via package manager">Installing Node.js via package manager</a>. [2014-12-31].</em></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在 CentOS 上编译安装 ruby 1.9.3 ]]></title>
+    <link href="http://dukelazy.github.io/2014/12/compiler-ruby-1.9.3-in-centos/"/>
+    <updated>2014-12-20T18:16:01+08:00</updated>
+    <id>http://dukelazy.github.io/2014/12/compiler-ruby-1.9.3-in-centos</id>
+    <content type="html"><![CDATA[<p>以下命令都是在超级管理员权限下执行，如果不是超级管理员，请自行调整安装目录和命令。</p>
+
+<!--more-->
+
+
+<h2>准备编译环境</h2>
+
+<pre><code class="bash">sudo yum -y install make gcc openssl-devel zlib-devel gcc gcc-c++ make autoconf readline-devel curl-devel expat-devel gettext-devel ncurses-devel sqlite3-devel mysql-devel httpd-devel wget which
+</code></pre>
+
+<h2>编译 yaml 支持</h2>
+
+<pre><code class="bash">cd /usr/src
+wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+tar zxf yaml-0.1.4.tar.gz
+cd yaml-0.1.4
+./configure --prefix=/usr/local
+make &amp;&amp; make install
+</code></pre>
+
+<h2>编译 Ruby</h2>
+
+<pre><code class="bash">cd /usr/src
+wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.gz
+tar zxf ruby-1.9.3-p551.tar.gz
+cd ruby-1.9.3-p551
+./configure --prefix=/usr/local --disable-install-doc --with-opt-dir=/usr/local/lib
+make &amp;&amp; make install
+</code></pre>
+
+<h2>检查安装</h2>
+
+<pre><code class="bash">whereis ruby
+ruby --version
+</code></pre>
+
+<h2>编译错误处理</h2>
+
+<ul>
+<li>编译Ruby的时候遇到如下错误，解决办法参照网页 http://blog.csdn.net/iefreer/article/details/18828515</li>
+</ul>
+
+
+<pre><code>ossl_pkey_ec.c:765: warning: assignment makes pointer from integer without a cast
+ossl_pkey_ec.c:819: error: ‘EC_GROUP_new_curve_GF2m’ undeclared (first use in this function)
+ossl_pkey_ec.c:819: error: (Each undeclared identifier is reported only once
+ossl_pkey_ec.c:819: error: for each function it appears in.)
+ossl_pkey_ec.c: In function ‘ossl_ec_group_set_seed’:
+ossl_pkey_ec.c:1114: warning: comparison between signed and unsigned integer expressions
+make[1]: *** [ossl_pkey_ec.o] Error 1
+make[1]: Leaving directory `/usr/src/ruby-1.9.2-p330/ext/openssl'
+make: *** [mkmain.sh] Error 1
+</code></pre>
+
+<h2><em>参考资料</em></h2>
+
+<ul>
+<li>http://www.cnblogs.com/iosdev/p/3320671.html</li>
+<li>http://blog.csdn.net/iefreer/article/details/18828515</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在 CentOS 上安装 Jekyll 与 Raneto]]></title>
+    <link href="http://dukelazy.github.io/2014/10/install-jekyll-and-raneto-in-centos/"/>
+    <updated>2014-10-27T12:20:56+08:00</updated>
+    <id>http://dukelazy.github.io/2014/10/install-jekyll-and-raneto-in-centos</id>
+    <content type="html"><![CDATA[<p><blockquote><p>一天竟瞎折腾。</p><footer><strong>我</strong> <cite>回头看过</cite></footer></blockquote></p>
+
+<p>准备构建知识管理系统，安装两个使用 Markdown 语法的静态网页生成程序，先安装上试试，不知道到底咋样。</p>
+
+<!--more-->
+
+
+<h2>一、安装准备</h2>
+
+<pre><code># wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.5.tgz
+# tar -vxf rubygems-2.4.5.tgz
+# cd rubygems-2.4.5
+# ruby setup.rb
+# gem install RedCloth #这个为了解决运行jekyll的时候出错的问题
+# gem install rdiscount
+</code></pre>
+
+<ul>
+<li><strong>PS:</strong></li>
+<li>使用gem安装的时候，如果无法访问https://api.rubygem.org可以参照https://ruby.taobao.org替换使用淘宝的源。</li>
+<li>我去这次替换淘宝源后安装有些包出错,最终还是切换回官方源安装成功。</li>
+</ul>
+
+
+<h2>二、安装jekyll</h2>
+
+<pre><code># gem install jekyll
+</code></pre>
+
+<h2>三、使用 Jekyll</h2>
+
+<pre><code># cd ~
+# jekyll install blog
+# cd blog/
+# jekyll server -H 0.0.0.0
+</code></pre>
+
+<p>浏览器访问 http://127.0.0.1:4000</p>
+
+<h2>四、安装Raneto</h2>
+
+<ul>
+<li>首先安装Node.Js</li>
+</ul>
+
+
+<pre><code>wget http://nodejs.org/dist/v0.10.35/node-v0.10.35-linux-x64.tar.gz
+tar zvxf node-v0.10.35-linux-x64.tar.gz
+mv node-v0.10.35-linux-x64 ~/opt/nodejs
+ln -s ~/opt/nodejs/bin/node ~/bin/node
+ln -s ~/opt/nodejs/bin/npm ~/bin/npm
+</code></pre>
+
+<ul>
+<li>下载安装Raneto</li>
+</ul>
+
+
+<pre><code>wget https://github.com/gilbitron/Raneto/archive/0.6.0.zip Raneto-0.6.0.zip
+unzip Raneto-0.6.0.zip
+mv Raneto-0.6.0 ~/www/raneto
+
+cd ~/www/raneto
+npm install
+npm start
+</code></pre>
+
+<p>浏览器访问 http://127.0.0.1:3000/</p>
 ]]></content>
   </entry>
   

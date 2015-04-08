@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: C# | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/c-number/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-08T11:51:50+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[非原创]C#简单生成随机数]]></title>
+    <link href="http://dukelazy.github.io/2014/06/simple-cenerates-random-numbers/"/>
+    <updated>2014-06-14T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2014/06/simple-cenerates-random-numbers</id>
+    <content type="html"><![CDATA[<p>用C#生成随机数的相关资料,在移动硬盘上发现的,整理放进来,网上找的，忘记了原文网址了。</p>
+
+<!--more-->
+
+
+<pre><code>using System;
+
+namespace RandomTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 0; i &lt; 100; i++)
+            {
+                Random d = new Random();
+                Console.WriteLine(d.Next(100));
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>理论上而言，这个程序会产生100个不同的0～100的整数，而实际情况却是除了第一个数字不同外，剩余99个数字会产生随机的99个相同的数字！而在中间加入调试点或者用MessageBox.show()的方式却能正确的得到100个不同的随机数！</p>
+
+<p>为什么这样？难道要暂停一下子？于是修改代码：</p>
+
+<pre><code>using System;
+
+namespace RandomTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int i = 0; i &lt; 100; i++)
+            {
+                Random d = new Random();
+                Thread.Sleep(15);
+                Console.WriteLine(d.Next(100));
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>再次运行后，输出的数字终于随机了，而且15毫秒以上的暂停才会正常，如果只暂停1毫秒的话，会规律地出现连续5-6个一样的随机数，如果改成5毫秒的暂停的话，这种重复产生一样随机数的概率变成2-3个！</p>
+
+<p>在网上苦苦搜索了2天，没什么帮助，而在CSDN论坛却很快有人给了解决方法：</p>
+
+<pre><code>using System;
+
+namespace RandomTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random d = new Random();
+            for (int i = 0; i &lt; 100; i++)
+            {
+                Console.WriteLine(d.Next(100));
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>把随机对象放在循环的外面就能解决问题！但还是没人能给个解释。估计果然是因为伪随机数的缘故，每次新产生随机种子的时候有时间的参与，所以才会在短时间内产生完全重复一致的“伪随机数”吧！</p>
+
+<p>又及：网上看到一个提高随机数不重复概率的种子生成方法。</p>
+
+<pre><code>static int GetRandomSeed()
+{
+    byte[] bytes = new byte[4];
+    System.Security.Cryptography.RNGCryptoServiceProvider rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
+    rng.GetBytes(bytes);
+    return BitConverter.ToInt32(bytes, 0);
+}
+
+Random random = new Random(GetRandomSeed());
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[C#生成随机数]]></title>
+    <link href="http://dukelazy.github.io/2014/06/Use-csharp-cenerates-random-numbers/"/>
+    <updated>2014-06-14T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2014/06/Use-csharp-cenerates-random-numbers</id>
+    <content type="html"><![CDATA[<p>用C#生成随机数的相关资料,在移动硬盘上发现的,先放进来,网上找的，忘记了原文网址了。</p>
+
+<!--more-->
+
+
+<h2>导语引言</h2>
+
+<h3>随机数说明</h3>
+
+<p>.net.Frameword 中提供了一个专门产生随机数的类 System.Random</p>
+
+<h3>随机数生成器基本使用</h3>
+
+<p>我们可以使用两种方式初始化一个随机数发生器,微软的随机数生成器为我们提供了两种方式初始化一个随机数生成器。</p>
+
+<p>一种是默认的构造函数<code>Random generator = new Random();</code>，用该方法初始化的生成器.net.Frameword使用与时间相关的默认种子值为我们创建出一个随机数生成器；</p>
+
+<p>第二种是使用指定的随机种子值初始化一个随机生成器；</p>
+
+<pre><code>Random ro = new Random(10);
+</code></pre>
+
+<p>或</p>
+
+<pre><code class="csharp">Random ra = new Random(unchecked((int)DateTime.Now.Ticks));
+</code></pre>
+
+<pre><code class="csharp">long tick = DateTime.Now.Ticks;
+Random ran = new Random((int)(DateTime.Now.Ticks &amp; 0xffffffffL) | (int)(tick &gt;&gt; 32));
+</code></pre>
+
+<p>或</p>
+
+<pre><code class="csharp">Random ro = new Random(iSeed());
+static int iSeed() //有返回值，叫子函数（ＶＢ），无返回值，叫子程序（ＶＢ）；；；Ｃ#中，统一叫方法.
+{
+    //一个子方法，跟据tick产生随机数的种子
+    long tick = 987654123;//定义一干扰常数，9位数且尾数不为0，自定
+    tick = tick * (System.DateTime.Now.Millisecond + System.DateTime.Now.Month);//乘以毫秒为干扰
+    tick = tick + System.DateTime.Now.Ticks; //加上tick，主变量
+    tick = tick + System.Environment.TickCount * (System.DateTime.Now.Millisecond + System.DateTime.Now.Year);//开机毫秒数
+    tick = tick + System.Environment.WorkingSet * (System.DateTime.Now.Millisecond + System.DateTime.Now.Day);//内存干扰
+    string sTick = tick.ToString();//将tick转换为字符;
+    Console.WriteLine("转换为字符的64位Long " + sTick);
+    string sSeed = sTick.Substring(sTick.Length - 10); //先取10位
+    if (Convert.ToDouble(sSeed) &gt; 2147483642) // 聪明不可用尽，int32亦不取尽
+    {
+        sSeed = sTick.Substring(sTick.Length - 9); //溢出int32正数，则取9位
+    }
+    return Convert.ToInt32(sSeed); //转换为int32数字，把算出的数，给回去iSeed，呵呵~~
+    //一个子方法，跟据tick产生随机数的种子
+}
+</code></pre>
+
+<pre><code class="csharp">static int GetRandomSeed()
+{
+    byte[] bytes = new byte[4];
+    System.Security.Cryptography.RNGCryptoServiceProvider rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
+    rng.GetBytes(bytes);
+    return BitConverter.ToInt32(bytes, 0);
+}
+Random random = new Random(GetRandomSeed());
+</code></pre>
+
+<h2><em>参考文档</em></h2>
+
+<ul>
+<li><em>红叶菩提. <a href="http://onetown.blog.163.com/blog/static/9025535201311520533/" title="C# 随机数种子的获取">C# 随机数种子的获取</a>. 网易博客. 2013-02-01 [2014-6-15].</em></li>
+<li><em>旧语新思. <a href="http://growupsoft.blog.163.com/blog/static/960729201092611427366/" title="C#最佳随机数生成（Mersenne Twister）及最佳种子获得方法  ">C#最佳随机数生成（Mersenne Twister）及最佳种子获得方法</a>. 网易博客. 2010-10-26 [2014-6-15].</em></li>
+<li><em>许明吉. <a href="http://www.cnblogs.com/jxsoft/archive/2011/03/15/1984509.html" title="C# 生成随机数">C# 生成随机数</a>. 博客园. 2011-03-15 [2014-6-15].</em></li>
+<li><em>amber(ms). <a href="http://www.cnblogs.com/izanami/archive/2011/04/20/2022173.html" title="C#生成随机数的三种方法">C#生成随机数的三种方法</a>. 博客园. 2011-04-20 [2014-6-15].</em></li>
+<li><em>XCQ1228. <a href="http://blog.csdn.net/XCQ1228/article/details/2771287" title="C#中的随机数种子 ">C#中的随机数种子 </a>. CSDN博客. 2008-08-05 [2014-6-15].</em></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[非原创]C#生成随机数进阶]]></title>
+    <link href="http://dukelazy.github.io/2014/06/Random-number-generation-advanced/"/>
+    <updated>2014-06-14T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2014/06/Random-number-generation-advanced</id>
+    <content type="html"><![CDATA[<p>用C#生成随机数的相关资料,在移动硬盘上发现的,整理放进来,网上找的，忘记了原文网址了。</p>
+
+<!--more-->
+
+
+<h3>生成随机数进阶</h3>
+
+<ul>
+<li>不指定随机数生成范围</li>
+<li>指定随机数生成范围</li>
+<li>生成随机的双精度浮点数</li>
+</ul>
+
+
+<h3>生成不重复随机数</h3>
+
+<h3>按概率生成随机数</h3>
+
+<h3>参考文档</h3>
+
+<p>我们在做能自动生成试卷的考试系统时，常常需要随机生成一组不重复的题目，在.net Framework中提供了一个专门用来产生随机数的类System.Random。</p>
+
+<p>对于随机数，大家都知道，计算机不可能产生完全随机的数字，所谓的随机数发生器都是通过一定的算法对事先选定的随机种子做复杂的运算，用产生的结果来近似的模拟完全随机数，这种随机数被称 作伪随机数。伪随机数是以相同的概率从一组有限的数字中选取的。所选数字并不具有完全的随机性，但是从实用的角度而言，其随机程度已足够了。伪随机数的选 择是从随机种子开始的，所以为了保证每次得到的伪随机数都足够地“随机”，随机种子的选择就显得非常重要。如果随机种子一样，那么同一个随机数发生器产生 的随机数也会一样。一般地，我们使用同系统时间有关的参数作为随机种子，这也是.net Framework中的随机数发生器默认采用的方法。</p>
+
+<h3>初始化种子发生器</h3>
+
+<p>我们可以使用两种方式初始化一个随机数发生器：
+- 不指定随机种子，系统自动选取当前时间作为随机种子：</p>
+
+<pre><code class="csharp">Random ro = new Random();
+</code></pre>
+
+<ul>
+<li>可以指定一个int型参数作为随机种子，这样可以保证99%不是一样。之后，我们就可以使用这个Random类的对象来产生随机数，这时候要用到Random.Next()方法。这个方法使用相当灵活，你甚至可以指定产生的随机数的上下限。</li>
+</ul>
+
+
+<pre><code class="csharp">int iSeed = 10;
+Random ro = new Random(10);
+long tick = DateTime.Now.Ticks;
+Random ran = new Random((int)(DateTime.Now.Ticks &amp; 0xffffffffL) | (int)(tick &gt;&gt; 32));
+</code></pre>
+
+<h3>生成随机数</h3>
+
+<ol>
+<li>不指定上下限的使用如下：</li>
+</ol>
+
+
+<pre><code class="C#">int iResult;
+iResult=ro.Next();
+</code></pre>
+
+<ol>
+<li><p>下面的代码指定返回小于100的随机数：
+<code>C#
+int iResult;
+int iUp=100;
+iResult=ro.Next(iUp);
+</code></p></li>
+<li><p>而下面这段代码则指定返回值必须在50-100的范围之内：</p></li>
+</ol>
+
+
+<pre><code class="C#">int iResult;
+int iUp=100;
+int iDown=50;
+iResult=ro.Next(iDown,iUp);
+</code></pre>
+
+<ol>
+<li>除了Random.Next()方法之外，Random类还提供了Random.NextDouble()方法产生一个范围在0.0-1.0之间的随机的双精度浮点数：</li>
+</ol>
+
+
+<pre><code class="C#">double dResult;
+dResult=ro.NextDouble();
+</code></pre>
+
+<h2>解决生成随机数重复</h2>
+
+<p>但是用Random类生成题号，会出现重复，特别是在数量较小的题目中要生成不重复的的题目是很难的，参考了网上的一些方法，包括两类，一类是通过随机种子入手，使每一次的随机种子不同，来保证不重复；第二类是使用一些数据结构和算法。下面主要就第二类介绍几个方法。
+　 　
+- <strong>方法一</strong></p>
+
+<p>思想是用一个数组来保存索引号，先随机生成一个数组位置，然后把这个位置的索引号取出来，并把最后一个索引号复制到当前的数组位置，然后使随机 数的上限减一，具体如：先把这100个数放在一个数组内，每次随机取一个位置（第一次是1-100，第二次是1-99，&hellip;），将该位置的数用最后的数 代替。</p>
+
+<pre><code class="csharp">    int[] index = new int[15];
+    for (int i = 0; i &lt; 15; i++)
+        index = i;
+    Random r = new Random();
+    //用来保存随机生成的不重复的10个数
+    int[] result = new int[10];
+    int site = 15;//设置下限
+    int id;
+    for (int j = 0; j &lt; 10; j++)
+    {
+        id = r.Next(1, site - 1);
+        //在随机位置取出一个数，保存到结果数组
+        result[j] = index[id];
+        //最后一个数复制到当前位置
+        index[id] = index[site - 1];
+        //位置的下限减少一
+        site--;
+    }
+</code></pre>
+
+<ul>
+<li><strong>方法二</strong></li>
+</ul>
+
+
+<p>利用Hashtable。</p>
+
+<pre><code class="C#">Hashtable hashtable = new Hashtable();
+Random rm = new Random();
+int RmNum = 10;
+for (int i = 0; hashtable.Count &lt; RmNum; i++)
+{
+    int nValue = rm.Next(100);
+    if (!hashtable.ContainsValue(nValue) &amp;&amp; nValue != 0)
+    {
+        hashtable.Add(nValue, nValue);
+        Console.WriteLine(nValue.ToString());
+    }
+}
+</code></pre>
+
+<ul>
+<li><strong>方法三</strong></li>
+</ul>
+
+
+<p>递归，用它来检测生成的随机数是否有重复，如果取出来的数字和已取得的数字有重复就重新随机获取。</p>
+
+<pre><code class="C#">Random ra = new Random(unchecked((int)DateTime.Now.Ticks));
+int[] arrNum = new int[10];
+int tmp = 0;
+int minValue = 1;
+int maxValue = 10;
+for (int i = 0; i &lt; 10; i++)
+{
+    tmp = ra.Next(minValue, maxValue); //随机取数
+    arrNum = getNum(arrNum, tmp, minValue, maxValue, ra); //取出值赋到数组中
+}
+</code></pre>
+
+<pre><code class="C#">public int getNum(int[] arrNum, int tmp, int minValue, int maxValue, Random ra)
+{
+    int n = 0;
+    while (n &lt;= arrNum.Length - 1)
+    {
+        if (arrNum[n] == tmp) //利用循环判断是否有重复
+        {
+            tmp = ra.Next(minValue, maxValue); //重新随机获取。
+            getNum(arrNum, tmp, minValue, maxValue, ra);//递归:如果取出来的数字和已取得的数字有重复就重新随机获取。
+        }
+        n++;
+    }
+    return tmp;
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

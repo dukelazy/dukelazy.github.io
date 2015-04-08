@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>解决在git的post-receive钩子不能执行git Pull - 放羊的博客</title>
+  <title>[转]解决在git的post-receive钩子不能执行git Pull - 放羊的博客</title>
   <meta name="author" content="Duke Lazy">
 
   
@@ -34,7 +34,7 @@
 
 </head>
 
-<body   >
+<body   class="no-sidebar"  >
   <header role="banner"><a id="avatar" href="/"></a>   
 <hgroup>
   <h1><a href="/">放羊的博客</a></h1>
@@ -76,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">解决在git的post-receive钩子不能执行git Pull</h1>
+      <h1 class="entry-title">[转]解决在git的post-receive钩子不能执行git Pull</h1>
     
     
       <p class="meta">
@@ -93,6 +93,9 @@
 
 
 <div class="entry-content"><p>有一个需求是本地git在push到远程 git repo 之后，在远程服务器上自动在/dir/foo下执行 git pull 的操作。想来是一个很简单的需求，不就是在远程的 foo.git 仓库中的 hook 里加一个 post-receive 的钩子，然后在钩子里加入一个 git pull 的操作。但是实际操作的时候发现有问题的，因为这样忽略了一个小细节的问题。</p>
+
+<!--more-->
+
 
 <p>操作之前，头脑里想的代码如下：</p>
 
@@ -142,12 +145,12 @@
 
 
 2015-01-11 写下. 
-     全文共 126 字
+     全文共 127 字
       
 
 <span class="categories">
   
-    <a class='category' href='/category/jekyll/'>jekyll</a>
+    <a class='category' href='/category/git/'>git</a>
   
 </span>
 
@@ -156,7 +159,7 @@
 
 <span class="tags">
   
-    <a class='tag' href='/tags/git/'>git</a>, <a class='tag' href='/tags/hook/'>hook</a>, <a class='tag' href='/tags/gou-zi/'>钩子</a>
+    <a class='tag' href='/tags/git/'>git</a>, <a class='tag' href='/tags/hook/'>hook</a>
   
 </span>
 
@@ -172,7 +175,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2015/01/Random-number-generation-advanced/" title="Previous Post: 生成随机数进阶">&laquo; 生成随机数进阶</a>
+        <a class="basic-alignment left" href="/2015/01/time-related-words/" title="Previous Post: 英语时间相关单词">&laquo; 英语时间相关单词</a>
       
       
         <a class="basic-alignment right" href="/2015/01/minecraft-server-template/" title="Next Post: Minecraft server template">Minecraft server template &raquo;</a>
@@ -182,42 +185,6 @@
 </article>
 
 </div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/03/rsync-script/">Rsync Script</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
 
 
     </div>

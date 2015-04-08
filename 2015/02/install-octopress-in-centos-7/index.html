@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>在 CentOS 7 上安装 Octopress - 放羊的博客</title>
+  <meta name="author" content="Duke Lazy">
+
+  
+  <meta name="description" content="在一个全新的系统上,重新安装了 Octopress 记录下安装过程.在此之前要先安装 Octopress 的运行环境 Ruby 1.9.3 与 Node.Js 安装过程 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+[dukelazy@localhost ~]$ cd ~
+[dukelazy@ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dukelazy.github.io/2015/02/install-octopress-in-centos-7/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="放羊的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.lug.ustc.edu.cn/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   class="no-sidebar"  >
+  <header role="banner"><a id="avatar" href="/"></a>   
+<hgroup>
+  <h1><a href="/">放羊的博客</a></h1>
+  
+    <h2>万能的技术,苦逼的技术.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="dukelazy.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+<li><a href="/life-thoughts">生活杂谈</a></li>
+<li><a href="/technology-programming">程序生涯</a></li>
+<li><a href="/messy">杂七杂八</a></li>
+<li><a href="/detailed-list">各项清单</a></li>
+<li><a href="/project">开源项目</a></li>
+  <li><a href="/archives">文章归档</a></li>
+  <li><a href="/tags">标签</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">在 CentOS 7 上安装 Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2015-02-03
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>在一个全新的系统上,重新安装了 Octopress 记录下安装过程.在此之前要先安装 Octopress 的运行环境 Ruby 1.9.3 与 Node.Js</p>
+
+<!--more-->
+
+
+<h2>安装过程</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span><span class="nb">cd</span> ~
+</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>git clone https://github.com/imathis/octopress.git octopress
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span><span class="nb">cd </span>octopress
+</span><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span>rbenv <span class="nb">local </span>1.9.3-p551
+</span><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span>rbenv rehash
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span>gem install bundler
+</span><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span>rbenv rehash
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span>bundle install -V <span class="c"># 可以编辑Gemfile，使用淘宝的源</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>dukelazy@localhost octopress<span class="o">]</span><span class="nv">$ </span>rake install
+</span><span class='line'>mkdir -p <span class="nb">source</span>
+</span><span class='line'>cp -r .themes/classic/source/. <span class="nb">source</span>
+</span><span class='line'>mkdir -p sass
+</span><span class='line'>cp -r .themes/classic/sass/. sass
+</span><span class='line'>mkdir -p <span class="nb">source</span>/_posts
+</span><span class='line'>mkdir -p public
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>错误处理</h2>
+
+<ol>
+<li><p>在安装 Ruby 之前没有安装 zlib-devel,安装 zlib-devel 后重新安装 Ruby 即可.</p>
+
+<ul>
+<li>错误信息如下:</li>
+</ul>
+
+
+<pre><code class="`"> [dukelazy@localhost octopress]$ gem install bundler
+ ERROR:  Loading command: install (LoadError)
+     cannot load such file -- zlib
+ ERROR:  While executing gem ... (NameError)
+     uninitialized constant Gem::Commands::InstallCommand
+</code></pre>
+
+<ul>
+<li>处理过程:</li>
+</ul>
+
+
+<pre><code class="`"> [dukelazy@localhost octopress]$ sudo yum install zlib-devel
+ [dukelazy@localhost octopress]$ rbenv uninstall 1.9.3-p551
+ [dukelazy@localhost octopress]$ rbenv install 1.9.3-p551
+ [dukelazy@localhost octopress]$ rbenv rehash
+</code></pre></li>
+<li><p>在安装 Ruby 之前没有安装 openssl-devel,安装 openssl-devel 后重新安装 Ruby 即可.</p>
+
+<ul>
+<li>错误信息如下:</li>
+</ul>
+
+
+<pre><code class="` bash"> [dukelazy@localhost octopress]$ bundle install
+ Could not load OpenSSL.
+ You must recompile Ruby with OpenSSL support or change the sources in your
+ Gemfile from 'https' to 'http'. Instructions for compiling with OpenSSL using
+ RVM are available at rvm.io/packages/openssl.
+</code></pre>
+
+<ul>
+<li>处理过程:</li>
+</ul>
+
+
+<pre><code class="` bash"> [dukelazy@localhost octopress]$ sudo yum install openssl-devel
+ [dukelazy@localhost octopress]$ rbenv install 1.9.3-p551
+ [dukelazy@localhost octopress]$ rbenv rehash
+</code></pre></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">— 由 <span class="fn">Duke Lazy</span></span>
+
+     于 
+
+
+
+
+2015-04-04 编辑. 
+     全文共 323 字
+      
+
+<span class="categories">
+  
+    <a class='category' href='/category/huan-jing-an-zhuang/'>环境安装</a>
+  
+</span>
+
+
+      
+
+<span class="tags">
+  
+    <a class='tag' href='/tags/blog/'>blog</a>, <a class='tag' href='/tags/centos/'>centos</a>, <a class='tag' href='/tags/octopress/'>octopress</a>, <a class='tag' href='/tags/ruby/'>ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2015/02/install-rbenv-in-centos-7/" title="Previous Post: 在 CentOS 7 上安装 rbenv">&laquo; 在 CentOS 7 上安装 rbenv</a>
+      
+      
+        <a class="basic-alignment right" href="/2015/02/dillinger/" title="Next Post: dillinger 使用说明">dillinger 使用说明 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Duke Lazy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

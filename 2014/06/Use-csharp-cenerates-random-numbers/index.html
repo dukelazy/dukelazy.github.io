@@ -9,7 +9,7 @@
   <meta name="author" content="Duke Lazy">
 
   
-  <meta name="description" content="导语引言 随机数说明 .net.Frameword中提供了一个专门产生随机数的类System.Random 随机数生成器基本使用 我们可以使用两种方式初始化一个随机数发生器, 微软的随机数生成器为我们提供了两种方式初始化一个随机数生成器。一种是默认的构造函数Random generator = &hellip;">
+  <meta name="description" content="用C#生成随机数的相关资料,在移动硬盘上发现的,先放进来,网上找的，忘记了原文网址了。 导语引言 随机数说明 .net.Frameword 中提供了一个专门产生随机数的类 System.Random 随机数生成器基本使用 我们可以使用两种方式初始化一个随机数发生器, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -34,7 +34,7 @@
 
 </head>
 
-<body   >
+<body   class="no-sidebar"  >
   <header role="banner"><a id="avatar" href="/"></a>   
 <hgroup>
   <h1><a href="/">放羊的博客</a></h1>
@@ -92,16 +92,24 @@
   </header>
 
 
-<div class="entry-content"><h3>导语引言</h3>
+<div class="entry-content"><p>用C#生成随机数的相关资料,在移动硬盘上发现的,先放进来,网上找的，忘记了原文网址了。</p>
+
+<!--more-->
+
+
+<h2>导语引言</h2>
 
 <h3>随机数说明</h3>
 
-<p>.net.Frameword中提供了一个专门产生随机数的类System.Random</p>
+<p>.net.Frameword 中提供了一个专门产生随机数的类 System.Random</p>
 
 <h3>随机数生成器基本使用</h3>
 
-<p>我们可以使用两种方式初始化一个随机数发生器,
- 微软的随机数生成器为我们提供了两种方式初始化一个随机数生成器。一种是默认的构造函数<code>Random generator = new Random();</code>，用该方法初始化的生成器.net.Frameword使用与时间相关的默认种子值为我们创建出一个随机数生成器；第二种是使用指定的随机种子值初始化一个随机生成器；</p>
+<p>我们可以使用两种方式初始化一个随机数发生器,微软的随机数生成器为我们提供了两种方式初始化一个随机数生成器。</p>
+
+<p>一种是默认的构造函数<code>Random generator = new Random();</code>，用该方法初始化的生成器.net.Frameword使用与时间相关的默认种子值为我们创建出一个随机数生成器；</p>
+
+<p>第二种是使用指定的随机种子值初始化一个随机生成器；</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>Random ro = new Random(10);</span></code></pre></td></tr></table></div></figure>
@@ -164,6 +172,8 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
+
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -183,7 +193,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>参考文档</h4>
+<h2><em>参考文档</em></h2>
 
 <ul>
 <li><em>红叶菩提. <a href="http://onetown.blog.163.com/blog/static/9025535201311520533/" title="C# 随机数种子的获取">C# 随机数种子的获取</a>. 网易博客. 2013-02-01 [2014-6-15].</em></li>
@@ -208,12 +218,24 @@
 
 
 
-2014-06-14 写下. 
-     全文共 624 字
+2014-06-14 编辑. 
+     全文共 629 字
       
+
+<span class="categories">
+  
+    <a class='category' href='/category/sui-ji-shu/'>随机数</a>
+  
+</span>
 
 
       
+
+<span class="tags">
+  
+    <a class='tag' href='/tags/c-number/'>C#</a>, <a class='tag' href='/tags/sui-ji-shu/'>随机数</a>
+  
+</span>
 
 
     </p>
@@ -227,50 +249,16 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/2014/06/Random-number-generation-advanced/" title="Previous Post: [非原创]C#生成随机数进阶">&laquo; [非原创]C#生成随机数进阶</a>
       
-        <a class="basic-alignment right" href="/2014/06/simple-cenerates-random-numbers/" title="Next Post: 简单生成随机数">简单生成随机数 &raquo;</a>
+      
+        <a class="basic-alignment right" href="/2014/06/simple-cenerates-random-numbers/" title="Next Post: [非原创]C#简单生成随机数">[非原创]C#简单生成随机数 &raquo;</a>
       
     </p>
   </footer>
 </article>
 
 </div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/03/rsync-script/">Rsync Script</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
 
 
     </div>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Minecraft | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/category/minecraft/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-08T11:51:50+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Minecraft Server Template]]></title>
+    <link href="http://dukelazy.github.io/2015/01/minecraft-server-template/"/>
+    <updated>2015-01-29T01:43:02+08:00</updated>
+    <id>http://dukelazy.github.io/2015/01/minecraft-server-template</id>
+    <content type="html"><![CDATA[<!--more-->
+
+
+<pre><code class="bash Minecraft_server_template.txt http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt Minecraft_server_template.txt">#!/bin/bash
+
+# http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt
+
+################################################################################
+## MAKE SURE THIS SCRIPT IS AVAILABLE IN YOUR $PATH.
+################################################################################
+# It's highly advisable to create a directory to hold all of your server files. 
+# The jar will generate quite a few files upon first run and it would get pretty 
+# messy if there are other files in the same directory.
+################################################################################
+## NEEDED INFORMATION
+################################################################################
+# This is the location for a Debian/Ubuntu java executable
+javaexec=/usr/bin/java
+
+# Set this to the directory containing the minecraft_server.jar
+# Provide the full path from /
+server_location=CHANGE ME BEFORE DOING ANYTHING
+
+
+################################################################################
+## RUNNING THE SERVER
+################################################################################
+# By cd'ing to the server location
+# All server files will be created in this directory.
+cd $server_location
+
+# Run the Server
+`$javaexec -Xmx1024M -Xms1024M -jar $server_location/minecraft_server.jar nogui`
+
+# After killing off the server, you will be cd'ed back to the directory you were 
+# at prior to running this script.
+cd -
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

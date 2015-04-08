@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: 千千静听 | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/qian-qian-jing-ting/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-08T11:51:50+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[千千静听早期各版本特点]]></title>
+    <link href="http://dukelazy.github.io/2015/02/ttplayer-early-every-version-features/"/>
+    <updated>2015-02-26T14:39:59+08:00</updated>
+    <id>http://dukelazy.github.io/2015/02/ttplayer-early-every-version-features</id>
+    <content type="html"><![CDATA[<p><blockquote><p>千千静听是我非常喜欢用的一款音乐播放器，可惜被百度给糟蹋了。痛心！！！</p><footer><strong>我</strong> <cite>2015年02月26日</cite></footer></blockquote></p>
+
+<!--more-->
+
+
+<ul>
+<li>4.6.8.0 - 5.0.2.0 ：纯本地式播放器，无音乐窗，无弹窗</li>
+<li>5.1.0.0 - 5.3.1.0 ：带音乐窗，无弹窗</li>
+<li>5.5.1.0 - 5.9.6.0 ：经典皮肤，带音乐窗，带弹窗</li>
+<li>6.0.0.0 ：百度音乐皮肤（可更换），带音乐窗，带弹窗</li>
+<li>6.1.0.0 ：百度音乐皮肤（可更换），带登录，带网盘上传，带音乐窗，带弹窗</li>
+<li>6.1.2.0 - 6.1.4.0 ：百度音乐皮肤（可更换），带登录，带网盘上传，带音乐窗，带弹窗，安装界面及安装包改变</li>
+<li>7.0.0.0 - 7.0.2.0 ：百度音乐皮肤（可更换），带登录，带云音乐同步，带音乐窗，带弹窗，安装界面改变</li>
+<li>7.1.0.0 ：百度音乐皮肤（可更换），带登录，带云音乐同步，带音乐窗，带弹窗，安装界面及安装包改变，更名为百度音乐</li>
+</ul>
+
+
+<h2><em>参考资料</em></h2>
+
+<ul>
+<li>转载自百度【千千静听】贴吧</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

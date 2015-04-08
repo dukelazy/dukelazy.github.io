@@ -9,12 +9,8 @@
   <meta name="author" content="Duke Lazy">
 
   
-  <meta name="description" content="First Header Second Header Content Cell 1 Content Cell 50 Year Temperature (low) Temperature (high) 1900 -10 25 1910 -15 30 1920 -10 32 1
-2
-3
-4
-5
-6 &hellip;">
+  <meta name="description" content="注意原路径末尾有没有/符号 如果没有/则在目录中创建原路径最后的目录;
+如果有/,则在目标路径的根目录下创建源目录中的文件; ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,357 +80,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-2015-04-03
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><table>
-<thead>
-<tr>
-<th><em>First Header</em>  </th>
-<th style="text-align:right;"> <em>Second Header</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Content Cell  </td>
-<td style="text-align:right;"> 1</td>
-</tr>
-<tr>
-<td>Content Cell  </td>
-<td style="text-align:right;"> 50</td>
-</tr>
-</tbody>
-</table>
-
-
-<table>
-<thead>
-<tr>
-<th><em>Year</em> </th>
-<th style="text-align:center;"> <em>Temperature (low)</em> </th>
-<th style="text-align:center;"> <em>Temperature (high)</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1900 </td>
-<td style="text-align:center;"> -10 </td>
-<td style="text-align:center;"> 25</td>
-</tr>
-<tr>
-<td>1910 </td>
-<td style="text-align:center;"> -15 </td>
-<td style="text-align:center;"> 30</td>
-</tr>
-<tr>
-<td>1920 </td>
-<td style="text-align:center;"> -10 </td>
-<td style="text-align:center;"> 32</td>
-</tr>
-</tbody>
-</table>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span>
-</span><span class='line'>git clone git://github.com/sstephenson/rbenv.git .rbenv
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bash_profile
-</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;eval &quot;$(rbenv init -)&quot;&#39;</span> &gt;&gt; ~/.bash_profile
-</span><span class='line'>git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-</span><span class='line'><span class="nb">source</span> ~/.bash_profile
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Install Ruby 1.9.3</h3>
-
-<p>Next install Ruby 1.9.3 and you&rsquo;ll be all set.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rbenv install 1.9.3-p551
-</span><span class='line'>rbenv <span class="nb">local </span>1.9.3-p551
-</span><span class='line'>rbenv rehash
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>ftp://ftp.ruby-lang.org/pub/ruby/</li>
-<li>http://cache.ruby-lang.org/pub/ruby/1.9/</li>
-<li>https://ruby-china.org/wiki/rbenv-guide</li>
-<li>http://octopress.org/docs/setup/rbenv/</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-2015-04-03
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/imathis/octopress.git octopress
-</span><span class='line'>
-</span><span class='line'>cd octopress
-</span><span class='line'>rbenv local 1.9.3-p551
-</span><span class='line'>rbenv rehash 
-</span><span class='line'>ruby --version
-</span><span class='line'>
-</span><span class='line'>gem install bundler
-</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
-</span><span class='line'>可以编辑Gemfile，使用淘宝的源
-</span><span class='line'>bundle install -V 或者 bundle install -V
-</span><span class='line'>
-</span><span class='line'>[dukelazy@localhost octopress]$ rake install
-</span><span class='line'>## Copying classic theme into ./source and ./sass
-</span><span class='line'>mkdir -p source
-</span><span class='line'>cp -r .themes/classic/source/. source
-</span><span class='line'>mkdir -p sass
-</span><span class='line'>cp -r .themes/classic/sass/. sass
-</span><span class='line'>mkdir -p source/_posts
-</span><span class='line'>mkdir -p public</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>error</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[dukelazy@localhost octopress]$ gem install bundler
-</span><span class='line'>ERROR:  Loading command: install (LoadError)
-</span><span class='line'>    cannot load such file -- zlib
-</span><span class='line'>ERROR:  While executing gem ... (NameError)
-</span><span class='line'>    uninitialized constant Gem::Commands::InstallCommand</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo yum install zlib-devel
-</span><span class='line'>rbenv uninstall 1.9.3-p551
-</span><span class='line'>rbenv install 1.9.3-p551
-</span><span class='line'>rbenv rehash</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>error</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[dukelazy@localhost octopress]$ bundle install
-</span><span class='line'>Could not load OpenSSL.
-</span><span class='line'>You must recompile Ruby with OpenSSL support or change the sources in your
-</span><span class='line'>Gemfile from 'https' to 'http'. Instructions for compiling with OpenSSL using
-</span><span class='line'>RVM are available at rvm.io/packages/openssl.
-</span><span class='line'>
-</span><span class='line'>sudo yum install openssl-devel
-</span><span class='line'>rbenv install 1.9.3-p551
-</span><span class='line'>rbenv rehash</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-2015-04-03
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>我的操作系统环境信息</h3>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>cat /etc/redhat-release
-</span><span class='line'>CentOS Linux release 7.0.1406 <span class="o">(</span>Core<span class="o">)</span>
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>uname -r
-</span><span class='line'>3.10.0-123.20.1.el7.x86_64
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>python --version
-</span><span class='line'>Python 2.7.5
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>安装方法一</h3>
-
-<p>适用于有管理员权限的用户，安装后整个系统全部用户均可用。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c"># curl -sL https://rpm.nodesource.com/setup | bash -</span>
-</span><span class='line'><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c"># yum install -y nodejs</span>
-</span><span class='line'><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c"># yum install -y gcc-c++ make</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>node --version
-</span><span class='line'>v0.10.38
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>npm --version
-</span><span class='line'>1.4.28
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>安装方法二</h3>
-
-<p>适用于没有管理员权限以及想安装不同版本等情况。
-在<a href="https://nodejs.org/download/" title="Node.js">Node.js</a>官网查看符合自己系统版本的包下载并安装</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>wget http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>tar zvxf node-v0.12.2-linux-x64.tar.gz
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>mkdir -p <span class="nv">$HOME</span>/opt
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>mv node-v0.12.2-linux-x64 <span class="nv">$HOME</span>/opt/
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>mkdir -p <span class="nv">$HOME</span>/bin
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>ln -s <span class="nv">$HOME</span>/opt/node-v0.12.2-linux-x64/bin/node <span class="nv">$HOME</span>/bin/
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>ln -s <span class="nv">$HOME</span>/opt/node-v0.12.2-linux-x64/bin/npm <span class="nv">$HOME</span>/bin/
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span><span class="nb">source</span> <span class="nv">$HOME</span>/.bash_profile
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>rm -rf node-v0.12.2-linux-x64.tar.gz
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>node --version
-</span><span class='line'>v0.12.2
-</span><span class='line'><span class="o">[</span>dukelazy@localhost ~<span class="o">]</span><span class="nv">$ </span>npm --version
-</span><span class='line'>2.7.4
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>参考文档</h3>
-
-<ul>
-<li><em><a href="%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5URL" title="作者名称">作者名称</a>. <a href="%E6%96%87%E7%AB%A0URL" title="文章标题">文章标题</a>. <a href="%E7%BD%91%E7%AB%99%E9%A6%96%E9%A1%B5url" title="网站名称">网站</a>. 发布日期 [引用日期].</em></li>
-<li><a href="https://nodejs.org" title="Node.js">https://nodejs.org/</a>.</li>
-<li><a href="https://github.com/joyent/node" title="Node.js Git Repository">Node.js in github</a></li>
-<li><a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager" title="Installing Node.js via package manager">Installing Node.js via package manager</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/2015/03/rsync-script/">Rsync Script</a></h1>
     
     
@@ -475,7 +120,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a></h1>
+      <h1 class="entry-title"><a href="/2015/03/explain-the-folder-tree-structure-important-mfs-system/">重要文件夹结构说明</a></h1>
     
     
       <p class="meta">
@@ -484,43 +129,119 @@
 
 
 
-2015-02-28
+2015-03-07
         
       </p>
     
   </header>
 
 
-  <div class="entry-content">
-</div>
-  
-  
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/                   #根文件系统
+</span><span class='line'>+---archive
+</span><span class='line'>+---backup
+</span><span class='line'>|   \---website
+</span><span class='line'>+---book
+</span><span class='line'>|   |   1.rtf
+</span><span class='line'>|   |   q.txt
+</span><span class='line'>|   |   sf.txt
+</span><span class='line'>|   |
+</span><span class='line'>|   +---fd
+</span><span class='line'>|   \---fs
+</span><span class='line'>+---current
+</span><span class='line'>+---document
+</span><span class='line'>+---Environment
+</span><span class='line'>+---list
+</span><span class='line'>+---Resources
+</span><span class='line'>+---software
+</span><span class='line'>\---workspace</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2015/02/my-virpus-server-information/">The Virpus Server Information</a></h1>
-    
-    
-      <p class="meta">
-        
+<ul>
+<li>Raven-GitCafePC上的重要文件夹以及文件</li>
+</ul>
 
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Raven-GitCafePC.
+</span><span class='line'>+---C:
+</span><span class='line'>|   +---SRE
+</span><span class='line'>|   \---Users
+</span><span class='line'>|       \---Raven
+</span><span class='line'>|           |    .bash_history
+</span><span class='line'>|           |    .gemrc
+</span><span class='line'>|           |    .gitconfig
+</span><span class='line'>|           |    .gvimrc
+</span><span class='line'>|           |    .npmrc
+</span><span class='line'>|           |    .viminfo
+</span><span class='line'>|           |    .vimrc
+</span><span class='line'>|           |    _viminfo
+</span><span class='line'>|           |
+</span><span class='line'>|           +---.gnupg
+</span><span class='line'>|           +---.ssh
+</span><span class='line'>|           \---.vim
+</span><span class='line'>|
+</span><span class='line'>+---D:
+</span><span class='line'>|   +---KuGou
+</span><span class='line'>|   +---Resources
+</span><span class='line'>|   \---SoftWare
+</span><span class='line'>|
+</span><span class='line'>+---E
+</span><span class='line'>|   +---dev
+</span><span class='line'>|   +---scm
+</span><span class='line'>|   +---Sync
+</span><span class='line'>|   \---Tools
+</span><span class='line'>|
+</span><span class='line'>\---F:
+</span><span class='line'>    \---PT</span></code></pre></td></tr></table></div></figure>
 
-
-2015-02-28
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
 </div>
   
   
@@ -750,7 +471,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/2015/02/explain-the-folder-tree-structure-important-mfs-system/">重要文件夹结构说明</a></h1>
+      <h1 class="entry-title"><a href="/2015/02/ttplayer-early-every-version-features/">千千静听早期各版本特点</a></h1>
     
     
       <p class="meta">
@@ -766,145 +487,184 @@
   </header>
 
 
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/                   #根文件系统
-</span><span class='line'>+---archive
-</span><span class='line'>+---backup
-</span><span class='line'>|   \---website
-</span><span class='line'>+---book
-</span><span class='line'>|   |   1.rtf
-</span><span class='line'>|   |   q.txt
-</span><span class='line'>|   |   sf.txt
-</span><span class='line'>|   |
-</span><span class='line'>|   +---fd
-</span><span class='line'>|   \---fs
-</span><span class='line'>+---current
-</span><span class='line'>+---document
-</span><span class='line'>+---Environment
-</span><span class='line'>+---list
-</span><span class='line'>+---Resources
-</span><span class='line'>+---software
-</span><span class='line'>\---workspace</span></code></pre></td></tr></table></div></figure>
+  <div class="entry-content"><blockquote><p>千千静听是我非常喜欢用的一款音乐播放器，可惜被百度给糟蹋了。痛心！！！</p><footer><strong>我</strong> <cite>2015年02月26日</cite></footer></blockquote>
 
 
-<ul>
-<li>Octopress重点关注的文件夹和文件</li>
-</ul>
 
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>octopress.
-</span><span class='line'>|   config.rb
-</span><span class='line'>|   config.ru
-</span><span class='line'>|   Gemfile
-</span><span class='line'>|   Rakefile
-</span><span class='line'>|   _config.yml
-</span><span class='line'>|   
-</span><span class='line'>+---.themes
-</span><span class='line'>+---plugins
-</span><span class='line'>+---public  
-</span><span class='line'>+---source
-</span><span class='line'>\---_deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>Raven-GitCafePC上的重要文件夹以及文件</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Raven-GitCafePC.
-</span><span class='line'>+---C:
-</span><span class='line'>|   +---SRE
-</span><span class='line'>|   \---Users
-</span><span class='line'>|       \---Raven
-</span><span class='line'>|           |    .bash_history
-</span><span class='line'>|           |    .gemrc
-</span><span class='line'>|           |    .gitconfig
-</span><span class='line'>|           |    .gvimrc
-</span><span class='line'>|           |    .npmrc
-</span><span class='line'>|           |    .viminfo
-</span><span class='line'>|           |    .vimrc
-</span><span class='line'>|           |    _viminfo
-</span><span class='line'>|           |
-</span><span class='line'>|           +---.gnupg
-</span><span class='line'>|           +---.ssh
-</span><span class='line'>|           \---.vim
-</span><span class='line'>|
-</span><span class='line'>+---D:
-</span><span class='line'>|   +---KuGou
-</span><span class='line'>|   +---Resources
-</span><span class='line'>|   \---SoftWare
-</span><span class='line'>|
-</span><span class='line'>+---E
-</span><span class='line'>|   +---dev
-</span><span class='line'>|   +---scm
-</span><span class='line'>|   +---Sync
-</span><span class='line'>|   \---Tools
-</span><span class='line'>|
-</span><span class='line'>\---F:
-</span><span class='line'>    \---PT</span></code></pre></td></tr></table></div></figure>
 
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/2015/02/ttplayer-early-every-version-features/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/02/markdown-howto/">Markdown-howto</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2015-02-13
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="overview">概述</h2>
+
+
+
+
+<h3 id="philosophy">宗旨</h3>
+
+
+<p>Markdown 的目标是实现「易读易写」。</p>
+
+<p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>、<a href="http://www.aaronsw.com/2002/atx/">atx</a>、<a href="http://textism.com/tools/textile/">Textile</a>、<a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>、<a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a> 和 <a href="http://ettext.taint.org/doc/">EtText</a>，而最大灵感来源其实是纯文本电子邮件的格式。</p>
+
+<p>总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像*强调*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2015/02/markdown-howto/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/02/cmd-markdown-editor/">Cmd Markdown Editor 使用说明</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2015-02-13
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。</p>
+
+<p>您可以使用 Cmd Markdown：</p>
+
+<blockquote><ul>
+<li>整理知识，学习笔记</li>
+<li>发布日记，杂文，所见所想</li>
+<li>撰写发布技术文稿（代码支持）</li>
+<li>撰写发布学术论文（LaTeX 公式支持）</li>
+</ul>
+</blockquote>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2015/02/cmd-markdown-editor/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/02/dillinger/">Dillinger 使用说明</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2015-02-13
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Dillinger</h1>
+
+<p>Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.</p>
+
+<ul>
+<li>Type some Markdown on the left</li>
+<li>See HTML in the right</li>
+<li>Magic</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2015/02/dillinger/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/02/install-octopress-in-centos-7/">在 CentOS 7 上安装 Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2015-02-03
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在一个全新的系统上,重新安装了 Octopress 记录下安装过程.在此之前要先安装 Octopress 的运行环境 Ruby 1.9.3 与 Node.Js</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2015/02/install-octopress-in-centos-7/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -925,23 +685,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a>
-      </li>
-    
-      <li class="post">
         <a href="/2015/03/rsync-script/">Rsync Script</a>
       </li>
     
       <li class="post">
-        <a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a>
+        <a href="/2015/03/explain-the-folder-tree-structure-important-mfs-system/">重要文件夹结构说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/02/my-localhost-server-information/">The Localhost Server Information</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/02/hard-to-remember-linux-commonly-used-commands/">Linux常用难记命令</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2015/02/hard-to-remember-git-commonly-used-commands/">Git常用难记命令</a>
       </li>
     
   </ul>

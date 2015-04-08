@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: hook | 放羊的博客]]></title>
   <link href="http://dukelazy.github.io/tags/hook/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-04-04T14:02:47+08:00</updated>
+  <updated>2015-04-08T11:51:50+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -14,11 +14,14 @@
 
   
   <entry>
-    <title type="html"><![CDATA[解决在git的post-receive钩子不能执行git pull]]></title>
+    <title type="html"><![CDATA[[转]解决在git的post-receive钩子不能执行git pull]]></title>
     <link href="http://dukelazy.github.io/2015/01/git-post-receive-git-pull/"/>
     <updated>2015-01-11T00:00:00+08:00</updated>
     <id>http://dukelazy.github.io/2015/01/git-post-receive-git-pull</id>
     <content type="html"><![CDATA[<p>有一个需求是本地git在push到远程 git repo 之后，在远程服务器上自动在/dir/foo下执行 git pull 的操作。想来是一个很简单的需求，不就是在远程的 foo.git 仓库中的 hook 里加一个 post-receive 的钩子，然后在钩子里加入一个 git pull 的操作。但是实际操作的时候发现有问题的，因为这样忽略了一个小细节的问题。</p>
+
+<!--more-->
+
 
 <p>操作之前，头脑里想的代码如下：</p>
 

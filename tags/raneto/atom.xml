@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: raneto | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/raneto/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-08T11:51:50+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在 CentOS 上安装 Jekyll 与 Raneto]]></title>
+    <link href="http://dukelazy.github.io/2014/10/install-jekyll-and-raneto-in-centos/"/>
+    <updated>2014-10-27T12:20:56+08:00</updated>
+    <id>http://dukelazy.github.io/2014/10/install-jekyll-and-raneto-in-centos</id>
+    <content type="html"><![CDATA[<p><blockquote><p>一天竟瞎折腾。</p><footer><strong>我</strong> <cite>回头看过</cite></footer></blockquote></p>
+
+<p>准备构建知识管理系统，安装两个使用 Markdown 语法的静态网页生成程序，先安装上试试，不知道到底咋样。</p>
+
+<!--more-->
+
+
+<h2>一、安装准备</h2>
+
+<pre><code># wget http://production.cf.rubygems.org/rubygems/rubygems-2.4.5.tgz
+# tar -vxf rubygems-2.4.5.tgz
+# cd rubygems-2.4.5
+# ruby setup.rb
+# gem install RedCloth #这个为了解决运行jekyll的时候出错的问题
+# gem install rdiscount
+</code></pre>
+
+<ul>
+<li><strong>PS:</strong></li>
+<li>使用gem安装的时候，如果无法访问https://api.rubygem.org可以参照https://ruby.taobao.org替换使用淘宝的源。</li>
+<li>我去这次替换淘宝源后安装有些包出错,最终还是切换回官方源安装成功。</li>
+</ul>
+
+
+<h2>二、安装jekyll</h2>
+
+<pre><code># gem install jekyll
+</code></pre>
+
+<h2>三、使用 Jekyll</h2>
+
+<pre><code># cd ~
+# jekyll install blog
+# cd blog/
+# jekyll server -H 0.0.0.0
+</code></pre>
+
+<p>浏览器访问 http://127.0.0.1:4000</p>
+
+<h2>四、安装Raneto</h2>
+
+<ul>
+<li>首先安装Node.Js</li>
+</ul>
+
+
+<pre><code>wget http://nodejs.org/dist/v0.10.35/node-v0.10.35-linux-x64.tar.gz
+tar zvxf node-v0.10.35-linux-x64.tar.gz
+mv node-v0.10.35-linux-x64 ~/opt/nodejs
+ln -s ~/opt/nodejs/bin/node ~/bin/node
+ln -s ~/opt/nodejs/bin/npm ~/bin/npm
+</code></pre>
+
+<ul>
+<li>下载安装Raneto</li>
+</ul>
+
+
+<pre><code>wget https://github.com/gilbitron/Raneto/archive/0.6.0.zip Raneto-0.6.0.zip
+unzip Raneto-0.6.0.zip
+mv Raneto-0.6.0 ~/www/raneto
+
+cd ~/www/raneto
+npm install
+npm start
+</code></pre>
+
+<p>浏览器访问 http://127.0.0.1:3000/</p>
+]]></content>
+  </entry>
+  
+</feed>

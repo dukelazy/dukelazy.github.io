@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>简单生成随机数 - 放羊的博客</title>
+  <title>[非原创]C#简单生成随机数 - 放羊的博客</title>
   <meta name="author" content="Duke Lazy">
 
   
-  <meta name="description" content="1
+  <meta name="description" content="用C#生成随机数的相关资料,在移动硬盘上发现的,整理放进来,网上找的，忘记了原文网址了。 1
 2
 3
 4
@@ -26,7 +26,7 @@
 15
 16
 using System; namespace RandomTest
-{ class Program { static void Main(string[] args) { for (int i = 0; i &lt; &hellip;">
+{ class Program { static void &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -51,7 +51,7 @@ using System; namespace RandomTest
 
 </head>
 
-<body   >
+<body   class="no-sidebar"  >
   <header role="banner"><a id="avatar" href="/"></a>   
 <hgroup>
   <h1><a href="/">放羊的博客</a></h1>
@@ -93,7 +93,7 @@ using System; namespace RandomTest
   
   <header>
     
-      <h1 class="entry-title">简单生成随机数</h1>
+      <h1 class="entry-title">[非原创]C#简单生成随机数</h1>
     
     
       <p class="meta">
@@ -109,7 +109,14 @@ using System; namespace RandomTest
   </header>
 
 
-<div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="entry-content"><p>用C#生成随机数的相关资料,在移动硬盘上发现的,整理放进来,网上找的，忘记了原文网址了。</p>
+
+<!--more-->
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -143,8 +150,9 @@ using System; namespace RandomTest
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>理论上而言，这个程序会产生100个不同的0～100的整数，而实际情况却是除了第一个数字不同外，剩余99个数字会产生随机的99个相同的数字！而在中间加入调试点或者用MessageBox.show()的方式却能正确的得到100个不同的随机数！
-为什么这样？难道要暂停一下子？于是修改代码：</p>
+<p>理论上而言，这个程序会产生100个不同的0～100的整数，而实际情况却是除了第一个数字不同外，剩余99个数字会产生随机的99个相同的数字！而在中间加入调试点或者用MessageBox.show()的方式却能正确的得到100个不同的随机数！</p>
+
+<p>为什么这样？难道要暂停一下子？于是修改代码：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -182,8 +190,9 @@ using System; namespace RandomTest
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>再次运行后，输出的数字终于随机了，而且15毫秒以上的暂停才会正常，如果只暂停1毫秒的话，会规律地出现连续5-6个一样的随机数，如果改成5毫秒的暂停的话，这种重复产生一样随机数的概率变成2-3个！
-在网上苦苦搜索了2天，没什么帮助，而在CSDN论坛却很快有人给了解决方法：</p>
+<p>再次运行后，输出的数字终于随机了，而且15毫秒以上的暂停才会正常，如果只暂停1毫秒的话，会规律地出现连续5-6个一样的随机数，如果改成5毫秒的暂停的话，这种重复产生一样随机数的概率变成2-3个！</p>
+
+<p>在网上苦苦搜索了2天，没什么帮助，而在CSDN论坛却很快有人给了解决方法：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -220,8 +229,9 @@ using System; namespace RandomTest
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>把随机对象放在循环的外面就能解决问题！但还是没人能给个解释。估计果然是因为伪随机数的缘故，每次新产生随机种子的时候有时间的参与，所以才会在短时间内产生完全重复一致的“伪随机数”吧！
-又及：网上看到一个提高随机数不重复概率的种子生成方法。</p>
+<p>把随机对象放在循环的外面就能解决问题！但还是没人能给个解释。估计果然是因为伪随机数的缘故，每次新产生随机种子的时候有时间的参与，所以才会在短时间内产生完全重复一致的“伪随机数”吧！</p>
+
+<p>又及：网上看到一个提高随机数不重复概率的种子生成方法。</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -257,12 +267,24 @@ using System; namespace RandomTest
 
 
 
-2014-06-14 写下. 
-     全文共 375 字
+2014-06-14 编辑. 
+     全文共 377 字
       
+
+<span class="categories">
+  
+    <a class='category' href='/category/sui-ji-shu/'>随机数</a>
+  
+</span>
 
 
       
+
+<span class="tags">
+  
+    <a class='tag' href='/tags/c-number/'>C#</a>, <a class='tag' href='/tags/sui-ji-shu/'>随机数</a>
+  
+</span>
 
 
     </p>
@@ -279,49 +301,13 @@ using System; namespace RandomTest
         <a class="basic-alignment left" href="/2014/06/Use-csharp-cenerates-random-numbers/" title="Previous Post: C#生成随机数">&laquo; C#生成随机数</a>
       
       
-        <a class="basic-alignment right" href="/2014/06/random-numbers/" title="Next Post: 随机数">随机数 &raquo;</a>
+        <a class="basic-alignment right" href="/2014/06/random-numbers/" title="Next Post: [非原创]随机数定义">[非原创]随机数定义 &raquo;</a>
       
     </p>
   </footer>
 </article>
 
 </div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/03/rsync-script/">Rsync Script</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
 
 
     </div>

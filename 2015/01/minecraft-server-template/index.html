@@ -66,7 +66,7 @@
 
 </head>
 
-<body   >
+<body   class="no-sidebar"  >
   <header role="banner"><a id="avatar" href="/"></a>   
 <hgroup>
   <h1><a href="/">放羊的博客</a></h1>
@@ -124,7 +124,12 @@
   </header>
 
 
-<div class="entry-content"><figure class='code'><figcaption><span>Minecraft_server_template.txt</span><a href='http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt'>Minecraft_server_template.txt</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="entry-content"><!--more-->
+
+
+
+
+<figure class='code'><figcaption><span>Minecraft_server_template.txt</span><a href='http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt'>Minecraft_server_template.txt</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -194,80 +199,6 @@
 </span><span class='line'><span class="nb">cd</span> -
 </span></code></pre></td></tr></table></div></figure>
 
-
-
-
-<figure class='code'><figcaption><span> (Minecraft_server_template.sh)</span> <a href='/downloads/code/Minecraft_server_template.sh'>download</a></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## MAKE SURE THIS SCRIPT IS AVAILABLE IN YOUR $PATH.</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># It&#39;s highly advisable to create a directory to hold all of your server files. </span>
-</span><span class='line'><span class="c"># The jar will generate quite a few files upon first run and it would get pretty </span>
-</span><span class='line'><span class="c"># messy if there are other files in the same directory.</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## NEEDED INFORMATION</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># This is the location for a Debian/Ubuntu java executable</span>
-</span><span class='line'><span class="nv">javaexec</span><span class="o">=</span>/usr/bin/java
-</span><span class='line'>
-</span><span class='line'><span class="c"># Set this to the directory containing the minecraft_server.jar</span>
-</span><span class='line'><span class="c"># Provide the full path from /</span>
-</span><span class='line'><span class="nv">server_location</span><span class="o">=</span>CHANGE ME BEFORE DOING ANYTHING
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c">## RUNNING THE SERVER</span>
-</span><span class='line'><span class="c">################################################################################</span>
-</span><span class='line'><span class="c"># By cd&#39;ing to the server location</span>
-</span><span class='line'><span class="c"># All server files will be created in this directory.</span>
-</span><span class='line'><span class="nb">cd</span> <span class="nv">$server_location</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># Run the Server</span>
-</span><span class='line'><span class="sb">`</span><span class="nv">$javaexec</span> -Xmx1024M -Xms1024M -jar <span class="nv">$server_location</span>/minecraft_server.jar nogui<span class="sb">`</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># After killing off the server, you will be cd&#39;ed back to the directory you were </span>
-</span><span class='line'><span class="c"># at prior to running this script.</span>
-</span><span class='line'><span class="nb">cd</span> -
-</span></code></pre></td></tr></table></div></figure>
-
 </div>
 
 
@@ -284,11 +215,23 @@
 
 
 2015-01-29 写下. 
-     全文共 621 字
+     全文共 310 字
       
+
+<span class="categories">
+  
+    <a class='category' href='/category/minecraft/'>minecraft</a>
+  
+</span>
 
 
       
+
+<span class="tags">
+  
+    <a class='tag' href='/tags/minecraft/'>minecraft</a>, <a class='tag' href='/tags/script/'>script</a>, <a class='tag' href='/tags/server/'>server</a>, <a class='tag' href='/tags/you-xi/'>游戏</a>
+  
+</span>
 
 
     </p>
@@ -302,52 +245,16 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2015/01/git-post-receive-git-pull/" title="Previous Post: 解决在git的post-receive钩子不能执行git pull">&laquo; 解决在git的post-receive钩子不能执行git pull</a>
+        <a class="basic-alignment left" href="/2015/01/git-post-receive-git-pull/" title="Previous Post: [转]解决在git的post-receive钩子不能执行git pull">&laquo; [转]解决在git的post-receive钩子不能执行git pull</a>
       
       
-        <a class="basic-alignment right" href="/2015/02/title/" title="Next Post: title">title &raquo;</a>
+        <a class="basic-alignment right" href="/2015/02/install-rbenv-in-centos-7/" title="Next Post: 在 CentOS 7 上安装 rbenv">在 CentOS 7 上安装 rbenv &raquo;</a>
       
     </p>
   </footer>
 </article>
 
 </div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/2015/04/install-rbenv-in-centos-7/">Install Rbenv in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-octopress-in-centos-7/">Install Octopress in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/04/install-nodejs-in-centos-7/">Install Nodejs in CentOS 7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/03/rsync-script/">Rsync Script</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2015/02/my-aliyun-server-information/">The Aliyun Server Information</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
 
 
     </div>

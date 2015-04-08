@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | 放羊的博客]]></title>
   <link href="http://dukelazy.github.io/category/linux/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-04-04T14:02:47+08:00</updated>
+  <updated>2015-04-08T11:51:50+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -89,6 +89,21 @@ set LANG=zh_CN.UTF-8
 set LC_ALL=zh_CN.UTF-8
 rake generate
 </code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux常用难记命令]]></title>
+    <link href="http://dukelazy.github.io/2015/02/hard-to-remember-linux-commonly-used-commands/"/>
+    <updated>2015-02-28T14:24:08+08:00</updated>
+    <id>http://dukelazy.github.io/2015/02/hard-to-remember-linux-commonly-used-commands</id>
+    <content type="html"><![CDATA[<pre><code>[root@host named]# lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID: CentOS
+Description:    CentOS Linux release 7.0.1406 (Core)
+Release:        7.0.1406
+Codename:       Core
+</code></pre>
 ]]></content>
   </entry>
   

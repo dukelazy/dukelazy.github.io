@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: webpai | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/webpai/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-08T11:51:50+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Multipart/form-data POST Format]]></title>
+    <link href="http://dukelazy.github.io/2015/01/multipart-form-data-post-format/"/>
+    <updated>2015-01-05T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2015/01/multipart-form-data-post-format</id>
+    <content type="html"><![CDATA[<p>之前用 POST 方式调用很多API都没有问题，这次调作用总是失败，才发现原来这个 WebAPi 需要用 <code>Multipart/form-data</code> 格式调用才可以，记录下用普通POST和 <code>Multipart/form-data</code> 格式调用的抓包数据。更新现在已经可以支持普通的POST了。</p>
+
+<!--more-->
+
+
+<h2>一、General</h2>
+
+<pre><code>POST /oauth/token HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Host: api.s.gitcafe.org
+Content-Length: 234
+Expect: 100-continue
+grant_type=password&amp;username=raven@gitcafe.com&amp;password=[passwordValue]&amp;client_id=0aeef87b0f41e96adde4f323012997961faec5f06210865f7a73c638e542f2bd&amp;client_secret=276ab98bbe499b5c827523b6ad1b095290dbd7e86b98211f84d7d951505389ef&amp;scope=read write
+</code></pre>
+
+<h2>二、Multipart/form-data</h2>
+
+<pre><code>POST /oauth/token HTTP/1.1
+Content-Type: multipart/form-data; boundary="b0e86de3-4c49-42ad-b971-034f42b6634a"
+Host: api.s.gitcafe.org
+Content-Length: 1021
+Expect: 100-continue
+Connection: Keep-Alive
+
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="grant_type"
+
+password
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="username"
+
+raven@gitcafe.com
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="password"
+
+[passwordValue]
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="client_id"
+
+0aeef87b0f41e96adde4f323012997961faec5f06210865f7a73c638e542f2bd
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="client_secret"
+
+276ab98bbe499b5c827523b6ad1b095290dbd7e86b98211f84d7d951505389ef
+--b0e86de3-4c49-42ad-b971-034f42b6634a
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: form-data; name="scope"
+
+read write
+--b0e86de3-4c49-42ad-b971-034f42b6634a--
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

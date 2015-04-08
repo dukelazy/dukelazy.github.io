@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: node.js | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/node-dot-js/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2015-04-08T11:51:50+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在 CentOS 7 上安装 Node.js]]></title>
+    <link href="http://dukelazy.github.io/2014/12/install-nodejs-in-centos-7/"/>
+    <updated>2014-12-31T12:20:56+08:00</updated>
+    <id>http://dukelazy.github.io/2014/12/install-nodejs-in-centos-7</id>
+    <content type="html"><![CDATA[<p>Node.Js 是一个 Javascript 运行环境 (runtime),无论在 Windows 还是 Linux 上安装和使用都很方便.现在有很多程序都是使用 Node.Js 作为运行框架, Node.Js 也有非常丰富的扩展库.下面主要记录我在 Centos 7 上的安装过程.使用两种不同的方式安装,我要使用最新的稳定版本所以使用第二种方法安装的.</p>
+
+<!--more-->
+
+
+<h2>系统信息</h2>
+
+<pre><code class="bash">[dukelazy@localhost ~]$ cat /etc/redhat-release
+CentOS Linux release 7.0.1406 (Core)
+[dukelazy@localhost ~]$ uname -r
+3.10.0-123.20.1.el7.x86_64
+[dukelazy@localhost ~]$ python --version
+Python 2.7.5
+</code></pre>
+
+<h2>安装方法一</h2>
+
+<p>使用yum安装.适用于有管理员权限的用户，安装后整个系统全部用户均可用。</p>
+
+<pre><code class="bash">[root@localhost ~]# curl -sL https://rpm.nodesource.com/setup | bash -
+[root@localhost ~]# yum install -y gcc-c++ make zlib-devel openssl-devel
+[root@localhost ~]# yum install -y nodejs
+</code></pre>
+
+<p>查看安装的版本</p>
+
+<pre><code class="bash">[dukelazy@localhost ~]$ node --version
+v0.10.38
+[dukelazy@localhost ~]$ npm --version
+1.4.28
+</code></pre>
+
+<h2>安装方法二</h2>
+
+<p>适用于没有管理员权限或者想安装不同版本等情况.
+在<a href="https://nodejs.org/download/" title="Node.js">Node.js</a>官网查看符合自己系统版本的包下载解压到安装目录,配置环境变量.</p>
+
+<pre><code>[dukelazy@localhost ~]$ wget http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz
+[dukelazy@localhost ~]$ tar zvxf node-v0.12.2-linux-x64.tar.gz
+[dukelazy@localhost ~]$ mkdir -p $HOME/opt
+[dukelazy@localhost ~]$ mv node-v0.12.2-linux-x64 $HOME/opt/
+[dukelazy@localhost ~]$ mkdir -p $HOME/bin
+[dukelazy@localhost ~]$ ln -s $HOME/opt/node-v0.12.2-linux-x64/bin/node $HOME/bin/
+[dukelazy@localhost ~]$ ln -s $HOME/opt/node-v0.12.2-linux-x64/bin/npm $HOME/bin/
+[dukelazy@localhost ~]$ source $HOME/.bash_profile
+[dukelazy@localhost ~]$ rm -rf node-v0.12.2-linux-x64.tar.gz
+</code></pre>
+
+<p>查看安装的版本</p>
+
+<pre><code>[dukelazy@localhost ~]$ node --version
+v0.12.2
+[dukelazy@localhost ~]$ npm --version
+2.7.4
+</code></pre>
+
+<h2><em>参考资料</em></h2>
+
+<ul>
+<li><em><a href="https://nodejs.org" title="Node.js">https://nodejs.org/</a>. [2014-12-31].</em></li>
+<li><em><a href="https://github.com/joyent/node" title="Node.js Git Repository">Node.js in github</a>. [2014-12-31].</em></li>
+<li><em><a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager" title="Installing Node.js via package manager">Installing Node.js via package manager</a>. [2014-12-31].</em></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
