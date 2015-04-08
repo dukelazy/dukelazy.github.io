@@ -3,8 +3,8 @@ layout: post
 title: "Git常用难记命令"
 date: 2015-02-28 14:19:34 +0800
 comments: true
-categories: "Program-career"
-tags:  ["git","Command"]
+categories: "git"
+tags:  ["git","命令行","手册"]
 ---
 
 {% blockquote @shepherdlazy,twitter http://www.twitter.com/shepherdlazy %}

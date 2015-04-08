@@ -6,9 +6,9 @@ Create_by: Shepherd Lazy <shepherd.lazy@Gmail.com>
 Date_Time: 2014-10-17 9:23:13
 layout: post
 title: 个人信息管理
-Subtitle: #副标题
-categories: #jekyll or [jekyll,hook,github]
-tags:  #git or [git,hook,钩子]
+Subtitle: 
+categories: 
+tags: 
 Description:  
 ---
 

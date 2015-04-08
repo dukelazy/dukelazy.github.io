@@ -4,15 +4,16 @@ Author: Shepherd Lazy
 Create_by: Shepherd Lazy <shepherd.lazy@Gmail.com>
 Date_Time: 2015-1-11 3:13:14 
 layout: post
-title: 解决在git的post-receive钩子不能执行git pull
+title: "[转]解决在git的post-receive钩子不能执行git pull"
 Subtitle: 
-categories: jekyll
-tags:  [git,hook,钩子]
+categories: "git"
+tags:  ["git","hook"]
 Description:  
 ---
 
 有一个需求是本地git在push到远程 git repo 之后，在远程服务器上自动在/dir/foo下执行 git pull 的操作。想来是一个很简单的需求，不就是在远程的 foo.git 仓库中的 hook 里加一个 post-receive 的钩子，然后在钩子里加入一个 git pull 的操作。但是实际操作的时候发现有问题的，因为这样忽略了一个小细节的问题。
 
+<!--more-->
 
 操作之前，头脑里想的代码如下：
 

@@ -3,7 +3,8 @@ layout: post
 title: "markdown-howto"
 date: 2015-02-13 13:03:43 +0800
 comments: true
-categories: 
+categories: "markdown"
+tags: ["markdown"]
 ---
 
 <h2 id="overview">概述</h2>

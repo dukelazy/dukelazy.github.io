@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "dillinger"
+title: "dillinger 使用说明"
 date: 2015-02-13 13:01:08 +0800
 comments: true
-categories: 
+categories: "markdown"
+tags: ["markdown","editor","webtool"]
 ---
 # Dillinger
 
@@ -12,7 +13,9 @@ Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered H
   - Type some Markdown on the left
   - See HTML in the right
   - Magic
+  
 <!--more-->
+
 Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site] [1]:
 
 > The overriding design goal for Markdown's

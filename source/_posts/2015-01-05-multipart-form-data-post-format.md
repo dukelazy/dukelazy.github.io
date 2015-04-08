@@ -1,9 +1,14 @@
 ---
 layout: post
-title: POST Format
-categories: jekyll
-tags:  markdown
+title: "Multipart/form-data POST Format"
+updated: 20154-04-04 20:50:47 +0800
+categories: "webapi"
+tags: ["http","https","webpai","form-data"]
 ---
+
+之前用 POST 方式调用很多API都没有问题，这次调作用总是失败，才发现原来这个 WebAPi 需要用 `Multipart/form-data` 格式调用才可以，记录下用普通POST和 `Multipart/form-data` 格式调用的抓包数据。更新现在已经可以支持普通的POST了。
+
+<!--more-->
 
 一、General
 --------------------

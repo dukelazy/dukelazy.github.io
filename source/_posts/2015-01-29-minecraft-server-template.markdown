@@ -3,8 +3,11 @@ layout: post
 title: "Minecraft server template"
 date: 2015-01-29 0‏‎1:43:02 +0800
 comments: true
-categories: 
+categories: "Minecraft"
+tags: ["游戏","server","script","minecraft"]
 ---
+
+<!--more-->
 
 ``` bash Minecraft_server_template.txt http://hydra-media.cursecdn.com/minecraft-zh.gamepedia.com/a/a9/Minecraft_server_template.txt Minecraft_server_template.txt
 #!/bin/bash
@@ -42,5 +45,3 @@ cd $server_location
 # at prior to running this script.
 cd -
 ```
-
-{% include_code Minecraft_server_template.sh %}

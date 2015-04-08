@@ -1,14 +1,11 @@
 ---
 layout: post
-title: "cmd markdown editor"
+title: "cmd markdown editor 使用说明"
 date: 2015-02-13 13:02:27 +0800
 comments: true
-categories: 
+categories: "markdown"
+tags: ["markdown","editor","webtool"]
 ---
-
-# 欢迎使用 Cmd - 在线 Markdown 编辑阅读器
-
-------
 
 我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，**Cmd Markdown** 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。
 
@@ -159,8 +156,8 @@ Bob-->Alice: I am good thanks!
 
 再一次感谢您花费时间阅读这份欢迎稿，点击 <i class="icon-file"></i> (Ctrl+Alt+N) 开始撰写新的文稿吧！祝您在这里记录、阅读、分享愉快！
 
-作者 [@ghosert][3]     
-2014 年 07月 07日    
+作者 [@ghosert][3]
+2014 年 07月 07日
 
 [^LaTeX]: 支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
 

@@ -3,8 +3,8 @@ layout: post
 title: "Linux常用难记命令"
 date: 2015-02-28 14:24:08 +0800
 comments: true
-categories: "Program-career"
-tags:  ["linux","Command"]
+categories: "linux"
+tags:  ["linux","命令行","CentOS","手册"]
 ---
 
 ```
