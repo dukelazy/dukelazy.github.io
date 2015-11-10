@@ -4,7 +4,7 @@
   <title><![CDATA[放羊的博客]]></title>
   <link href="http://dukelazy.github.io/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-04-08T11:51:50+08:00</updated>
+  <updated>2015-11-10T18:02:42+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -12,6 +12,147 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[MFS Directory Tree Planning]]></title>
+    <link href="http://dukelazy.github.io/2015/04/mfs-directory-tree-planning/"/>
+    <updated>2015-04-04T22:39:24+08:00</updated>
+    <id>http://dukelazy.github.io/2015/04/mfs-directory-tree-planning</id>
+    <content type="html"><![CDATA[<p>为不同文件夹根据重要级别,可再生级别,保密级别配置不同的备份和共享访问策略</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/ mfs                   #根文件系统,[环境,程序,数据]
+</span><span class='line'>+---scm     #GitRepository   svnRepository
+</span><span class='line'>+---src     #源代码,没有纳入版本库的,还有第三方下载的,重要版本的发布版源码
+</span><span class='line'>+---archive #dist,软件程序发布包
+</span><span class='line'>+---doc     #document,文档,图书等
+</span><span class='line'>+---media   #对媒体资料
+</span><span class='line'>|   +---music   #音乐资料
+</span><span class='line'>|   +---videos  #视频资料
+</span><span class='line'>|   +---recorder#录音资料
+</span><span class='line'>|   \---gallery #相册
+</span><span class='line'>+---backup  #重要的备份,数据库备份,服务器配置,运行环境配置等,操作系统等非常大的备份,不打算放在这里
+</span><span class='line'>+---tools   #这里包含mfs管理脚本,如果只放在mfs中当mfs没有挂载的时候会无法使用
+</span><span class='line'>\---www # 网站,这个主要是为了提高小文件读取速度,如果配置好备份等,可以从scm与backup等地快速重建
+</span><span class='line'>#虚拟目录
+</span><span class='line'>share   #共享目录-samba
+</span><span class='line'>nfs     #NFS共享
+</span><span class='line'>ftp     #ftp读写目录-ftp
+</span><span class='line'>pub     #共享目录-http
+</span><span class='line'>ext     #扩展池挂载目录
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>可以重建的(包括可以从网络下载的)用mfspool-ext,这个池暂时不作冗余备份
+</span><span class='line'>+---software
+</span><span class='line'>+---SRE     #软件运行环境(software run environment)
+</span><span class='line'>+---Users
+</span><span class='line'>|   +---dukelazy
+</span><span class='line'>|   +---shepherd
+</span><span class='line'>|   \---Raven
+</span><span class='line'>+---machine #不同的计算机或操作系统
+</span><span class='line'>\---workspace   #工作目录,主要指开发和文档编写
+</span><span class='line'>+---movie
+</span><span class='line'>+---current
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>+---list
+</span><span class='line'>+---Resources</span></code></pre></td></tr></table></div></figure>
+
+
+<p>rsync-to-zfs</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#! /bin/bash
+</span><span class='line'>#rsync -avP /mfs/pub/mnt/sdc1 /mfs/pub/mnt/sdb6/
+</span><span class='line'>#rsync -avP /mfs/pub/mnt/sdc2 /mfs/pub/mnt/sdb6/
+</span><span class='line'>#rsync -avP /mfs/pub/mnt/sdd3 /mfs/pub/mnt/sdb6/
+</span><span class='line'>
+</span><span class='line'>#rsync -avP /mfs/pub/mnt/sde3 /mfs/pub/mnt/sdb6/
+</span><span class='line'>#rsync -avP /mfs/pub/mnt/sde1 /mfs/pub/mnt/sdb6/
+</span><span class='line'>
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sde1/KuGou /mfspool/media/music
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdc1/galleries   /mfspool/media/gallery
+</span><span class='line'>
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdd3/SoftWare/ /mfspool-ext/software/gitcafe-software/
+</span><span class='line'>
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdc1/行车记录仪-过年 /mfspool/media/videos
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdc1/结婚照光盘镜像 /mfspool/media/gallery
+</span><span class='line'>
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdc2/server1.myrsoft.net /mfspool/backup
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdc2/yanyu /mfspool/backup
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sde1/电影 /mfspool-ext/movie
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sde3/happycasts.net /mfspool-ext/movie
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sde3/wpf教程  /mfspool-ext/movie
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/transmission /mfspool-ext/movie
+</span><span class='line'>
+</span><span class='line'>rsync -avP /mfs/pub/mnt/sdb6/sdd3/迅雷下载 /mfspool-ext/software</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rsync Script]]></title>
@@ -2924,104 +3065,6 @@ Godaddy、</p>
 
 
 <hr />
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[在 CentOS 上编译安装 Ruby 1.9.3]]></title>
-    <link href="http://dukelazy.github.io/2014/12/compiler-ruby-1.9.3-in-centos/"/>
-    <updated>2014-12-20T18:16:01+08:00</updated>
-    <id>http://dukelazy.github.io/2014/12/compiler-ruby-1.9.3-in-centos</id>
-    <content type="html"><![CDATA[<p>以下命令都是在超级管理员权限下执行，如果不是超级管理员，请自行调整安装目录和命令。</p>
-
-<!--more-->
-
-
-<h2>准备编译环境</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo yum -y install make gcc openssl-devel zlib-devel gcc gcc-c++ make autoconf readline-devel curl-devel expat-devel gettext-devel ncurses-devel sqlite3-devel mysql-devel httpd-devel wget which
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>编译 yaml 支持</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> /usr/src
-</span><span class='line'>wget http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
-</span><span class='line'>tar zxf yaml-0.1.4.tar.gz
-</span><span class='line'><span class="nb">cd </span>yaml-0.1.4
-</span><span class='line'>./configure --prefix<span class="o">=</span>/usr/local
-</span><span class='line'>make <span class="o">&amp;&amp;</span> make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>编译 Ruby</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> /usr/src
-</span><span class='line'>wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.gz
-</span><span class='line'>tar zxf ruby-1.9.3-p551.tar.gz
-</span><span class='line'><span class="nb">cd </span>ruby-1.9.3-p551
-</span><span class='line'>./configure --prefix<span class="o">=</span>/usr/local --disable-install-doc --with-opt-dir<span class="o">=</span>/usr/local/lib
-</span><span class='line'>make <span class="o">&amp;&amp;</span> make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>检查安装</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>whereis ruby
-</span><span class='line'>ruby --version
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>编译错误处理</h2>
-
-<ul>
-<li>编译Ruby的时候遇到如下错误，解决办法参照网页 http://blog.csdn.net/iefreer/article/details/18828515</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ossl_pkey_ec.c:765: warning: assignment makes pointer from integer without a cast
-</span><span class='line'>ossl_pkey_ec.c:819: error: ‘EC_GROUP_new_curve_GF2m’ undeclared <span class="o">(</span>first use in this <span class="k">function</span><span class="o">)</span>
-</span><span class='line'>ossl_pkey_ec.c:819: error: <span class="o">(</span>Each undeclared identifier is reported only once
-</span><span class='line'>ossl_pkey_ec.c:819: error: <span class="k">for</span> each <span class="k">function</span> it appears in.<span class="o">)</span>
-</span><span class='line'>ossl_pkey_ec.c: In <span class="k">function</span> ‘ossl_ec_group_set_seed’:
-</span><span class='line'>ossl_pkey_ec.c:1114: warning: comparison between signed and unsigned integer expressions
-</span><span class='line'>make<span class="o">[</span>1<span class="o">]</span>: *** <span class="o">[</span>ossl_pkey_ec.o<span class="o">]</span> Error 1
-</span><span class='line'>make<span class="o">[</span>1<span class="o">]</span>: Leaving directory <span class="sb">`</span>/usr/src/ruby-1.9.2-p330/ext/openssl<span class="err">&#39;</span>
-</span><span class='line'>make: *** <span class="o">[</span>mkmain.sh<span class="o">]</span> Error 1
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><em>参考资料</em></h2>
-
-<ul>
-<li>http://www.cnblogs.com/iosdev/p/3320671.html</li>
-<li>http://blog.csdn.net/iefreer/article/details/18828515</li>
-</ul>
-
 ]]></content>
   </entry>
   
