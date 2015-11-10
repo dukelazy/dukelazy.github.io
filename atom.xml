@@ -4,7 +4,7 @@
   <title><![CDATA[放羊的博客]]></title>
   <link href="http://dukelazy.github.io/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-11-10T18:02:42+08:00</updated>
+  <updated>2015-11-10T18:10:55+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -18,7 +18,201 @@
     <link href="http://dukelazy.github.io/2015/04/mfs-directory-tree-planning/"/>
     <updated>2015-04-04T22:39:24+08:00</updated>
     <id>http://dukelazy.github.io/2015/04/mfs-directory-tree-planning</id>
-    <content type="html"><![CDATA[<p>为不同文件夹根据重要级别,可再生级别,保密级别配置不同的备份和共享访问策略</p>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/
+</span><span class='line'>+---home 
+</span><span class='line'>|   +---git 
+</span><span class='line'>|   \---mfs 
+</span><span class='line'>+---mfs -&gt; /home/mfs 
+</span><span class='line'>+---mfspool 
+</span><span class='line'>+---mfspool-ext </span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/mfs                              # 根文件系统,[环境,程序,数据]
+</span><span class='line'>+---scm      -&gt; mfspool/scm       # GitRepository   svnRepository
+</span><span class='line'>+---src      -&gt; mfspool/src       # 源代码,没有纳入版本库的,还有第三方下载的,重要版本的发布版源码
+</span><span class='line'>+---archive  -&gt; mfspool/archive   # dist,软件程序发布包
+</span><span class='line'>+---doc      -&gt; mfspool/doc       # document,文档,图书等
+</span><span class='line'>+---media    -&gt; mfspool/media     # 对媒体资料
+</span><span class='line'>|   +---music                          # 音乐资料 -&gt; mfspool/media/music 
+</span><span class='line'>|   +---videos                         # 视频资料 -&gt; mfspool/media/videos 
+</span><span class='line'>|   +---recorder                       # 录音资料 -&gt; mfspool/media/recorder 
+</span><span class='line'>|   +---movie     -&gt; mfspool-ext/movie # 电影等
+</span><span class='line'>|   \---gallery                        # 相册 -&gt; mfspool/media/gallery 
+</span><span class='line'>+---software -&gt; mfspool-ext/software   #
+</span><span class='line'>+---backup   -&gt; mfspool/backup    # 重要的备份,数据库备份,服务器配置,运行环境配置等,操作系统等非常大的备份,不打算放在这里
+</span><span class='line'>|   +---current   -&gt; mfspool-ext/current    # 
+</span><span class='line'>|   +---SRE                                 # 软件运行环境(software run environment) -&gt; mfspool/SRE
+</span><span class='line'>|   +---Users                               # 不同用户的用户目录 -&gt; mfspool/users
+</span><span class='line'>|   +---machine                             # 不同的计算机或操作系统 -&gt; mfspool/machine
+</span><span class='line'>|   \---workspace -&gt; mfspool-ext/workspace  # 工作目录,主要指开发和文档编写
+</span><span class='line'>+---www      -&gt; mfspool/www        # 网站,这个主要是为了提高小文件读取速度,如果配置好备份等,可以从scm与backup等地快速重建
+</span><span class='line'>+---tools    -&gt; mfspool/tools      # 这里包含mfs管理脚本,如果只放在mfs中当mfs没有挂载的时候会无法使用
+</span><span class='line'>+---tmp      -&gt; mfspool-ext/tmp    # 
+</span><span class='line'>\---pub      -&gt; mfspool/pub        # 公开资料，尽量都是软连接</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># zfs list
+</span><span class='line'>NAME                     USED  AVAIL  REFER  MOUNTPOINT
+</span><span class='line'>mfspool                  356G  2.29T   173G  /mfspool
+</span><span class='line'>mfspool-ext              794G  1.86T   257G  /mfspool-ext
+</span><span class='line'>mfspool-ext/current      136K  1.86T   136K  /mfs/backup/current
+</span><span class='line'>mfspool-ext/movie        347G  1.86T   347G  /mfs/media/movie
+</span><span class='line'>mfspool-ext/software     190G  1.86T   190G  /mfspool-ext/software
+</span><span class='line'>mfspool-ext/tmp          136K  1.86T   136K  /mfs/tmp
+</span><span class='line'>mfspool-ext/workspace    136K  1.86T   136K  /mfs/backup/workspace
+</span><span class='line'>mfspool/archive         13.8G  2.29T  13.8G  /mfs/archive
+</span><span class='line'>mfspool/backup          96.9G  2.29T  96.9G  /mfs/backup
+</span><span class='line'>mfspool/backup/SRE       136K  2.29T   136K  /mfs/backup/SRE
+</span><span class='line'>mfspool/backup/machine   136K  2.29T   136K  /mfs/backup/machine
+</span><span class='line'>mfspool/backup/users     136K  2.29T   136K  /mfs/backup/users
+</span><span class='line'>mfspool/doc             2.43G  2.29T  2.43G  /mfs/doc
+</span><span class='line'>mfspool/media           69.8G  2.29T   176K  /mfs/media
+</span><span class='line'>mfspool/media/gallery   39.3G  2.29T  39.3G  /mfs/media/gallery
+</span><span class='line'>mfspool/media/music     3.04G  2.29T  3.04G  /mfs/media/music
+</span><span class='line'>mfspool/media/recorder   969M  2.29T   969M  /mfs/media/recorder
+</span><span class='line'>mfspool/media/videos    26.6G  2.29T  26.6G  /mfs/media/videos
+</span><span class='line'>mfspool/pub              136K  2.29T   136K  /mfs/pub
+</span><span class='line'>mfspool/scm              168M  2.29T   168M  /mfs/scm
+</span><span class='line'>mfspool/src              136K  2.29T   136K  /mfs/src
+</span><span class='line'>mfspool/tools            136K  2.29T   136K  /mfs/tools
+</span><span class='line'>mfspool/www              136K  2.29T   136K  /mfs/www</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># zpool status
+</span><span class='line'>  pool: mfspool
+</span><span class='line'> state: ONLINE
+</span><span class='line'>status: Some supported features are not enabled on the pool. The pool can
+</span><span class='line'>    still be used, but some features are unavailable.
+</span><span class='line'>action: Enable all features using 'zpool upgrade'. Once this is done,
+</span><span class='line'>    the pool may no longer be accessible by software that does not support
+</span><span class='line'>    the features. See zpool-features(5) for details.
+</span><span class='line'>  scan: none requested
+</span><span class='line'>config:
+</span><span class='line'>
+</span><span class='line'>    NAME                                          STATE     READ WRITE CKSUM
+</span><span class='line'>    mfspool                                       ONLINE       0     0     0
+</span><span class='line'>      mirror-0                                    ONLINE       0     0     0
+</span><span class='line'>        usb-ST3000VX_000-1ES166_000000000000-0:0  ONLINE       0     0     0
+</span><span class='line'>        usb-ST3000VX_000-1ES166_000000000000-0:1  ONLINE       0     0     0
+</span><span class='line'>
+</span><span class='line'>errors: No known data errors
+</span><span class='line'>
+</span><span class='line'>  pool: mfspool-ext
+</span><span class='line'> state: ONLINE
+</span><span class='line'>status: Some supported features are not enabled on the pool. The pool can
+</span><span class='line'>    still be used, but some features are unavailable.
+</span><span class='line'>action: Enable all features using 'zpool upgrade'. Once this is done,
+</span><span class='line'>    the pool may no longer be accessible by software that does not support
+</span><span class='line'>    the features. See zpool-features(5) for details.
+</span><span class='line'>  scan: none requested
+</span><span class='line'>config:
+</span><span class='line'>
+</span><span class='line'>    NAME                                        STATE     READ WRITE CKSUM
+</span><span class='line'>    mfspool-ext                                 ONLINE       0     0     0
+</span><span class='line'>      usb-ST3000VX_000-1ES166_000000000000-0:2  ONLINE       0     0     0
+</span><span class='line'>
+</span><span class='line'>errors: No known data errors
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>为不同文件夹根据重要级别,可再生级别,保密级别配置不同的备份和共享访问策略</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
