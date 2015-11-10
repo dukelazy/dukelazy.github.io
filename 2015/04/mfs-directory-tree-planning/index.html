@@ -17,26 +17,7 @@
 6
 7
 /
-+---home | +---git | \---mfs +---mfs -&gt; /home/mfs +---mfspool +---mfspool-ext 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20 &hellip;">
++---home | +---git | \---mfs +---mfs -&gt; /home/mfs +---mfspool +---mfspool-ext 注意因为 mfspool-ext 的一些目录设置为挂载到 mfspool 的子目录下，如果先挂载 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -140,6 +121,8 @@
 <!--more-->
 
 
+<p>注意因为 mfspool-ext 的一些目录设置为挂载到 mfspool 的子目录下，如果先挂载 mfspool-ext 可能会造成 mfspool 无法挂载到 <code>/mfs</code> 目录下,这个暂时没有找到可以调整挂载顺序的方法，所以使用的时候要注意观察 <code>/mfs</code> 目录下是否有 <code>ftp</code> 文件夹. 如果没有可能 mfspool 挂载失败了要手动导出后重新按顺序挂载.</p>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -162,23 +145,27 @@
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>/mfs                              # 根文件系统,[环境,程序,数据]
 </span><span class='line'>+---scm      -&gt; mfspool/scm       # GitRepository   svnRepository
 </span><span class='line'>+---src      -&gt; mfspool/src       # 源代码,没有纳入版本库的,还有第三方下载的,重要版本的发布版源码
 </span><span class='line'>+---archive  -&gt; mfspool/archive   # dist,软件程序发布包
 </span><span class='line'>+---doc      -&gt; mfspool/doc       # document,文档,图书等
-</span><span class='line'>+---media    -&gt; mfspool/media     # 对媒体资料
-</span><span class='line'>|   +---music                          # 音乐资料 -&gt; mfspool/media/music 
-</span><span class='line'>|   +---videos                         # 视频资料 -&gt; mfspool/media/videos 
-</span><span class='line'>|   +---recorder                       # 录音资料 -&gt; mfspool/media/recorder 
-</span><span class='line'>|   +---movie     -&gt; mfspool-ext/movie # 电影等
-</span><span class='line'>|   \---gallery                        # 相册 -&gt; mfspool/media/gallery 
+</span><span class='line'>+---media    # 媒体资料
+</span><span class='line'>|   +---music -&gt; mfspool/music            # 音乐资料
+</span><span class='line'>|   +---videos -&gt; mfspool/videos          # 视频资料
+</span><span class='line'>|   +---recorder -&gt; mfspool/recorder      # 录音资料
+</span><span class='line'>|   +---movie -&gt; mfspool-ext/movie        # 电影等
+</span><span class='line'>|   \---gallery -&gt; mfspool/media/gallery  # 相册
 </span><span class='line'>+---software -&gt; mfspool-ext/software   #
-</span><span class='line'>+---backup   -&gt; mfspool/backup    # 重要的备份,数据库备份,服务器配置,运行环境配置等,操作系统等非常大的备份,不打算放在这里
+</span><span class='line'>+---backup    # 重要的备份,数据库备份,服务器配置,运行环境配置等,操作系统等非常大的备份,不打算放在这里
+</span><span class='line'>|   +---SRE -&gt; mfspool/SRE                  # 软件运行环境(software run environment)
+</span><span class='line'>|   +---data -&gt; mfspool/machine             # 不同的计算机或操作系统
+</span><span class='line'>|   +---secret -&gt; mfspool/secret            # 
+</span><span class='line'>|   +---Users-&gt; mfspool/users               # 不同用户的用户目录
+</span><span class='line'>|   +---machine -&gt; mfspool-ext/machine          # 不同的计算机或操作系统
 </span><span class='line'>|   +---current   -&gt; mfspool-ext/current    # 
-</span><span class='line'>|   +---SRE                                 # 软件运行环境(software run environment) -&gt; mfspool/SRE
-</span><span class='line'>|   +---Users                               # 不同用户的用户目录 -&gt; mfspool/users
-</span><span class='line'>|   +---machine                             # 不同的计算机或操作系统 -&gt; mfspool/machine
 </span><span class='line'>|   \---workspace -&gt; mfspool-ext/workspace  # 工作目录,主要指开发和文档编写
 </span><span class='line'>+---www      -&gt; mfspool/www        # 网站,这个主要是为了提高小文件读取速度,如果配置好备份等,可以从scm与backup等地快速重建
 </span><span class='line'>+---tools    -&gt; mfspool/tools      # 这里包含mfs管理脚本,如果只放在mfs中当mfs没有挂载的时候会无法使用
@@ -462,7 +449,7 @@
 
 
 2015-11-10 编辑. 
-     全文共 1095 字
+     全文共 1125 字
       
 
 
