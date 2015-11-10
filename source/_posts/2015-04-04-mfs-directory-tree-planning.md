@@ -18,24 +18,28 @@ categories:
 ```
 
 <!--more-->
+注意因为 mfspool-ext 的一些目录设置为挂载到 mfspool 的子目录下，如果先挂载 mfspool-ext 可能会造成 mfspool 无法挂载到 `/mfs` 目录下,这个暂时没有找到可以调整挂载顺序的方法，所以使用的时候要注意观察 `/mfs` 目录下是否有 `ftp` 文件夹. 如果没有可能 mfspool 挂载失败了要手动导出后重新按顺序挂载.
+
 ```
 /mfs                              # 根文件系统,[环境,程序,数据]
 +---scm      -> mfspool/scm       # GitRepository   svnRepository
 +---src      -> mfspool/src       # 源代码,没有纳入版本库的,还有第三方下载的,重要版本的发布版源码
 +---archive  -> mfspool/archive   # dist,软件程序发布包
 +---doc      -> mfspool/doc       # document,文档,图书等
-+---media    -> mfspool/media     # 对媒体资料
-|   +---music                          # 音乐资料 -> mfspool/media/music 
-|   +---videos                         # 视频资料 -> mfspool/media/videos 
-|   +---recorder                       # 录音资料 -> mfspool/media/recorder 
-|   +---movie     -> mfspool-ext/movie # 电影等
-|   \---gallery                        # 相册 -> mfspool/media/gallery 
++---media    # 媒体资料
+|   +---music -> mfspool/music            # 音乐资料
+|   +---videos -> mfspool/videos          # 视频资料
+|   +---recorder -> mfspool/recorder      # 录音资料
+|   +---movie -> mfspool-ext/movie        # 电影等
+|   \---gallery -> mfspool/media/gallery  # 相册
 +---software -> mfspool-ext/software   #
-+---backup   -> mfspool/backup    # 重要的备份,数据库备份,服务器配置,运行环境配置等,操作系统等非常大的备份,不打算放在这里
++---backup    # 重要的备份,数据库备份,服务器配置,运行环境配置等,操作系统等非常大的备份,不打算放在这里
+|   +---SRE -> mfspool/SRE                  # 软件运行环境(software run environment)
+|   +---data -> mfspool/machine             # 不同的计算机或操作系统
+|   +---secret -> mfspool/secret            # 
+|   +---Users-> mfspool/users               # 不同用户的用户目录
+|   +---machine -> mfspool-ext/machine          # 不同的计算机或操作系统
 |   +---current   -> mfspool-ext/current    # 
-|   +---SRE                                 # 软件运行环境(software run environment) -> mfspool/SRE
-|   +---Users                               # 不同用户的用户目录 -> mfspool/users
-|   +---machine                             # 不同的计算机或操作系统 -> mfspool/machine
 |   \---workspace -> mfspool-ext/workspace  # 工作目录,主要指开发和文档编写
 +---www      -> mfspool/www        # 网站,这个主要是为了提高小文件读取速度,如果配置好备份等,可以从scm与backup等地快速重建
 +---tools    -> mfspool/tools      # 这里包含mfs管理脚本,如果只放在mfs中当mfs没有挂载的时候会无法使用
