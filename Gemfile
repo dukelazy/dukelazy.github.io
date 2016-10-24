@@ -1,5 +1,6 @@
-source "https://rubygems.org"
+#source "http://rubygems.org"
 #source "https://ruby.taobao.org"
+source "http://gems.ruby-china.org/"
 
 group :development do
   gem 'rake', '~> 10.0'
