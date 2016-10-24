@@ -60,6 +60,13 @@ mkdir -p public
     [dukelazy@localhost octopress]$ rbenv rehash
     ```
 
+    Ubuntu 14.04.5 LTS
+    
+    ``` bash
+    apt-get install zlib1g
+    apt-get install zlib1g-dev
+    ```
+
 2. 在安装 Ruby 之前没有安装 openssl-devel,安装 openssl-devel 后重新安装 Ruby 即可.
 
     - 错误信息如下:
@@ -78,4 +85,11 @@ mkdir -p public
     [dukelazy@localhost octopress]$ sudo yum install openssl-devel
     [dukelazy@localhost octopress]$ rbenv install 1.9.3-p551
     [dukelazy@localhost octopress]$ rbenv rehash
+    ```
+
+    Ubuntu 14.04.5 LTS
+
+    ``` bash
+    apt-get install openssl
+    apt-get install libssl-dev
     ```
