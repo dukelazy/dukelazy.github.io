@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>定制Apache索引样式 - 放羊的博客</title>
+  <meta name="author" content="Duke Lazy">
+
+  
+  <meta name="description" content="虽然很多服务都迁移到Nginx了，但是一直不太满意Nginx的目录索引展示效果，所以目录索引的网站一直用的还是Apache。不过好像Nginx可以用fancyindex模块来定制所以的展示方式，http://mirrors.163.com 好像用的就是这个，不过还没有研究，有时间再看看吧。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dukelazy.github.io/2015/12/apache/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="放羊的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.lug.ustc.edu.cn/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   class="no-sidebar"  >
+  <header role="banner"><a id="avatar" href="/"></a>   
+<hgroup>
+  <h1><a href="/">放羊的博客</a></h1>
+  
+    <h2>万能的技术,苦逼的技术.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="dukelazy.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+<li><a href="/life-thoughts">生活杂谈</a></li>
+<li><a href="/technology-programming">程序生涯</a></li>
+<li><a href="/messy">杂七杂八</a></li>
+<li><a href="/detailed-list">各项清单</a></li>
+<li><a href="/project">开源项目</a></li>
+  <li><a href="/archives">文章归档</a></li>
+  <li><a href="/tags">标签</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">定制Apache索引样式</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2015-12-08
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><!-- more -->
+
+
+<p>虽然很多服务都迁移到Nginx了，但是一直不太满意Nginx的目录索引展示效果，所以目录索引的网站一直用的还是Apache。不过好像Nginx可以用fancyindex模块来定制所以的展示方式，http://mirrors.163.com 好像用的就是这个，不过还没有研究，有时间再看看吧。
+最近忽然想要为目录展示的时候为一些特殊的目录加上一个说明，对目录做一个说明。所以需要定制下Apache的索引样式，下面记录下过程。</p>
+
+<!--more-->
+
+
+<h2>1.查看系统的Apache版本</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[dukelazy@coreServer ~]# httpd -v
+</span><span class='line'>Server version: Apache/2.4.6 (CentOS)
+</span><span class='line'>Server built:   Aug 24 2015 18:11:25</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>2.到官网查看说明文档</h2>
+
+<p>Apache的目录索引(也就是目录浏览)功能是 <code>mod_autoindex</code> 模块实现的。  <code>mod_autoindex</code> 模块官方说明文档的网址是 http://httpd.apache.org/docs/2.4/mod/mod_autoindex.html</p>
+
+<h2>3.修改配置文件</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nt">&lt;Directory</span> <span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nb">Options</span> Indexes MultiViews FollowSymlinks
+</span><span class='line'>  <span class="nb">indexOptions</span> VersionSort FoldersFirst
+</span><span class='line'>  <span class="nb">IndexIgnore</span> favicon.ico header.html footer.html images
+</span><span class='line'>  <span class="nb">HeaderName</span> .mfs/HEADER.html
+</span><span class='line'>  <span class="nb">ReadmeName</span> .mfs/README.html
+</span><span class='line'>  <span class="nb">IndexOrderDefault</span> Ascending Name
+</span><span class='line'>  <span class="nb">AllowOverride</span> <span class="k">None</span>
+</span><span class='line'>  <span class="nb">Require</span> <span class="k">all</span> granted
+</span><span class='line'><span class="nt">&lt;/Directory&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;FilesMatch</span> <span class="s">\.php$</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nb">SetHandler</span> <span class="k">None</span>
+</span><span class='line'><span class="nt">&lt;/FilesMatch&gt;</span>
+</span><span class='line'><span class="nb">DirectoryIndex</span> <span class="k">None</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>4.配置文件部分指令说明</h2>
+
+<h3>1. <strong>indexOptions</strong></h3>
+
+<ul>
+<li>示例</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">indexOptions</span> VersionSort FoldersFirst NameWidth=*
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>可用参数
+
+<ul>
+<li><code>ScanHTMLTitles</code> - 搜索HTML标题,如果目录中含有HTML文件，则Apache会自动读取HTML文件的&lt; title>……部分，用HTML文件的标题作为Description（描述）显示在列表目录中的 Description部分。。（注意：加载该指令会加大CPU的负荷！）</li>
+<li><code>NameWidth=*</code> - 文件命显示字节数指定目录列表可以显示最长为25字节的文件/目录名,如果使用*来做值,会自适应到最长文件名</li>
+<li><code>DescriptionWidth=128</code> - 描述显示字节数指定目录列表可以显示最长为128字节的文件/目录描述内容</li>
+<li><code>HTMLTable</code> - 允许HTML格式</li>
+<li><code>FoldersFirst</code>-  目录优先</li>
+<li><code>SuppressLastModified</code> - 在目录中禁止显示最近的修改时间</li>
+<li><code>VersionSort</code> - 版本排序 如果目录中含有同一文件的不同版本，则Apache会对该文件按照版本号自动排序 无须多说，加上吧。对于中文来说，是按照拼音顺序排序</li>
+<li><code>IconHeight=24 IconWidth=24</code> - 修改图标尺寸</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>2. IndexIgnore</h3>
+
+<p>索引排除语法 在它后面设定的文件/目录不会在目录列表中显示。</p>
+
+<ul>
+<li>示例</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">IndexIgnore</span> header.html footer.html
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>     <br/>
+header.html footer.html 这两个文件不会在索引（目录浏览）中出现。</p>
+
+<h3>3. HeaderName</h3>
+
+<p>指定该目录列表的header模板，指定一个html文件后，Apache会用这个网页替换掉默认目录列表上面呆板的Index of … 。</p>
+
+<ul>
+<li>示例</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">HeaderName</span> <span class="sx">/data/index/header.html</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>4. ReadmeName</h3>
+
+<p>在索引列表底部嵌入文件 指定该目录列表的footer模板，指定一个html文件后，Apache会在目录列表的底部加载这个网页。</p>
+
+<ul>
+<li>示例</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">ReadmeName</span> <span class="sx">/data/index/footer.html</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>5. IndexOrderDefault</h3>
+
+<p>指定目录列表的排序方式</p>
+
+<ul>
+<li>示例</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">IndexOrderDefault</span> Ascending Date
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>6. <code>AddDescription</code></h3>
+
+<p>如果你想为某个文件设置一个Description（描述）的话，就使用这个指令，格式是AddDescription &ldquo;描述&rdquo; 文件名</p>
+
+<h3>7. AddIcon</h3>
+
+<p>定制文件图标</p>
+
+<ul>
+<li>示例</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="nb">AddIcon</span> <span class="sx">/icons/word.gif</span> .doc .DOC
+</span><span class='line'><span class="nb">AddIcon</span> <span class="sx">/icons/rar.gif</span> .rar .RAR
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Apache有一个专门负责文件类型的文件：mime.types，里面为每个文件进行了详细分类。比如有：application,image,audio,video。在里面狂搜了一遍，没有上面的那三个类型，于是在前面增加如下定义</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='apacheconf'><span class='line'><span class="c"># MIME type Extensions</span>
+</span><span class='line'><span class="err">application/</span><span class="nb">winrar</span> rar
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">— 由 <span class="fn">Duke Lazy</span></span>
+
+     于 
+
+
+
+
+2015-12-08 写下. 
+     全文共 376 字
+      
+
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2015/11/password-management/" title="Previous Post: 密码管理">&laquo; 密码管理</a>
+      
+      
+        <a class="basic-alignment right" href="/2015/12/t440-hardware-configuration-report/" title="Next Post: T440硬件配置信息报告">T440硬件配置信息报告 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Duke Lazy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

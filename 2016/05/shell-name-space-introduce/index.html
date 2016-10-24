@@ -1,0 +1,638 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Windows外壳名字空间的浏览 - 放羊的博客</title>
+  <meta name="author" content="Duke Lazy">
+
+  
+  <meta name="description" content="Windows95/98对Dos/Win3.x作了许多重大改进，在文件系统方面，它除了采用长文件名替代Dos中的8.3文件名以外，引入外壳名字空间（Shell Name Space）来代Dos文件系统是其又一大突破．本文将简要地介绍如何在Windows 95/98或Windows NT4. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://dukelazy.github.io/2016/05/shell-name-space-introduce/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="放羊的博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.lug.ustc.edu.cn/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.lug.ustc.edu.cn/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   class="no-sidebar"  >
+  <header role="banner"><a id="avatar" href="/"></a>   
+<hgroup>
+  <h1><a href="/">放羊的博客</a></h1>
+  
+    <h2>万能的技术,苦逼的技术.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="dukelazy.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+<li><a href="/life-thoughts">生活杂谈</a></li>
+<li><a href="/technology-programming">程序生涯</a></li>
+<li><a href="/messy">杂七杂八</a></li>
+<li><a href="/detailed-list">各项清单</a></li>
+<li><a href="/project">开源项目</a></li>
+  <li><a href="/archives">文章归档</a></li>
+  <li><a href="/tags">标签</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Windows外壳名字空间的浏览</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+2016-05-26
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Windows95/98对Dos/Win3.x作了许多重大改进，在文件系统方面，它除了采用长文件名替代Dos中的8.3文件名以外，引入外壳名字空间（Shell Name Space）来代Dos文件系统是其又一大突破．本文将简要地介绍如何在Windows 95/98或Windows NT4.0以上版本。</p>
+
+<!--more-->
+
+
+<h2>一、概述</h2>
+
+<h3>1.1 简介</h3>
+
+<p>　　在Dos/Win3.x中，每个逻辑分区构成一棵目录树，文件系统由这一统一的根，而且每个目录或文件必须一一对应于文件系统中客观存在的项。但Windows引入了“外壳名字空间”（ Shell Name Space）的概念之后，这一切就都变了。</p>
+
+<p>　　外壳名字空间是Windows下的标准文件系统，它大大扩展了Dos文件系统，形成了以“桌面”（Desktop）为根的单一的文件系统树，原有的Ｃ盘、Ｄ盘等目录树变成了“我的电脑”这一外壳名字空间子树的下一级子树，而像“控制面板”、“回收站”、“网上邻居”等应用程序及“打印机”等设备也被虚拟成了外壳名字空间中的节点。另外，与ＤＯＳ中物理存储只能和文件系统项一一对应这一点不同的是，一个实际目录在外壳名字空间中可以表现为不同的项。例如“我的文档”与“C;/My Documents”其实都指向“C;/My Documents”目录，但它们在外壳名字空间中是不同的项。如果我们运行Windows 自带的“Windows资源管理器”看一下的话，那么在它的左部树型视图中我们就可以清楚的看到整个外壳名字空间替代ＤＯＳ文件系统，Windows在文件系统的组织与管理上终于有了质的飞跃。</p>
+
+<p>　　为了区别于ＤＯＳ中“目录”的概念，Windows引入了“文件夹”（Folder）的概念。“文件夹”一般是指外壳名字空间树中的非叶节点，既可以是ＤＯＳ下的目录，也可是“控制面板”、“回收站”这类虚拟的目录。但外壳名字空间中有些项本身并不是文件夹（即不具有文件夹属性），但却含有子文件夹，比如“网上邻居”等。以下为讲座方便，我们也认为它们是文件夹。</p>
+
+<p>　　在下面的讲座过程中我们将用“文件系统”一词来指代ＤＯＳ文件系统，而用“外壳名字空间”一词来指代Windows中的外壳名字空间：另外用“文件”一词来指代外壳名字空间这棵树中的叶节点（虽然它们不都是物理存储上的文件）。</p>
+
+<p>　　在Windows中，Win3.x的文件操作函数，如FindFirstFile、FindNextFile、SetCurrentDirectory等，虽然仍可使用，但用它们只能浏览文件系统，却无法浏览与操纵整个外壳名字空间。要浏览Windows中的外壳名字空间，就必须使用一套全新的、基于ＣＯＭ（组件对象模型）基础上的方法。</p>
+
+<h3>1.2 新的“路径”PIDL</h3>
+
+<p>　在讨论基于 COM 的方法之前，我们先来介绍一下外壳名字空间中“路径”的表示问题。DOS 的字符串路径只能表示文件系统，而无法表示整个外壳名字空间，所以外壳名字空间提供了一种“路径”的替代 PIDL。</p>
+
+<p>　　PIDL 是一个元素类型为 ITEMIDLIST 结构的数组，数组中元素的个数是未知的，但紧接着数组末尾的必是一个双字节的零。每个数组元素代表了外壳名字空间树中的一层（即一个文件夹或文件），数组中的前一元素代表的是后一元素的父文件夹。由此可见，PIDL 实际上就是指向一块由若干个顺序排列的 ITEMIDLIST 结构组成、并在最后有一个双字节零的空间的指针。所以 PIDL 的类型就被 Windows 定义为 ITEMIDLIST 结构的指针。</p>
+
+<p>　　PIDL亦有“绝对路径”与“相对路径”的概念。表示“相对路径”的PIDL（本文简称为“相对PIDL”）只有一个ITEMIDLIST结构的元素，用于标识相对于父文件夹的“路径”；表示“绝对路径”的PIDL（简称为“绝对PIDL”）有若干个ITEMIDLIST结构的元素，第一个元素表示外壳名字空间根文件夹（“桌面”）下的某一子文件夹A，第二个元素则表示文件夹A下的某一子文件夹B，其余依此类推。这样绝对PIDL就通过保存一条从“桌面”下的直接子文件夹或文件的绝对PIDL与相对PIDL是相同的，而其他的文件夹或文件的相对PIDL就只是其绝对PIDL的最后一部分了。</p>
+
+<p>　　但现在就出现了一个问题：即“桌面”的表示问题。外壳名字空间中其他各项都可以用从“桌面”开始的绝对PIDL加以表示，但“桌面”的PIDL数组显然一个元素都没有。这样就只剩下PIDL数组最后的那个双字节的零了。所以，“桌面”的PIDL就是一个16位的零。注意：“桌面”内容是一个双字节的零。另外，虽然“桌面”表示的是“C:/Windows/Desktop”文件夹（这里假定Windows的系统目录为“C:/Windows”）的内容，但“桌面”与“C:/Windows/Desktop”文件夹的PIDL是完全不同的。这一点同样适用于“我的文档”与“C:/My Documents”等文件夹。</p>
+
+<p>　　DOS中的路径是一个字符串，但PIDL是一种二进制结构，所以我们不能直接从PIDL中获知它所代表的到底是哪个文件夹或文件，而必须调用相应的函数把它转换成代表路径的字符串。如果某绝对PIDL是文件系统的一部分，则调用SHGetPathFromIDList函数即可；但如不是，就无法获得路径字符串了，因为DOS中根本就不存在这种路径。但很可惜的是，Windows并没有提供一个函数来让我们方便地把文件系统的路径字符串转换成PIDL。不过我们可用一个我们自己实现的函数 ParsePidlFromPath() 来达目的（具体函数的实现见下文）。</p>
+
+<p>　　PIDL的创建与释放一般并不使用C++的new和delete操作或C语言的malloc和free函数,而必须使用专门的方法进行.首先调用SHGEetMallocI函数得到Malloc接口(COM接口的一种,关于COM接口下面将详述)的指针,再调用该接口的Alloc方法为PIDL分配空间,或调用该接口的Free方法释放某个PIDL占用的空间。最后调用该接口的Release方法释放该接口。</p>
+
+<p>　除了下面将要介绍的IShellFolder、IEnumIDList等COM接口可以操作PIDL外，还有很多以SH开头的Windows API函数也可操作PIDL，不过一般这些函数都要求使用绝对PIDL作参数。例如SHGetFileInfo函数可得到某一PIDL所指对象的各种信息，包括名字、图标、属性等；SHFileOperation函数可对外壳名字空间中的项进行拷贝、移动、改名、删除等操作；SHBrowseForFolder可以显示一个让用户选择外壳名字空间中某一文件夹的浏览对话框.</p>
+
+<h3>1.3 基于COM的方法</h3>
+
+<p>　　讨论清楚了PIDL的概念之后,我们回过头来讨论基于COM之上的浏览外壳名字空间的方法。如果说PIDL是外壳的名字空间中的“路径”的话，那么下面所说的两个COM接口IshellFolder与IEnumIDList就起着与Win 3.x中的FindFirstFile、FindNextFile等函数类似的功能。</p>
+
+<p>　　在Windows中，每个文件夹都由操作系统实现了一个派生自Iunknown接口（COM接口的最基本类）的接口IshellFolder。通过调用某个文件夹的该接口，即可实现对该文件夹的浏览，得到该文件夹中子项（子文件夹或文件）的各种相关信息。</p>
+
+<p>　　我们可以调用SHGetDesktopFolder函数来获得外壳名字空间的根文件夹（即“桌面”）的IshellFolder接口。对于某个文件夹A，以它的子文件夹B的相对PIDL为参数，调用它的IshellFolder接口的BindToObject方法即可得到子文件夹B的IshellFolder接口。如要枚举某个文件夹下的子项，则只需调用它的IshellFolder接口的EnumObjects方法即可获得一个IEnumIDList接口。通过调用该IEnumIDList接口的Next方法我们即可枚举出该文件夹的所有子项（包括文件夹和文件等对象），获得它们的相对PIDL。使用父文件夹的IshellFolder接口和这些相对PIDL，我们即可获得这些子项的各种相关信息，包括显示名称、图标、属性等，甚至还可以获得它的右键菜单。例如，调用该接口的GetDisplayNameOf方法可获得该文件夹下子项的显示名称；调用ParseDisplayName方法可把某个子项的用Unicode内码表示的字符串路径翻译成对应的PIDL。这样通过PIDL和这两个接口，我们就可以遍历和操纵整个外壳名字空间了。</p>
+
+<p>　　除了IshellFolder和IEnumIDList接口以外，Windows 外壳名字空间还提供了很多其他COM接口，例如IshellBrowser、IshellLink、IshellIcom、IshellView等。通过这些接口，应用于程序就可以更好的与外壳名字空间交互。由于本文篇幅有限，这些接口就不详细介绍了，有兴趣的读者可参阅相关资料。</p>
+
+<p>　　值得注意的是，COM中的接口虽然在使用上与C++中的类是非常相似（事实上COM接口在C ++中就是以类的形式声明的），但维护其正确的引用计数机制是非常重要的。每增加一个对该接口的引用，就要调用一次它的AddRef( )方法；而在使用完后必须调用它的Release( )方法释放该接口。关于COM及COM接口的细节请参见相关资料，这里不再赘述。</p>
+
+<p>　　可惜的是，虽然我们可依照上文给出的方法实现外壳名字空间的逐层展开，但外壳名字空间却并没有提供一种让我们自由跳转到某一文件夹的方法，也没有提供返回到上一级文件夹的方法，因为我们无法方便地获得父文件夹的IshellFolder接口。如果要返回，就必须由应用程序自己想方法获得父文件夹的IshellFolder接口。一种可行的方法是在展开外壳名字空间时保存每个文件夹的IShellFolder接口指针和它的绝对PIDL，这样就可以相对容易地实现自由跳转了。</p>
+
+<p>　　但无论如何，外壳名字空间提供的浏览和操作的方法比起DOS/ Windows 3.x的函数来还是有着巨大的飞跃的。只要我们理解清楚了这种方法的优点与不足，我们就可以扬长避短，开发出各种各样的使用外壳名字空间的程序来。</p>
+
+<h2>二、相关接口、函数和数据结构</h2>
+
+<p>　　对于本文所涉及的一些比较复杂的接口、函数和数据结构，以下仅列举出作者在Visual C++6.0查到的声明与定义,并配上相应的注释.一些较简单的则从略,未列出的请参见相关资料。</p>
+
+<h3>2.1 数据结构</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">typedef</span> <span class="n">IshellFolder</span> <span class="o">*</span><span class="n">LPSHELLFOLDER</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//IshellFolder接口指针的声明</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_ITEMIDLIST</span> <span class="p">{</span><span class="c1">//ITEMIDLIST结构的定义</span>
+</span><span class='line'>    <span class="n">SHITEMID</span> <span class="n">mkid</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span><span class="n">ITEMIDLIST</span><span class="p">,</span> <span class="o">*</span><span class="n">LPITEMIDLIST</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_SHITEMID</span> <span class="p">{</span><span class="c1">//ITEMIDLIST结构中元素的定义</span>
+</span><span class='line'>    <span class="n">USHORT</span> <span class="n">cb</span><span class="p">;</span><span class="c1">//本结构的长度(以字节计)</span>
+</span><span class='line'>    <span class="n">BYTE</span> <span class="n">abID</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="c1">//可变长的元素标识符</span>
+</span><span class='line'><span class="p">}</span><span class="n">SHITEMID</span><span class="p">,</span> <span class="o">*</span><span class="n">LPSHITEMID</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_SHFILEINFO</span> <span class="p">{</span><span class="c1">//SFFILEINFO结构的定义</span>
+</span><span class='line'>    <span class="n">HICON</span> <span class="n">hicon</span><span class="p">;</span><span class="c1">//文件图标的句柄</span>
+</span><span class='line'>    <span class="n">Int</span> <span class="n">ilcon</span><span class="p">;</span><span class="c1">//图标在系统图像列表中的序号</span>
+</span><span class='line'>    <span class="n">DWORD</span> <span class="n">dwAttributes</span><span class="p">;</span><span class="c1">//文件的属性</span>
+</span><span class='line'>    <span class="n">Char</span> <span class="n">szDisplayName</span><span class="p">[</span><span class="n">MAX_PATH</span><span class="p">];</span><span class="c1">//显示名称或路径</span>
+</span><span class='line'>    <span class="n">Char</span> <span class="n">szTypeName</span><span class="p">[</span><span class="mi">80</span><span class="p">];</span><span class="c1">//表示文件类型的字符串</span>
+</span><span class='line'><span class="p">}</span> <span class="n">SHFILEINFO</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>2.2 相关接口</h3>
+
+<h4>2.2 IshellFolder接口的方法</h4>
+
+<ul>
+<li>2.1.1 BindToObject
+
+<ul>
+<li>格式: <code>HRESULT BindToObject( LPCITEMIDLLIST pidl, LPBC pbcreserved, REFIID riid, LPVOID *ppvOut);</code></li>
+<li>作用：得到本文件夹中某一子文件夹的IShellFolder接口。</li>
+<li>参数：Riid应为IID_IshellFolder, pbcReserved应为NNUL,pidl为表示该子文件夹的“相对路径”的PIDL,从ppvOut中返回要求的IshellFolder接口的指针。</li>
+</ul>
+</li>
+<li>2.1.2 EnumObjects
+
+<ul>
+<li>格式：&#8217;HRSULT EnumObjects( HWND hwndOwner, DWORD grfFlags, LPENUMIDLIST*ppenumIDList);&#8217;</li>
+<li>作用：枚举本文件夹的成员。</li>
+<li>参数：hwndOwmer为父窗口句柄，grfFlags决定枚举世闻名的内容，可为SHCONTF_FOLDERS、SHCONTF_NONFOLDERS、SHCONTF_INCLUDEHIDDEN的组合,从ppenumIDList返回IEnumIDList接口的指针。</li>
+</ul>
+</li>
+<li>2.1.3 GetDisplayNameOf
+
+<ul>
+<li>格式：&#8217;HRESULT GetDisplayNameOf (LPCITEMIDLIST pidl, DWORD uFlags, LPSTRRERT lpName);&#8217;</li>
+<li>作用：得到本文件夹中某一对象的显示名称。</li>
+<li>参数：pidl为表示该子文件夹的“相对路径”的PIDL, uFlags为 SHGDN_NORMAL、SHGDN_INFOLDER、SHGFI_SYSICONINDEX、SHGFI_EXETYPE、SHGFI_ATTRIBUTES、SHGFI_PIDL、SHGFI_DISPLAYNAME、SHGFI_LARGEICON等。</li>
+<li>返回值：如uFlags包含SHGFI-EXETYPE标志，则返回值为该可执行文件夹类型；如uFlags包含SHGFI_SYSICONINDEX标志,则返回值为系统图像列表的句柄。否则,如本函数调用成功则返回非零值，失败则返回零。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>三、应用举例</h2>
+
+<p>几个非常有用的函数的实现</p>
+
+<h3>3.1 ParsePidlFromPath</h3>
+
+<p>描述：将文件系统路径翻译成对应的PIDL。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="n">LPITEMIDLIST</span> <span class="nf">ParsePidlFromPath</span><span class="p">(</span><span class="n">LPCSTR</span> <span class="n">path</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">//存放以Unicode内码表示的路径字符串的缓冲区</span>
+</span><span class='line'>    <span class="n">OLECHAR</span> <span class="n">szOleChar</span><span class="p">[</span><span class="n">MAX_PATH</span><span class="p">];</span>
+</span><span class='line'>    <span class="c1">//“桌面“的IshellFolder接口指针</span>
+</span><span class='line'>    <span class="n">LPSHELLFOLDER</span> <span class="n">IpsfDeskTop</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//返回的PIDL</span>
+</span><span class='line'>    <span class="n">LPITEMIDLIST</span> <span class="n">Ipifq</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">ULONG</span> <span class="n">ulEaten</span><span class="p">,</span> <span class="n">ulAttribs</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">HRESULT</span> <span class="n">hres</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//得到“桌面”的IshellFolderr 接口指针</span>
+</span><span class='line'>    <span class="n">SHGetDesktopFolder</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lpsfDeskTop</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//将Ansi字符集的路径字符串转换成Unicode字符串，  存入szOleChar</span>
+</span><span class='line'>    <span class="n">MultiByteToWideChar</span><span class="p">(</span><span class="n">CP_ACP</span><span class="p">,</span> <span class="n">MB_PRECOMPOSED</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">szOleChar</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">szOleChar</span><span class="p">));</span>
+</span><span class='line'>    <span class="c1">//将szOleChar,中的路径径字符串翻译成相应的PIDL，存入lpifq</span>
+</span><span class='line'>    <span class="n">hres</span> <span class="o">=</span> <span class="n">lpsfDeskTop</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">();</span>
+</span><span class='line'>    <span class="c1">//如果翻译失败，则返回NULL</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">FAILED</span><span class="p">(</span><span class="n">hres</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">lpifq</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3.2 GetItemIcon</h3>
+
+<p>描述：返回lpi这个绝对PIDL所指项的图标在系统图像列表中的序号，uFlags为要求的图标类型。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="n">Int</span> <span class="nf">Getltemlcon</span><span class="p">(</span><span class="n">LPITEMIDLIST</span> <span class="n">lpi</span><span class="p">,</span> <span class="n">UINT</span> <span class="n">uFlags</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">//存放文件信息的结构</span>
+</span><span class='line'>    <span class="n">SHFILEINFO</span> <span class="n">sfi</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//给uFlags增加一些公共标志（lpi为PIDL、要求返回系统图像列表、要求小图标）</span>
+</span><span class='line'>    <span class="n">uFlags</span> <span class="o">|=</span> <span class="n">SHGFI</span> <span class="o">-</span> <span class="n">PIDL</span> <span class="o">|</span> <span class="n">SHGFI_SYSICONINDEX</span> <span class="o">|</span> <span class="n">SHGFI_SMALLICON</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//获得图标</span>
+</span><span class='line'>    <span class="n">SHGetFileinfo</span><span class="p">((</span><span class="n">LPCSTR</span><span class="p">)</span><span class="n">lpi</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sfi</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">SHFILEINFO</span><span class="p">),</span> <span class="n">uFlags</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//返回图标在系统图像列表中的序号KD</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">sfi</span><span class="p">,</span> <span class="n">ilcon</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3.3 GetName</h3>
+
+<p>描述：lpio lpsf所指的IshellFolder接口代表的文件夹下的相对PIDL，本函数获得lpi所指项的显示名称，dwFlags表明欲得到的显示名称类型，lpFriendlyName为存放显示名称的缓冲区。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="n">BOOL</span> <span class="nf">GetName</span><span class="p">(</span><span class="n">LPSHELLFOLDER</span> <span class="n">lpsf</span><span class="p">,</span> <span class="n">LPITEMIDLIST</span> <span class="n">lpi</span><span class="p">,</span> <span class="n">DWORD</span> <span class="n">dwFlags</span><span class="p">,</span> <span class="n">LPSTR</span> <span class="n">lpFriendlyName</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">STRRET</span> <span class="n">str</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//得到显示名称</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">NOERROR</span> <span class="o">!=</span> <span class="n">lpsf</span><span class="o">-&gt;</span><span class="n">GetDisplayNameOf</span><span class="p">()</span><span class="n">lpi</span><span class="p">,</span> <span class="n">dwFlags</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">str</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//根据返回值进行转换</span>
+</span><span class='line'>    <span class="k">switch</span> <span class="p">(</span><span class="n">str</span> <span class="n">uType</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="c1">//如为Unicode字符串，则转成Ansi字符集的字符串case STRRET_WSTR:</span>
+</span><span class='line'>        <span class="n">WideCharToMultiByte</span><span class="p">(</span><span class="n">CP_ACP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">str</span><span class="p">.</span><span class="n">pOleStr</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ipFriendlyName</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">lpFriendlyName</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">Break</span><span class="p">;</span>
+</span><span class='line'>        <span class="c1">//如为偏移量，则去除偏移量</span>
+</span><span class='line'>    <span class="k">case</span> <span class="nl">STRRET_OFFSET</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">lstrcpy</span><span class="p">(</span><span class="n">lpFriendlyName</span><span class="p">,</span> <span class="p">(</span><span class="n">LPSTR</span><span class="p">)</span><span class="n">lpi</span> <span class="o">+</span> <span class="n">str</span><span class="p">.</span><span class="n">uOffset</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>        <span class="err">如为</span><span class="n">Ansi</span><span class="err">字符串，则直接拷贝</span>
+</span><span class='line'>    <span class="k">case</span> <span class="nl">STRRET_CSTR</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">Lstrcpy</span><span class="p">(</span><span class="n">lpFriendlyName</span><span class="p">,</span> <span class="p">(</span><span class="n">LPSTR</span><span class="p">)</span><span class="n">str</span><span class="p">.</span><span class="n">cStr</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">Break</span><span class="p">;</span>
+</span><span class='line'>        <span class="c1">//非法情况</span>
+</span><span class='line'>    <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">FALSE</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">TRUE</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>四、一个实例</h2>
+
+<p>以下我们将用Visual C++6.0制作一个例子来演示外壳名了空间的浏览。具体为使用Ctreer View,展开外壳名字空间中的“桌面”文件夹，枚举出该文件夹下的所有子文件夹。</p>
+
+<p>在这个项目中，CtreeView 的图像列表我们使用Windows 的系统图像列表，而不是自己创建一个。</p>
+
+<p>首先，用AppWizard新建一个项目，类型为MFC AppWizard(exe),项目名为Test；在第一步中选择Single document;在第六步中将CtestView的基类改为CtreeView。其它均使用默认设置。</p>
+
+<p>其次，在CtestView中加一个私有成员变量m_ImageList,类型为CimageList,用于保存系统列表。（Windows中所有的图标都保存在系统图像列表中，我们可以在程序中得到这个图像列表）。</p>
+
+<p>第三步，将上文提到的GetName 和GetItemIcon 这两个函数的实现拷贝到CtestView.cpp的较开头的位置。</p>
+
+<p>第四步，在CtestView的OnInitialUpdate( )函数中加入以下代码：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="c1">//系统图像列表的句柄</span>
+</span><span class='line'><span class="n">HIMAGELIST</span> <span class="n">himlSmall</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//存放文件信息的结构</span>
+</span><span class='line'><span class="n">SHFILEINFO</span> <span class="n">sfi</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//存放树型控件中的节点的信息</span>
+</span><span class='line'><span class="n">TV_INEM</span> <span class="n">tvi</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//向树型控件中插入节点时使用的结构</span>
+</span><span class='line'><span class="n">TV_INSERTSTRUCT</span> <span class="n">tvis</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//欲插入节点的前一节点的句柄</span>
+</span><span class='line'><span class="n">HTREEITEM</span> <span class="n">hParent</span> <span class="o">=</span> <span class="n">TVI_FIRST</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//欲节点的父节点的句柄</span>
+</span><span class='line'><span class="n">HTREEITEM</span> <span class="n">hParent</span> <span class="o">=</span> <span class="n">TV_ROOT</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//某一文件夹的IshellFolder接口指针</span>
+</span><span class='line'><span class="n">LPSHELLFOLDER</span> <span class="n">lpsf</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//IenumiDList接口的指针</span>
+</span><span class='line'><span class="n">LPENUMIDLIST</span> <span class="n">lpe</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//lpi为一PIDL</span>
+</span><span class='line'><span class="n">LPITEMIDLIST</span> <span class="n">lpi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//IMalloc接口的指针</span>
+</span><span class='line'><span class="n">LPMALLOC</span> <span class="n">lpMalloc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//枚举的个数</span>
+</span><span class='line'><span class="n">ULONG</span> <span class="n">ulFetched</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//存放显示名称的缓冲区</span>
+</span><span class='line'><span class="kt">char</span> <span class="n">szBuff</span><span class="p">[</span><span class="n">MAX_PATH</span><span class="p">];</span>
+</span><span class='line'><span class="c1">//获得系统图像列表，并把它赋给CtestView的CtreeCtrl控件</span>
+</span><span class='line'><span class="n">himlsmall</span> <span class="o">=</span> <span class="p">(</span><span class="n">HIMAGELIST</span><span class="p">)</span><span class="n">SHGetFileinfo</span><span class="p">(</span><span class="err">“</span><span class="nl">C</span><span class="p">:</span><span class="c1">//”,0,&amp;</span>
+</span><span class='line'><span class="n">sfi</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">SHFIEINFO</span><span class="p">),</span> <span class="n">SHGFI_SYSICONINDEX</span> <span class="o">|</span> <span class="n">SHGFI_SMALLICON</span><span class="p">);</span>
+</span><span class='line'><span class="n">m_lmageList</span><span class="p">.</span><span class="n">Attach</span><span class="p">(</span><span class="n">himlsmall</span><span class="p">);</span>
+</span><span class='line'><span class="n">GetTreeCtrl</span><span class="p">().</span><span class="n">SetlmageList</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_imageList</span><span class="p">,</span> <span class="n">TVSIL_NORMAL</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//获得Imalloc接口的指针</span>
+</span><span class='line'><span class="n">SHGetMalloc</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lpMalloc</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//获得“桌面”文件夹的IshellFolder接口指针</span>
+</span><span class='line'><span class="n">SHGetDesktopFloder</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lpsf</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//创建一个“桌面”的绝对PIDL</span>
+</span><span class='line'><span class="n">lpi</span> <span class="o">=</span> <span class="p">(</span><span class="n">LPITEMIDLIST</span><span class="p">)</span><span class="n">lpMalloc</span><span class="o">-&gt;</span><span class="n">Alloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">USHORT0</span><span class="p">));</span>
+</span><span class='line'><span class="o">*</span><span class="p">((</span><span class="n">USHORT</span><span class="o">*</span><span class="p">)</span><span class="n">lpi</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="c1">//设置要插入的树节点信息</span>
+</span><span class='line'>    <span class="n">tvi</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">TVIF_TEXT</span> <span class="o">|</span> <span class="n">TVIF_IMAGE</span> <span class="o">|</span> <span class="n">TVIF_SELECTEDIMAGE</span> <span class="o">|</span> <span class="n">TVIF_CHILDREN</span><span class="p">;</span>
+</span><span class='line'><span class="n">tvi</span><span class="p">.</span><span class="n">cchTextMax</span> <span class="o">=</span> <span class="n">MAX_PATH</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//设置显示名称</span>
+</span><span class='line'><span class="n">tvi</span><span class="p">.</span><span class="n">pszText</span> <span class="o">=</span> <span class="n">_T</span><span class="err">（“桌面”）；</span>
+</span><span class='line'>    <span class="c1">//获得标准图标和展开时的图标</span>
+</span><span class='line'>    <span class="n">tvi</span><span class="p">.</span><span class="n">ilmage</span> <span class="o">=</span> <span class="n">Tetltemlcon</span><span class="p">(</span><span class="n">lpi</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span><span class='line'><span class="n">tvi</span><span class="p">.</span><span class="n">iSelectedlmage</span> <span class="o">=</span> <span class="n">Getltemlcon</span><span class="p">(</span><span class="n">lpi</span><span class="p">,</span> <span class="n">SHGFI_OPENICON</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//设置插入位置</span>
+</span><span class='line'><span class="n">tvis</span><span class="p">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">tvi</span><span class="p">;</span>
+</span><span class='line'><span class="n">tvis</span><span class="p">.</span><span class="n">hlnsertAfter</span> <span class="o">=</span> <span class="n">TVI_FIRST</span><span class="p">;</span>
+</span><span class='line'><span class="n">tvis</span><span class="p">.</span><span class="n">hParent</span> <span class="o">=</span> <span class="n">TVI_ROOT</span><span class="p">;</span>
+</span><span class='line'><span class="c1">//插入根节点</span>
+</span><span class='line'><span class="n">hpParent</span> <span class="o">=</span> <span class="n">GetTreeCtrl</span><span class="p">().</span><span class="n">Instrtltem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tvis</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//释放lpi所占的空间</span>
+</span><span class='line'><span class="n">lpMalloc</span><span class="o">-&gt;</span><span class="n">Free</span><span class="p">(</span><span class="n">lpi</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//获得“桌面”文件夹的IenumiDList接口指针lpe</span>
+</span><span class='line'><span class="n">lpsf</span><span class="o">-&gt;</span><span class="n">EnumObjects</span><span class="p">(</span><span class="n">m_hWnd</span><span class="p">,</span> <span class="n">SHCONTF_FOLDERS</span> <span class="o">|</span>
+</span><span class='line'>    <span class="n">SHCONTF_NONFOLDERS</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">lpe</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//枚举“桌面”下的各个子文件夹</span>
+</span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">S_OK</span> <span class="o">=</span> <span class="o">=</span> <span class="n">lpe</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">lpi</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ulFetched</span><span class="p">))</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">//获得lpi表示的子文件夹的显示名称</span>
+</span><span class='line'>    <span class="n">GetName</span><span class="p">(</span><span class="n">lpsf</span><span class="p">,</span> <span class="n">lpi</span><span class="p">,</span> <span class="n">SHGDN_NORMAL</span><span class="p">,</span> <span class="n">szBuff</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">tvi</span><span class="p">.</span><span class="n">pszText</span> <span class="o">=</span> <span class="n">szBuff</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">// 获得该项的图标</span>
+</span><span class='line'>    <span class="c1">//由于是“桌面”下的直接子项，所以它的相对PIDL与绝对PIDL是一致的</span>
+</span><span class='line'>    <span class="n">tvi</span><span class="p">.</span><span class="n">ilmage</span> <span class="o">=</span> <span class="n">Getltemlcon</span><span class="p">(</span><span class="n">lpi</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">tvi</span><span class="p">.</span><span class="n">iSelectedimage</span> <span class="o">=</span> <span class="n">Getltemlcon</span><span class="p">(</span><span class="n">lpi</span><span class="p">,</span> <span class="n">SHGFI_OPENICON</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//设置插入位置</span>
+</span><span class='line'>    <span class="n">tvis</span><span class="p">.</span><span class="n">item</span> <span class="o">=</span> <span class="n">tvi</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">tvis</span><span class="p">.</span><span class="n">hinsertAfter</span> <span class="o">=</span> <span class="n">hPrev</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">tvis</span><span class="p">.</span><span class="n">hParent</span> <span class="o">=</span> <span class="n">hParent</span><span class="p">;</span>
+</span><span class='line'>    <span class="c1">//插入节点</span>
+</span><span class='line'>    <span class="n">hPrev</span> <span class="o">=</span> <span class="n">GetTreeCtrl</span><span class="p">().</span><span class="n">insertltem</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tvis</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//释放lpi所占的空间</span>
+</span><span class='line'>    <span class="n">ipMalloc</span><span class="o">-&gt;</span><span class="n">Free</span><span class="p">(</span><span class="n">lpi</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c1">//释放Imalloc和IsshellFolder接口</span>
+</span><span class='line'><span class="n">lpMalloc</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">();</span>
+</span><span class='line'><span class="n">lpsf</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">();</span>
+</span><span class='line'><span class="c1">//对生成的节点进行排序</span>
+</span><span class='line'><span class="n">GetTreeCtrl</span><span class="p">().</span><span class="n">SortChildren</span><span class="p">(</span><span class="n">hParent</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//将CtestView中的“桌面”节点展开</span>
+</span><span class='line'><span class="n">GetTreeCtrl</span><span class="p">().</span><span class="n">Selectltem</span><span class="p">(</span><span class="n">hParent</span><span class="p">);</span>
+</span><span class='line'><span class="n">GetTreeCtrl</span><span class="p">().</span><span class="n">Expand</span><span class="p">(</span><span class="n">hParent</span><span class="p">,</span> <span class="n">TVE_EXPAND</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后，响应CtestView的WM_DESTROY消息，加入以下代码：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="c1">//由于使用了系统图像列表，退出时必须释放对它的所有权</span>
+</span><span class='line'><span class="c1">//否则，退出后Windows将一个图标没有</span>
+</span><span class='line'><span class="n">m_imageList</span><span class="p">.</span><span class="n">Detach</span><span class="p">(</span> <span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个演示程序的效果如下图所示：</p>
+
+<h2>五、后记</h2>
+
+<p>　　由于篇幅的关系，本文所举的例子只能非常简单的演示一下外壳名字空间的浏览，很多较复杂的编程方法都没有表现出来。最后，希望本文能够起到抛砖引玉的作用，让更多的开发者认识与使用外壳名字空间，开发出更好的程序来。</p>
+
+<h2><em>参考资料</em></h2>
+
+<ul>
+<li><em><a href="http://blog.csdn.net/kingcom_xu/article/details/18943" title=" Windows外壳名字空间的浏览 "> Windows外壳名字空间的浏览</a>. [2003-03-18].</em></li>
+<li>MicrosoftCorporation. Microsoft Windows95程序员指南，清华大学出版社，1996</li>
+<li>StefamoMaruzzi.Windows95开发者必读，电子工业出版社，1997</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">— 由 <span class="fn">Duke Lazy</span></span>
+
+     于 
+
+
+
+
+2016-05-26 写下. 
+     全文共 1814 字
+      
+
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2015/12/t440-hardware-configuration-report/" title="Previous Post: T440硬件配置信息报告">&laquo; T440硬件配置信息报告</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Duke Lazy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

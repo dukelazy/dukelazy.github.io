@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: report | 放羊的博客]]></title>
+  <link href="http://dukelazy.github.io/tags/report/atom.xml" rel="self"/>
+  <link href="http://dukelazy.github.io/"/>
+  <updated>2016-10-24T15:47:05+08:00</updated>
+  <id>http://dukelazy.github.io/</id>
+  <author>
+    <name><![CDATA[Duke Lazy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[T440硬件配置信息报告]]></title>
+    <link href="http://dukelazy.github.io/2015/12/t440-hardware-configuration-report/"/>
+    <updated>2015-12-17T17:12:31+08:00</updated>
+    <id>http://dukelazy.github.io/2015/12/t440-hardware-configuration-report</id>
+    <content type="html"><![CDATA[<p>&hellip;</p>
+
+<!-- more -->
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center;"> 项目     </th>
+<th style="text-align:left;"> 详细型号<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> </th>
+<th style="text-align:center;"> 设备 ID <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup> </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"> 型号 </td>
+<td style="text-align:left;"> ThinkPad T440 </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 主板     </td>
+<td style="text-align:left;"> LENOVO 20B6A05GCD </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> BIOS     </td>
+<td style="text-align:left;"> GJET84WW (2.34 ) <sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup> </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> CPU      </td>
+<td style="text-align:left;"> Intel&reg; Core&trade; i7-4510U CPU @ 2.00GHz </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 集成显卡 </td>
+<td style="text-align:left;"> Intel&reg; HD Graphics 4400 </td>
+<td style="text-align:center;"> 8086-0A16 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 独立显卡 </td>
+<td style="text-align:left;"> NVIDIA GeForce GT 720M </td>
+<td style="text-align:center;"> 10DE-1140 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 声卡     </td>
+<td style="text-align:left;"> Realtek ALC292 </td>
+<td style="text-align:center;"> 10EC-0292 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 有线网卡 </td>
+<td style="text-align:left;"> Intel&reg; Ethernet Connection I218-V </td>
+<td style="text-align:center;"> 8086-1559 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 无线网卡 </td>
+<td style="text-align:left;"> Intel Wireless-N 7260 BGN 2x2 HMC WiFi Adapter </td>
+<td style="text-align:center;"> 8086-08B2 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 其他     </td>
+<td style="text-align:left;"> -       </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 读卡器   </td>
+<td style="text-align:left;"> Realtek RTS5227 PCI-E Card Reader </td>
+<td style="text-align:center;"> 10EC-5227 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 音频控制器 </td>
+<td style="text-align:left;"> Intel Lynx Point-LP PCH - High Definition Audio Controller </td>
+<td style="text-align:center;"> 8086-9C20 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> USB 2.0  </td>
+<td style="text-align:left;"> Intel Lynx Point-LP PCH - USB 2.0 EHCI Host Controller 1 </td>
+<td style="text-align:center;"> 8086-9C26 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> USB 3.0  </td>
+<td style="text-align:left;"> Intel Lynx Point-LP PCH - USB 3.0 xHCI Host Controller </td>
+<td style="text-align:center;"> 8086-9C31 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 蓝牙     </td>
+<td style="text-align:left;"> 英特尔&reg; 无线 Bluetooth&reg; 4.0 适配器 (USB 3.0) </td>
+<td style="text-align:center;"> 8087-07DC </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 摄像头   </td>
+<td style="text-align:left;"> Integrated Camera (USB 3.0) </td>
+<td style="text-align:center;"> 04CA-7035 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 外设     </td>
+<td style="text-align:left;"> -       </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 鼠标     </td>
+<td style="text-align:left;"> Lenovo Precision USB Mouse (USB 3.0) </td>
+<td style="text-align:center;">17EF-6050 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 机械键盘 </td>
+<td style="text-align:left;"> QPAD MK-10 (USB 3.0) </td>
+<td style="text-align:center;">195D-2034 </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 硬盘     </td>
+<td style="text-align:left;"> -       </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 硬盘     </td>
+<td style="text-align:left;"> WDC WD10JPVX-08JC3T5 1TB </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+<tr>
+<td style="text-align:center;"> 硬盘     </td>
+<td style="text-align:left;"> SanDisk SSD U110 16GB </td>
+<td style="text-align:center;"> -        </td>
+</tr>
+</tbody>
+</table>
+
+
+<p><img src="/images/avatar_60.jpeg" alt="描述" /></p>
+
+<p><img src="http://gallery.myrsoft.local/_data/i/blog/201512/20151217192412-66585271-me.jpg" alt="描述" /></p>
+
+<p><img src="/image/201512/20151217192412-66585271-me.jpg" alt="描述" /></p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="/Report.txt" title="详细报告单">详细报告单</a>. 2015-12-17 [2015-12-17].<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p><a href="http://dosc.myrsoft.net" title="设备ID查看方法">设备ID查看方法</a>. 2015-12-17 [2015-12-17].<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>2015年12月17日升级到 GJET84WW (2.34 )，在此之前是 GJET84WW (2.29 )<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

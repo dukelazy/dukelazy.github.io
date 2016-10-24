@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://dukelazy.github.io/2016/05/shell-name-space-introduce/</loc>
+    <lastmod>2016-05-26T17:43:33+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/2015/12/t440-hardware-configuration-report/</loc>
+    <lastmod>2015-12-17T17:12:31+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/2015/12/apache/</loc>
+    <lastmod>2015-12-08T15:43:35+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/2015/11/password-management/</loc>
+    <lastmod>2015-11-26T01:49:50+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://dukelazy.github.io/2015/04/mfs-directory-tree-planning/</loc>
     <lastmod>2015-04-04T22:39:24+08:00</lastmod>
   </url>
@@ -114,38 +130,200 @@
   </url>
   <url>
     <loc>http://dukelazy.github.io/about/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/archives/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/detailed-list/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/special/server/</loc>
   </url>
   <url>
     <loc>http://dukelazy.github.io/life-thoughts/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/messy/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/project/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/tags/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
   </url>
   <url>
     <loc>http://dukelazy.github.io/technology-programming/</loc>
-    <lastmod>2015-11-10T23:40:46+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/sui-ji-shu/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/c-number/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/centos/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/linux/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/jekyll/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/blog/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/raneto/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ruby/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/duan-zi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/xiao-hua/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ji-tang/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/node-dot-js/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/http/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/https/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/webpai/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/form-data/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/english/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/xue-xi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/git/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/hook/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/you-xi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/server/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/script/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/minecraft/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/rbenv/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/octopress/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/markdown/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/editor/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/webtool/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/qian-qian-jing-ting/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/player/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ruan-jian/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ming-ling-xing/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/shou-ce/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/centos/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/report/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/hardware/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/computer/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/t440/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/sui-ji-shu/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/yun-wei/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/huan-jing-an-zhuang/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/wang-zhai/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/webapi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/ying-yu-xue-xi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/git/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/minecraft/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/markdown/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/ruan-jian/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/linux/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/rsync/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/server/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/category/detailed-list/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/posts/2/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/posts/3/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/posts/4/</loc>
   </url>
 </urlset>

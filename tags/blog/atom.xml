@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: blog | 放羊的博客]]></title>
   <link href="http://dukelazy.github.io/tags/blog/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2015-11-10T23:40:46+08:00</updated>
+  <updated>2016-10-24T15:47:05+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -73,6 +73,12 @@ mkdir -p public
  [dukelazy@localhost octopress]$ rbenv uninstall 1.9.3-p551
  [dukelazy@localhost octopress]$ rbenv install 1.9.3-p551
  [dukelazy@localhost octopress]$ rbenv rehash
+</code></pre>
+
+<p> Ubuntu 14.04.5 LTS</p>
+
+<pre><code class="` bash"> apt-get install zlib1g
+ apt-get install zlib1g-dev
 </code></pre></li>
 <li><p>在安装 Ruby 之前没有安装 openssl-devel,安装 openssl-devel 后重新安装 Ruby 即可.</p>
 
@@ -96,6 +102,12 @@ mkdir -p public
 <pre><code class="` bash"> [dukelazy@localhost octopress]$ sudo yum install openssl-devel
  [dukelazy@localhost octopress]$ rbenv install 1.9.3-p551
  [dukelazy@localhost octopress]$ rbenv rehash
+</code></pre>
+
+<p> Ubuntu 14.04.5 LTS</p>
+
+<pre><code class="` bash"> apt-get install openssl
+ apt-get install libssl-dev
 </code></pre></li>
 </ol>
 
