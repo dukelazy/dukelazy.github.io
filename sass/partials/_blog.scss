@@ -105,6 +105,14 @@ article {
     font-weight: bold;
   }
 
+  .entry-content > p {
+    text-indent:2em; 
+  }
+
+  .entry-content > p > * {
+    text-indent:0em; 
+  }
+
 }
 article + article {
   .blog-index & {
