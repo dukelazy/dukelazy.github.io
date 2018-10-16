@@ -4,7 +4,7 @@
   <title><![CDATA[放羊的博客]]></title>
   <link href="http://dukelazy.github.io/atom.xml" rel="self"/>
   <link href="http://dukelazy.github.io/"/>
-  <updated>2018-10-16T14:11:38+08:00</updated>
+  <updated>2018-10-16T21:18:26+08:00</updated>
   <id>http://dukelazy.github.io/</id>
   <author>
     <name><![CDATA[Duke Lazy]]></name>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Mac 系统 开启启动 Nginx]]></title>
-    <link href="http://dukelazy.github.io/2017/05/how-to-start-nginx-on-port-80-at-mac-osx-boot-up-log-in/"/>
-    <updated>2017-05-16T14:26:38+08:00</updated>
-    <id>http://dukelazy.github.io/2017/05/how-to-start-nginx-on-port-80-at-mac-osx-boot-up-log-in</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Windows外壳名字空间的浏览]]></title>
@@ -3429,6 +3420,115 @@ Make a change in your file and instantanously see your updates!</p>
 </tr>
 </tbody>
 </table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multipart/form-data POST Format]]></title>
+    <link href="http://dukelazy.github.io/2015/01/multipart-form-data-post-format/"/>
+    <updated>2015-01-05T00:00:00+08:00</updated>
+    <id>http://dukelazy.github.io/2015/01/multipart-form-data-post-format</id>
+    <content type="html"><![CDATA[<p>之前用 POST 方式调用很多API都没有问题，这次调作用总是失败，才发现原来这个 WebAPi 需要用 <code>Multipart/form-data</code> 格式调用才可以，记录下用普通POST和 <code>Multipart/form-data</code> 格式调用的抓包数据。更新现在已经可以支持普通的POST了。</p>
+
+<!--more-->
+
+
+<h2>一、General</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>POST /oauth/token HTTP/1.1
+</span><span class='line'>Content-Type: application/x-www-form-urlencoded
+</span><span class='line'>Host: api.s.gitcafe.org
+</span><span class='line'>Content-Length: 234
+</span><span class='line'>Expect: 100-continue
+</span><span class='line'>grant_type=password&username=raven@gitcafe.com&password=[passwordValue]&client_id=0aeef87b0f41e96adde4f323012997961faec5f06210865f7a73c638e542f2bd&client_secret=276ab98bbe499b5c827523b6ad1b095290dbd7e86b98211f84d7d951505389ef&scope=read write
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>二、Multipart/form-data</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>POST /oauth/token HTTP/1.1
+</span><span class='line'>Content-Type: multipart/form-data; boundary="b0e86de3-4c49-42ad-b971-034f42b6634a"
+</span><span class='line'>Host: api.s.gitcafe.org
+</span><span class='line'>Content-Length: 1021
+</span><span class='line'>Expect: 100-continue
+</span><span class='line'>Connection: Keep-Alive
+</span><span class='line'>
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a
+</span><span class='line'>Content-Type: text/plain; charset=utf-8
+</span><span class='line'>Content-Disposition: form-data; name="grant_type"
+</span><span class='line'>
+</span><span class='line'>password
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a
+</span><span class='line'>Content-Type: text/plain; charset=utf-8
+</span><span class='line'>Content-Disposition: form-data; name="username"
+</span><span class='line'>
+</span><span class='line'>raven@gitcafe.com
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a
+</span><span class='line'>Content-Type: text/plain; charset=utf-8
+</span><span class='line'>Content-Disposition: form-data; name="password"
+</span><span class='line'>
+</span><span class='line'>[passwordValue]
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a
+</span><span class='line'>Content-Type: text/plain; charset=utf-8
+</span><span class='line'>Content-Disposition: form-data; name="client_id"
+</span><span class='line'>
+</span><span class='line'>0aeef87b0f41e96adde4f323012997961faec5f06210865f7a73c638e542f2bd
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a
+</span><span class='line'>Content-Type: text/plain; charset=utf-8
+</span><span class='line'>Content-Disposition: form-data; name="client_secret"
+</span><span class='line'>
+</span><span class='line'>276ab98bbe499b5c827523b6ad1b095290dbd7e86b98211f84d7d951505389ef
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a
+</span><span class='line'>Content-Type: text/plain; charset=utf-8
+</span><span class='line'>Content-Disposition: form-data; name="scope"
+</span><span class='line'>
+</span><span class='line'>read write
+</span><span class='line'>--b0e86de3-4c49-42ad-b971-034f42b6634a--</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
   </entry>

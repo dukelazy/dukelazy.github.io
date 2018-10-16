@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://dukelazy.github.io/2017/05/how-to-start-nginx-on-port-80-at-mac-osx-boot-up-log-in/</loc>
-    <lastmod>2017-05-16T14:26:38+08:00</lastmod>
-  </url>
-  <url>
     <loc>http://dukelazy.github.io/2016/05/shell-name-space-introduce/</loc>
     <lastmod>2016-05-26T17:43:33+08:00</lastmod>
   </url>
