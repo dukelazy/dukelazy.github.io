@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://dukelazy.github.io/2017/05/how-to-start-nginx-on-port-80-at-mac-osx-boot-up-log-in/</loc>
+    <lastmod>2017-05-16T14:26:38+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://dukelazy.github.io/2016/05/shell-name-space-introduce/</loc>
     <lastmod>2016-05-26T17:43:33+08:00</lastmod>
   </url>
@@ -141,9 +145,6 @@
     <loc>http://dukelazy.github.io/</loc>
   </url>
   <url>
-    <loc>http://dukelazy.github.io/special/server/</loc>
-  </url>
-  <url>
     <loc>http://dukelazy.github.io/life-thoughts/</loc>
   </url>
   <url>
@@ -157,6 +158,123 @@
   </url>
   <url>
     <loc>http://dukelazy.github.io/technology-programming/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/sui-ji-shu/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/c-number/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/centos/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/linux/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/jekyll/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/blog/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/raneto/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ruby/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/duan-zi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/xiao-hua/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ji-tang/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/node-dot-js/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/http/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/https/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/webpai/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/form-data/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/english/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/xue-xi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/git/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/hook/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/you-xi/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/server/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/script/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/minecraft/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/rbenv/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/octopress/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/markdown/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/editor/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/webtool/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/qian-qian-jing-ting/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/player/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ruan-jian/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/ming-ling-xing/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/shou-ce/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/centos/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/report/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/hardware/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/computer/</loc>
+  </url>
+  <url>
+    <loc>http://dukelazy.github.io/tags/t440/</loc>
   </url>
   <url>
     <loc>http://dukelazy.github.io/category/sui-ji-shu/</loc>
@@ -199,122 +317,5 @@
   </url>
   <url>
     <loc>http://dukelazy.github.io/category/detailed-list/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/c-number/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/sui-ji-shu/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/centos/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/linux/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/blog/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/jekyll/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/raneto/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/ruby/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/duan-zi/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/xiao-hua/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/ji-tang/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/node-dot-js/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/form-data/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/http/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/https/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/webpai/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/english/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/xue-xi/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/git/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/hook/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/minecraft/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/script/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/server/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/you-xi/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/rbenv/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/octopress/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/editor/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/markdown/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/webtool/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/player/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/qian-qian-jing-ting/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/ruan-jian/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/ming-ling-xing/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/shou-ce/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/centos/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/computer/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/hardware/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/report/</loc>
-  </url>
-  <url>
-    <loc>http://dukelazy.github.io/tags/t440/</loc>
   </url>
 </urlset>
